@@ -1,0 +1,229 @@
+<!-- 推荐点单详情页面 by lanclot -->
+<view class='backView'>
+
+  <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}"
+    next-margin="{{nextMargin}}" class='swiperimg' wx:if="{{backgroundIVs.length>0}}">
+    <block wx:for="{{backgroundIVs}}" wx:for-item="item" wx:for-index="idx" wx:key="index">
+      <swiper-item class='swiperimg'>
+        <image src="{{item}}" class="slide-image" binderror="scrollErrorFunction" data-errorimg="{{idx}}" bindtap='clickScroll' data-recommendid="{{item.recommendId}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class='addImageView' wx:else>
+    <text>店主还没有上传背景图片呦</text>
+  </view>
+
+  <view class='titleNameView'>
+    <view class='fountTitleView'>
+      <text class='levelTitleClassText'>等级：</text>
+      <text class='levelClassText'>{{partnerInfo.shopLevelname}}</text>
+
+    </view>
+    <view class='lastTitleView'>
+      <text class='saleTitleClassText'>销售：</text>
+      <text class='saleClassText'>{{partnerInfo.salesAmount}}</text>
+      <text class='saleClassdanweiText'>份</text>
+
+    </view>
+
+  </view>
+
+  <view class='nameViewClass'>
+    <text class='nameTitileclass'>{{partnerInfo.nickName}}</text>
+    <!-- <van-tabs active="{{ active }}" type="card"  bind:change="onChange" color="#01A0EB" line-width="0px">
+    <van-tab title="自取">
+    </van-tab>
+    <van-tab title="配送">
+    </van-tab>
+  </van-tabs> -->
+  </view>
+  <view class='choosePeisongBtnView'>
+
+    <view class='chooseBtnBackView'>
+      <!-- tab切换 -->
+      <view class="navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="navbar__item {{activeIndex == index ? 'navbar__item_on' : ''}}" bindtap="navTabClick">
+            <view class="navbar_title {{activeIndex == index ? 'navbar_title_cur' : ''}}">{{item.name}}</view>
+          </view>
+        </block>
+      </view>
+
+    </view>
+    <view class='tipsView' bindtap='guizeiTipsClick'>
+      <text class='guizetipsText'>规则解释</text>
+      <image src='../../Images/Recomand/wenhao_icon.png'></image>
+    </view>
+  </view>
+  <swiper class='myswiper' current="{{activeIndex}}" duration="300" bindchange="bindChange" style="width: 100%;min-height:{{activeIndex==0?'260rpx':(!addressInfodetail.address?'180rpx':'260rpx')}}">
+    <swiper-item>
+      <view class='ziquView'>
+        <view class='ziquView boxshoaw' data-orderid="{{item.orderId}}">
+
+          <view class='ziquCellClass' bindtap='addAddressGoto' data-latitude='{{merchantInfo.latitude}}' data-longitude='{{merchantInfo.longitude}}' data-id='{{merchantInfo.id}}'>
+            <view class='ziquCell_title'>
+              <text class='ziqutextInfo'>附近门店</text>
+              <view class='imageIconView'>
+                <text class='ziqutextTitle'>{{merchantInfo.shortName}}</text>
+                <image src='../../Images/Recomand/dianpu_icon.png'></image>
+              </view>
+            </view>
+            <view class='ziquInfoDizhiView'>
+              <text class='ziquInfoDizhi'>{{merchantInfo.location}}</text>
+              <view class='addimageIconView'>
+                <image src='../../Images/Recomand/dingwei_icon.png'></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </swiper-item>
+
+    <!-- 配送 -->
+    <swiper-item>
+      <view class='peisongView'>
+        <view class='peisongView boxshoaw' data-orderid="{{item.orderId}}">
+          <view wx:if="{{addressInfodetail.address}}" class='addressCellClass' bindtap='addAddressAction'>
+            <view class='addressCell_title'>
+              <text class='textInfo'>配送地址</text>
+              <text class='textTitle'>{{addressInfodetail.recieveName}}     {{addressInfodetail.mobile}}</text>
+              <text class='textTitle'>{{addressInfodetail.address}}{{addressInfodetail.addressDetail}}</text>
+              <!-- <text class='textInfo'>预计配送金额</text>
+              <text class='textTitleRed'>￥{{shipment}}</text> -->
+
+            </view>
+            <view class='editClass'>
+              <view class='editVIewclass'>
+                <text>编辑</text>
+              </view>
+            </view>
+          </view>
+          <view wx:else class='shop' bindtap='addAddressAction'>
+
+            <view class='showadress'>
+              点击添加地址开始点单吧！
+            </view>
+          </view>
+
+
+
+        </view>
+
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <van-tabs active="{{ active }}" color="#01A0EB" line-width="0rpx">
+
+    <block wx:for="{{categoryList}}" wx:for-item="productDIY" wx:for-index="productDIYidx"  wx:key="index">
+      <van-tab title="{{productDIY.category.name}}">
+        <block wx:for="{{productDIY.productDIYList}}" wx:for-item="productcat" wx:for-index="productcatidx">
+          <view class='leixingbgView' wx:if="{{productcat.products}}">
+            <view class='ShangpinBgView'>
+              <view class='shangpinLeixingView'>
+                <view class='leixingtitle'>
+                  <text>{{productcat.productDIY.name}}</text>
+                </view>
+              </view>
+            </view>
+            <view class='shangcollgeView'>
+              <scroll-view class="nav" scroll-x="true" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+
+                <block wx:for="{{productcat.products}}" wx:for-item="product" wx:for-index="productidx">
+                  <view class='shangpinInfoview'>
+                    <view class='nav_img' bindtap='chooseProdunctAction' data-product="{{product}}">
+                      <view style='background:#fff'>
+                        <image wx:if="{{product.isLucky=='false'}}" src="{{product.icon}}" binderror="typeErrorFunction" data-errorimg="{{idx}}"></image>
+                        <image wx:if="{{product.isLucky=='true'}}" src="../../Images/shop/fd.png" binderror="typeErrorFunction" data-errorimg="{{idx}}"></image>
+                      </view>
+                    </view>
+                    <view class='shangpinname'>
+                      <text>{{product.name}}</text>
+                    </view>
+                    <view class='lastView'>
+                      <view class='myInfoAddView'>
+                        <block wx:for="{{chooseproducts}}" wx:for-item="chooseproduct" wx:for-index="chooseproductidx">
+                          <van-stepper data-product="{{product}}" disable-input value="{{product.id == chooseproduct.id ?chooseproduct.numbers   :0}}" integer min="0" max="99999" step="1" bind:change="onChange" plus-class="jia" minus-class="jian" input-class="numinput" wx:if="{{product.id == chooseproduct.id}}"
+                          />
+                        </block>
+                        <!-- <van-stepper data-product="{{product}}" value="0" integer min="0" max="99999" step="1" bind:change="onChange" plus-class="jia" minus-class="jian" input-class="numinput" wx:if="{{chooseproducts.length==0}}" /> -->
+                      </view>
+                      <view class='moneyView'>
+                        <text>￥{{product.salePrice}}</text>
+                      </view>
+                    </view>
+                  </view>
+                </block>
+
+              </scroll-view>
+            </view>
+
+
+          </view>
+        </block>
+        <view class='addImageViewss' wx:if="{{productDIY.isallNotHave}}">
+          <text>暂无商品</text>
+        </view>
+
+
+
+
+      </van-tab>
+    </block>
+
+
+
+
+  </van-tabs>
+
+  <view class='headerIVbackView'>
+    <image src="{{partnerInfo.icon}}" class='headerIV'>
+    </image>
+
+  </view>
+</view>
+<view class="xiadanView {{isIphoneX?'linkCon':''}} ">
+
+  <view class='duorenDiandan' catchtap='morePersonClick' data-nickName="{{partnerInfo.nickName}}" data-icon='{{partnerInfo.icon}}'>
+    <text> 多人点单免运费</text>
+  </view>
+  <view class=' gouwuche' catchtap='shopCartClick'>
+    <image src='../../Images/Recomand/gouwuCheShop.png'></image>
+    <view class='redImview' style="{{isIphoneX?'bottom:126rpx':''}}" wx:if="{{tureproductList.length>0}}">
+      <text>{{totalAmount}}</text>
+    </view>
+  </view>
+</view>
+
+
+<!--屏幕背景变暗的背景  -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<!--弹出框  -->
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class='mylastTitleView'>
+    <text class='saleTitleClassText'>销售：</text>
+    <text class='saleClassdanweiText'>{{currentproduct.salesAmount}}份</text>
+  </view>
+  
+<block wx:if="{{currentproduct.isLucky==='true'}}">
+  <view class='infoText'></view>
+</block>
+<block wx:else>
+    <view class='infoText'>{{currentproduct.productMaterial}}</view>
+</block>
+
+  <view class='gouwucheAdd' bindtap='addProudctAction' data-product="{{currentproduct}}">加入购物车</view>
+
+  <view>
+  </view>
+
+  <view class='productIconView' style='background:#fff' >
+    <image wx:if="{{currentproduct.isLucky==='true'}}" src="../../Images/shop/fudai.png"></image>
+    <image wx:else src="{{currentproduct.icon}}"></image>
+  </view>
+  <!-- <view class='productIconView' style='background:#fff' wx:else>
+    <image src="{{currentproduct.icon}}"></image>
+  </view> -->
+</view>

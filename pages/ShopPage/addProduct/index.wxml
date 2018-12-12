@@ -1,0 +1,156 @@
+<!-- 添加产品 -->
+<!--pages/ShopPage/addProduct/index.wxml-->
+<view class='probody'>
+
+<canvas canvas-id="myCanvas" class='myCanvas' id='test'/>
+
+  <van-dialog id="van-dialog" />
+  <scroll-view scroll-x="true" style='height:84rpx;' class='add_steps'>
+    <view class="{{index==curIndex?'first':''}}" wx:for="{{productProcess}}" wx:for-index="index" wx:for-item="item" catchtap='stepsClick' data-index="{{index}}" data-minimum="{{item.minimum}}" data-maximum="{{item.maximum}}" data-sequence="{{item.sequence}}">{{item.name}}</view>
+  </scroll-view>
+
+  <view class="mark_dialog {{showView?'show':'hide'}}"></view>
+  <!-- 购物车弹框 -->
+  <view class="box-shoaw shop_cart {{showView?'show':'hide'}}">
+    <view class='shopcart'>
+      <view class='shop_first'>
+        <view class='shop_first_title'>{{productProcess[0].name}}</view>
+        <view class='shop_first_del'>
+          <image src='{{firstimg.icon}}'></image>
+          <view class='shop_first_p'>{{firsttitle}}</view>
+          <view class='shop_first_p'>¥{{firstPrice}}</view>
+          <view>
+            <button class='shop_first_btn' data-sequence='{{item.sequence}}' catchtap='firstDel'>删除</button>
+          </view>
+        </view>
+      </view>
+      <!-- 第二步购物车 -->
+       <view class='shop_first' wx:if="{{options.secondimg}}">
+        <view class='shop_first_title'>{{productProcess[1].name}}</view>
+        <view class='shop_first_del' wx:for="{{options.secondimg}}" wx:for-item="item">
+         <image class="" src='{{item.icon}}' ></image>
+          <view class='shop_first_p'>{{item.name}}</view>
+          <view class='shop_first_p'>¥{{item.price}}</view>
+          <view>
+            <button class='shop_first_btn' catchtap='secondDel' data-materialId='{{item.materialId}}' data-sequence='{{item.sequence}}'>删除</button>
+          </view>
+        </view>
+
+      </view>
+
+      <view class='shop_cart_save' catchtap='shopSave'>保存</view>
+    </view>
+
+
+
+  </view>
+
+  <!-- <view class="box-shoaw shop_cart {{showView1?'show':'hide'}}">
+    <view class='shop_first'>
+      <view class='shop_first_title'>{{productProcess[0].name}}</view>
+      <view class='shop_first_del'>
+        <image src='{{firstimg.icon}}'></image>
+        <view class='shop_first_p'>{{firsttitle}}</view>
+        <view class='shop_first_p'>¥{{firstPrice}}</view>
+        <view>
+          <button class='shop_first_btn' catchtap='firstDel'>删除</button>
+        </view>
+      </view>
+      <view class='shop_cart_save' catchtap='shopSave'>保存</view>
+    </view>
+  </view> -->
+
+  <!-- 总的素材 -->
+  <view wx:for="{{productProcess}}" wx:for-index="index" wx:for-item="item"  wx:key="index">
+
+    <view class="material {{curIndex==index?'show':'hide'}}">
+      <view class='glass'>
+        <view class='glass_con'>
+          <view class='glass_bg'>
+            <image src='{{bzimages[curIndex]}}' class='glass_con_bg'></image>
+            <image src='{{bg_images[curIndex]}}' id="dom" class='glass_bg_2'></image>
+            
+          </view>
+          <!-- 第1步 -->
+          <view wx:if="{{item.minimum === item.maximum && item.sequence == curIndex+1}}">
+            <view class='glass_con_first'>
+              <image src='{{firstimg.icon}}'></image>
+            </view>
+
+          </view>
+          <!-- 第2步 -->
+          <view wx:if=" {{item.maximum>1 && item.sequence === 2}}">
+            <view class='glass_con_first'>
+              <image src='{{firstimg.icon}}'></image>
+            </view>
+            <view class='glass_con_second'>
+              <view class='glass_second_relative'>
+                <image class="" src='{{item.icon}}' wx:for="{{options.secondimg}}" wx:for-item="item"></image>
+              </view>
+            </view>
+          </view>
+
+          <!-- 第3步 -->
+          <view class='glass_con_thrid' wx:if="{{item.maximum>1 && item.sequence === 3}}">
+            <view class='glass_con_first'>
+              <image src='{{firstimg.icon}}'></image>
+            </view>
+            <view class='glass_con_second'>
+              <view class='glass_second_relative'>
+                {{options.secondimg}}
+                <image class="" src='{{item.icon}}' wx:for="{{options.secondimg}}" wx:for-item="item"></image>
+              </view>
+            </view>
+          </view>
+
+          <!-- 第三步可拖拽 -->
+          <!-- wx:if="{{item.sequence === 3}}" -->
+          <movable-area wx:if="{{item.sequence === 3}}">
+            <movable-view style="height: 50px; width: 50px;" x="{{x}}" y="{{y}}" direction="all" scale="{{scale}}" out-of-bounds="{{outOfBounds}}" scale-area="{{scaleArea}}">
+              <view class='drag'>
+                <view class='drag_con'>
+                  <image src='../../../Images/shop/del.png' class='delete'></image>
+                  <image src='http://media.clicksdiy.com/blueglass/6652076b-f1f2-46bf-8ee6-7d5732f7b5e8.png' class='drag_img' bindload="imageLoad" data-index="{{index}}" style="width:{{ images[index].width }}rpx; height:{{ images[index].height }}rpx;"></image>
+                  <image src='../../../Images/shop/kd.png' class="kd"></image>
+                </view>
+              </view>
+            </movable-view>
+          </movable-area>
+
+        </view>
+        <view class='glass_desc'>最多添加一种原料</view>
+      </view>
+      <!-- 第一步 购物车下一步-->
+      <view class='money_next' wx:if="{{item.sequence === 1}}">
+        <view class='circle price' catchtap='priceClick' data-price='{{options.allPrice}}'>¥{{options.allPrice}}</view>
+        <view class='circle next' catchtap='Next' data-index="{{curIndex+1}}" data-sequence='{{item.sequence}}' data-minimum="{{item.minimum}}" data-maximum="{{item.maximum}}">下一步</view>
+      </view>
+      <!-- 第二步 购物车下一步-->
+      <view class='money_next' wx:if="{{item.sequence === 2}}">
+        <view class='circle price' catchtap='secondpriceClick' data-price='{{options.allPrice}}'>¥{{options.allPrice}}</view>
+        <view class='circle next' catchtap='secondNext' data-index="{{curIndex+1}}" data-sequence='{{item.sequence}}' data-minimum="{{item.minimum}}" data-maximum="{{item.maximum}}">下一步</view>
+      </view> -->
+      <!-- 第三步 购物车下一步-->
+      <view class='money_next' wx:if="{{item.sequence === 3}}">
+        <view class='circle price' catchtap='thirdpriceClick' data-price='{{options.allPrice}}'>¥{{options.allPrice}}</view>
+        <view class='circle next' catchtap='thirdNext' data-index="{{curIndex+1}}" data-sequence='{{item.sequence}}' data-minimum="{{item.minimum}}" data-maximum="{{item.maximum}}">完成</view>
+      </view>
+
+      <!-- 素材 -->
+      <view class='fruit'>
+        <scroll-view scroll-x="true" class='fruit'>
+
+          <view class='fruit_class' catchtap="fruitDiy" wx:for="{{productProcess[curIndex].productMaterials}}" wx:for-index="index" wx:for-item="proitem" data-amount="1" data-index="{{index}}" data-price="{{proitem.price}}" data-sequence='{{item.sequence}}' data-minimum="{{item.minimum}}"
+            data-maximum="{{item.maximum}}" data-productProcess="{{proitem.productProcess}}" data-id='{{proitem.id}}' data-comment="{{proitem.comment}}" data-icon="{{proitem.icon}}" data-name='{{proitem.name}}'>
+            <view class='fruit_img'>
+              <image src='{{proitem.icon}}' bindload="imageLoad" data-index="{{index}}" style="width:{{ images[index].width }}rpx; height:{{ images[index].height }}rpx; max-height:100rpx !important;"></image>
+            </view>
+            <view>{{proitem.name}}</view>
+          </view>
+
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+
+</view>

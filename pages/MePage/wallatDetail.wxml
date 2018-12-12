@@ -1,0 +1,77 @@
+<!--pages/MePage/wallatDetail.wxml-->
+<!-- <text>pages/MePage/wallatDetail.wxml</text> -->
+
+<view class='money_detail_container'>
+  <view class='top_view'>
+    <text class='top_title'>累计收益</text>
+    <text class='top_title_'>¥</text>
+    <text class='top_title_money'>{{grandTotalAmount}}</text>
+  </view>
+  <view class='bottom_view'>
+    <view class='tab_view'>
+      <van-tabs active="{{ active }}" bind:change="onChange" color="#01A0EB">
+        <van-tab title="全部">
+          <view class='cardView'>
+            <block wx:for="{{totalArray}}" wx:for-item="item" wx:for-index="idx">
+            <view class='total'>
+              <view class='left'>
+                <image src='../../Images/Me/income.png' class='icon_image'></image>
+                <view class='mid_view'>
+                  <text class='income_title'>{{item.name == '收益' ?"获取收益":"提现"}}</text>
+                  <text class='income_time'>{{item.bizDate}} 22:30</text>
+                </view>
+              </view>
+              <view class='right_view'>
+              <text class='income_money'>{{item.amount}}</text>
+              <text class='income_money_'>{{item.name == "收益"?"" :""}}</text>
+              </view>
+            </view>
+            <view class='line_view'></view>
+            </block>
+          </view>
+        </van-tab>
+        <van-tab title="进帐">
+          <view class='cardView'>
+            <block wx:for="{{incomeArray}}" wx:for-item="item" wx:for-index="idx">
+            <view class='total'>
+              <view class='left'>
+                <image src='../../Images/Me/income.png' class='icon_image'></image>
+                <view class='mid_view'>
+                  <text class='income_title'>{{item.name == '收益' ?"获取收益":"提现"}}</text>
+                  <text class='income_time'>{{item.bizDate}} 22:30</text>
+                </view>
+              </view>
+              <view class='right_view'>
+              <text class='income_money'>{{item.amount}}</text>
+              <text class='income_money_'>{{item.name == "收益"?"" :""}}</text>
+              </view>
+            </view>
+            <view class='line_view'></view>
+            </block>
+          </view>
+        </van-tab>
+        <van-tab title="提现">
+          <view class='cardView'>
+            <block wx:for="{{putoutArray}}" wx:for-item="item" wx:for-index="idx">
+            <view class='total'>
+              <view class='left'>
+                <image src='../../Images/Me/income.png' class='icon_image'></image>
+                <view class='mid_view'>
+                  <text class='income_title'>{{item.name == '收益' ?"获取收益":"提现"}}</text>
+                  <text class='income_time'>{{item.bizDate}} 22:30</text>
+                </view>
+              </view>
+              <view class='right_view'>
+              <text class='income_money'>{{item.amount}}</text>
+              <text class='income_money_'>{{item.name == "收益"?"" :""}}</text>
+              </view>
+            </view>
+            <view class='line_view'></view>
+            </block>
+          </view>
+        </van-tab>
+      </van-tabs>
+    </view>
+  </view>
+
+</view>

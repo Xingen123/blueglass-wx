@@ -1,0 +1,30 @@
+<view class='back2View'>
+  <image src='../../../Images/shop/apply_myBackView.jpg'>
+
+  </image>
+  <view class='tipsView'>
+    <image src="{{myIconImage}}" catchtap='addaction'>
+    </image>
+    <text catchtap='showtips'>
+Blueglass 虚拟店铺开设条款
+      </text>
+  </view>
+  <view class='kaidianView' catchtap='goKaiDian'>
+    <text class='textkaidian'>走！开店去！</text>
+  </view>
+
+  <view class='titleView'>
+  <text>芝麻开门！</text>
+  </view>
+    <view class='infoView'>
+  <text>热乎乎的营业执照到手啦！
+  距离开酸奶品牌店只差一步咯！
+  </text>
+  </view>
+
+  <!-- <view wx:if="{{isSelcect==1}}" class='shenheIV'>
+  <image src='../../../Images/shop/porsr_image.png'>
+  
+  </image>
+  </view> -->
+</view>

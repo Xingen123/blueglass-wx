@@ -1,0 +1,74 @@
+/* pages/OrderPage/DistributionOrderDetail/index.wxss */
+.cur_position{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.cur_position_img{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cur_position_img image{
+  width: 47px;
+  height: 47px;
+}
+.cur_position_img text{
+  font-size: 14px;
+  color: #4a4a4a;
+}
+.van-steps{
+  margin: 20px auto;
+}
+.blue-card{
+  margin-top: 20px !important;
+}
+.shop, .invite {
+  box-shadow: 0px 2px 20px 0 #ccc;
+  background: #fff;
+  width: calc(100% - 50px);
+  border: 1px solid #dcdcdc;
+  margin: 10px auto;
+  border-radius: 6px;
+  padding: 10px 10px 30px 10px;
+}
+
+.shop_nearby, .invite_shop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.shop_nearby_left {
+  color: #9b9b9b;
+  font-size: 14px;
+}
+
+.shop_nearby_right {
+  color: #4a4a4a;
+  font-size: 14px;
+}
+
+.shop_person {
+  display: flex;
+  margin-top: 10px;
+}
+
+.shop_person_name {
+  color: #4a4a4a;
+  font-size: 16px;
+}
+
+.shop_person_phone {
+  color: #4a4a4a;
+  font-size: 14px;
+  margin-left: 20px;
+  margin-top: 2px;
+}
+
+.shop_desc {
+  margin-top: 10px;
+  color: #4a4a4a;
+  font-size: 14px;
+}

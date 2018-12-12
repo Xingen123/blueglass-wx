@@ -1,0 +1,47 @@
+<!--pages/MePage/shopLevel.wxml-->
+<!-- <text>pages/MePage/shopLevel.wxml</text> -->
+<view>
+  <view class='shop_level_top box-shoaw '>
+    <view>
+      <text class='shop_level_blue'>{{myShopLevel.shopLevelName}}</text>
+      <text class='shop_level_money'>再努力{{myShopLevel.upgradeSalesAmount}}元,开启新等级</text>
+    </view>
+
+    <view class='shop_level_xs'>
+      本月已努力：
+      <text class='shop_level_xs_money'>{{myShopLevel.monthSalesAmount}}元</text>
+    </view>
+
+    <van-progress custom-class='progress' color='#01a0eb' show-pivot percentage='{{realSalesNum}}' pivot-text="{{myShopLevel.realSalesAmount}}元" pivot-color="#01a0eb" color="linear-gradient(to right, #02CEF7, #01A0EB)"></van-progress>
+
+    <view class='shop_desc'>
+      <view class='shop_desc_l'>
+       每月1日重新计算等级
+      </view>
+      <view class='shop_desc_r' catchtap='shopLevelDesc'>
+      查看通关秘籍
+      </view>
+    </view>
+
+  </view>
+
+  <van-tabs active="{{ active }}" bind:change="onChange" color="#01A0EB">
+    <van-tab title="{{item.name}}" wx:for="{{shopLeveInfos}}"  wx:for-item="item" wx:for-index="idx"  wx:key="index">
+    <view class='shop_tab'>
+      <view class='shop_tab_con'>
+        <image src='../../Images/Recomand/ddjd.png'></image>
+        <text>可上线{{item.sku}}款产品</text>
+      </view>
+      <view class='shop_tab_con'>
+        <view class='fkkfz'>
+           <image src='../../Images/Me/fk.png'></image>
+        </view>
+        <text>疯狂开发中</text>
+      </view>
+    </view>
+    
+    </van-tab>
+    
+  </van-tabs>
+
+</view>

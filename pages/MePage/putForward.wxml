@@ -1,0 +1,19 @@
+<!--pages/MePage/putForward.wxml-->
+<!-- <text>pages/MePage/putForward.wxml</text>
+ -->
+
+<view class='put_container'>
+  <view class='top_put'>
+    <text class='title_label'>提现金额</text>
+    <!-- <text class='money_label'>提现规则</text> -->
+  </view>
+  <input type='digit' class='inputtext' placeholder='' placeholder-style="font-family: PingFangSC-Regular;font-size: 26rpx;color: #9B9B9B;" bindinput="phoneInput"></input>
+  <view class='bottom_view'>
+    <text class='total_money_title'>当前可提现金额</text>
+    <text class='total_money'>￥{{total_money}}</text>
+  </view>
+
+  <view class='logoutview'>
+    <text class='logouttext' bindtap='logout'>发起提现</text>
+  </view>
+</view>

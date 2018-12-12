@@ -1,0 +1,11 @@
+<!-- 已取消订单--已完成订单详情 -->
+<!--pages/OrderPage/cancel/index.wxml-->
+<view>
+<!-- num="2" shopname="Blueglass酸奶店 >" detail="荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1" desc="描述信息" title="商品标题" thumb="{{ imageURL }}" -->
+  
+  <van-blue-card msgData="{{items}}" shopname="{{shopname}}">
+  </van-blue-card>
+
+  <van-order-card ordernum="2342425234239020928" shopname="订单详情" ordertime="2018-10-20 12:29:20" orderstate="已取消" ordermoney="2342425234239020928" totalmoney="300.00"></van-order-card>
+
+</view>

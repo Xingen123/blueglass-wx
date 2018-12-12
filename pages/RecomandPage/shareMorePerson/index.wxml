@@ -1,0 +1,123 @@
+<!--多人一起点单-购物车页（发起人）   自取-配送-->
+<!--pages/RecomandPage/submitOrder/index.wxml-->
+<view>
+  <van-dialog id="van-dialog" />
+  <view style='padding-bottom:120px;'>
+    <view class='shop'>
+      <view class='shop_nearby'>
+        <view class='shop_nearby_left'>附近门店</view>
+        <view class='shop_nearby_right'></view>
+      </view>
+      <!-- 收货地址 -->
+      <view wx:if="{{!address.recieveName}}" class='showadress'>
+        发起人未选择收货地址
+      </view>
+      <view wx:else>
+        <view class='shop_person'>
+          <view class='shop_person_name'>{{address.recieveName}}</view>
+          <view class='shop_person_phone'>{{address.recieveName}}</view>
+        </view>
+        <view class='shop_desc'>{{address.addressDetail}}</view>
+      </view>
+    </view>
+
+    <!-- 发起人 -->
+    <view class='shop pay_detail'>
+
+      <view class='fqr_detail'>
+        <view class='fqr_detail_left'>
+          <image class='icon_fqr' src='../../../Images/Recomand/fqr.png'></image>
+          <image class='head_path' src="{{initiatorUser.icon}}"></image>
+          <text>{{initiatorUser.nickName}}</text>
+        </view>
+
+        <!-- <view class='fqr_detail_r' bindtap='quitCloseAction'>
+          退出
+        </view> -->
+      </view>
+
+      <!-- 产品名称 -->
+      <view class='product'>
+        <!-- xunhuan -->
+        <block wx:for="{{mychooseProudct}}" wx:for-item="proudct" wx:for-index="proudctId">
+        <view class='product_name'>
+          <view class='product_name_n'>{{proudct.name}}</view>
+          <view class='product_name_num'>x{{proudct.amount}}</view>
+          <view class='product_name_price'>￥{{proudct.price}}</view>
+          <!-- <van-stepper value="{{ proudct.numbers }}" data-product="{{proudct}}"integer min="0" max="99999" step="1" bind:change="onChange" plus-class="jia" minus-class="jian" input-class="numinput" /> -->
+        </view>
+        </block>
+
+
+
+      </view>
+      <!-- 总计 -->
+      <view class='total'>
+        <view class='total_left'>总计</view>
+        <view class='total_money'>￥{{myparticipantTotalPrice}}</view>
+      </view>
+    </view>
+        <block wx:for="{{ALLpresonAddList}}" wx:for-item="person" wx:for-index="personId"  wx:key="index">
+   
+       <!-- 参与人 2 带锁住按钮-->
+    <view class='shop pay_detail'>
+
+      <view class='fqr_detail'>
+        <view class='fqr_detail_left'>
+          <image class='icon_fqr' src=''></image>
+          <image class='head_path' src="{{person.participantUser.icon}}"></image>
+          <text>{{person.participantUser.nickName}}</text>
+        </view>
+        <view class='fqr_detail_r' bindtap='quitCloseAction'  wx:if="{{person.myself==1}}">
+          退出
+        </view>
+      </view>
+        <block wx:for="{{person.participantUserProducts}}" wx:for-item="proudctx" wx:for-index="proudctId">
+              <!-- 产品名称 -->
+      <view class='product'>
+        <!-- xunhuan -->
+        <view class='product_name'>
+          <view class='product_name_n'>{{proudctx.name}}</view>
+          <view class='product_name_num'>x{{proudctx.amount}}</view>
+          <view class='product_name_price'>￥{{proudctx.price}}</view>
+          <van-stepper value="{{proudctx.amount}}" data-product="{{proudctx}}" integer min="0" max="99999" step="1" bind:change="onChange" plus-class="jia" minus-class="jian" input-class="numinput"  wx:if="{{person.myself==1 && isFinish==0}}"/>
+        </view>
+
+      </view>
+        </block>
+
+      <!-- 总计 -->
+      <view class='total'wx:if="{{person.participantUserProducts.length>0}}">
+        <view class='total_left'>总计</view>
+        <view class='total_money'>￥{{person.participantTotalPrice}}</view>
+      </view>
+    </view>
+    <!-- 参与人 1-->
+
+
+</block>
+
+  </view>
+
+ <text class='circle yqhy'>邀请\n好友</text>
+  <button  class='circletouMin' open-type="share" id="1"> </button>
+  
+  <view class='circle qdd' catchtap='diananAction' wx:if="{{isFinish==0}}" >去点单</view>
+
+  <van-submit-bar  label="总计：" price="{{totalPrice}}" button-text="完成" tip="满128元无配送费" bind:submit="onClickButton" wx:if="{{isFinish==0}}">
+    <span slot="tip" class="closeTip">
+      <span>
+        <van-icon size="16px" name="close" />
+      </span>
+    </span>
+  </van-submit-bar>
+
+    <van-submit-bar  label="总计：" price="{{totalPrice}}" button-text="完成" tip="满128元无配送费" bind:submit="onClickButton" disabled wx:else>
+    <span slot="tip" class="closeTip">
+      <span>
+        <van-icon size="16px" name="close" />
+      </span>
+    </span>
+  </van-submit-bar>
+
+</view>

@@ -1,0 +1,66 @@
+.content{ 
+ display: flex; 
+ justify-content: space-around; 
+ align-items: center; 
+ margin-top: 50rpx; 
+} 
+.iptbox{ 
+ width: 116rpx; 
+ height: 116rpx; 
+ border:1rpx solid #ddd; 
+ border-radius: 268rpx; 
+ display: flex; 
+ justify-content: center; 
+ align-items: center; 
+ text-align: center; 
+} 
+.ipt{ 
+ width: 0; 
+ height: 0; 
+} 
+.btn-area{ 
+ width: 80%; 
+ background-color: orange; 
+ color:white; 
+}
+.tipsLabel
+{
+   text-align: center; 
+}
+.tipsLabel text
+{
+  font-family: PingFangSC-Medium;
+font-size: 30rpx;
+color: #9B9B9B;
+}
+.addtitle
+{
+     margin-top: 150rpx; 
+   text-align: center; 
+
+}
+.addtitle text
+{
+  font-family: PingFangSC-Medium;
+font-size: 40rpx;
+color: #4A4A4A;
+}
+
+.kaidianView
+{
+background: #FFFFFF;
+box-shadow: 0 -7rpx 71rpx 0 rgba(234,234,234,0.50);
+width: calc(100% - 200rpx);
+height: 100rpx;
+text-align: center;
+line-height: 100rpx;
+margin-left: 100rpx;
+bottom: 50rpx;
+position: fixed;
+}
+.textkaidian
+{
+  font-family: PingFangSC-Medium;
+font-size: 30rpx;
+color: #01A0EB;
+}

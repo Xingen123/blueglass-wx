@@ -1,0 +1,57 @@
+<view class='blue-card'>
+  <view>
+    <view wx:if="{{ shopname }}" class="blue-card__title van-multi-ellipsis--l2">{{shopname}}</view>
+    <slot wx:else name="shopname" />
+  </view>
+
+  <view class="custom-class van-card {{ centered ? 'van-card--center' : '' }}">
+
+    <view class="van-card__content">
+      <view class='order-card__content' wx:if="{{ ordernum }}">
+        <view class='order-card__desc'>订单编号</view>
+        <view class="order-card__ordernum van-multi-ellipsis--l2">{{ ordernum }}</view>
+      </view>
+      <slot wx:else name="ordernum" />
+
+      <view class='order-card__content' wx:if="{{ ordertime }}">
+        <view class='order-card__desc'>下单时间</view>
+        <view class="order-card__ordernum van-multi-ellipsis--l2">{{ ordertime }}</view>
+      </view>
+      <slot wx:else name="ordertime" />
+
+      <view class='order-card__content' wx:if="{{ orderstate }}">
+        <view class='order-card__desc'>订单状态</view>
+        <view class="order-card__ordernum van-multi-ellipsis--l2 order-card__state">{{ orderstate }}</view>
+      </view>
+      <slot wx:else name="orderstate" />
+
+      <view class='order-card__content' wx:if="{{ ordermoney }}">
+        <view class='order-card__desc'>订单金额</view>
+        <view class="order-card__ordernum van-multi-ellipsis--l2 order-card__ordermoney">{{ ordermoney }}</view>
+      </view>
+      <slot wx:else name="ordermoney" />
+
+      <!-- <view class='order-card__content' wx:if="{{ discountmoney }}">
+        <view class='order-card__desc'>优惠</view>
+        <view class="order-card__ordernum van-multi-ellipsis--l2 order-card__discountmoney">-¥{{ discountmoney }}</view>
+      </view>
+      <slot wx:else name="discountmoney" /> -->
+      
+      <view class='order-card__content' wx:if="{{ deliveryCost }}">
+        <view class='order-card__desc'>配送费用</view>
+        <view class="order-card__ordernum van-multi-ellipsis--l2 order-card__discountmoney">¥{{ deliveryCost }}</view>
+      </view>
+      <slot wx:else name="deliveryCost" />
+
+      <view class='order-card__content' wx:if="{{ totalmoney }}">
+        <view class='order-card__desc'>实际支付</view>
+        <view class="order-card__ordernum van-multi-ellipsis--l2 order-card__totalmoney">¥{{ totalmoney }}</view>
+      </view>
+      <slot wx:else name="totalmoney" />
+    </view>
+  </view>
+
+  <view class="van-card__footer">
+    <slot name="footer" />
+  </view>
+</view>

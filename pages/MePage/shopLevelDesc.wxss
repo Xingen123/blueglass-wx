@@ -1,0 +1,14 @@
+/* pages/MePage/shopLevelDesc.wxss */
+.shop{
+  margin: 60rpx;
+}
+.title {
+  font-size: 36rpx;
+  color: #000;
+  text-align: center;
+}
+
+.con {
+  font-size: 24rpx;
+  color: #9b9b9b;
+}

@@ -1,0 +1,127 @@
+<!--多人一起点单-购物车页（发起人）   自取-配送-->
+<!--pages/RecomandPage/submitOrder/index.wxml-->
+<view>
+  <van-dialog id="van-dialog" />
+  <view style='padding-bottom:120px;'>
+    <view class='shop'>
+      <view class='shop_nearby'>
+        <view class='shop_nearby_left'>收货地址</view>
+
+        <view class='shop_nearby_right' bindtap='addAddressAction'>编辑</view>
+      </view>
+      <!-- 收货地址 -->
+      <view wx:if="{{!addressInfodetail.addressDetail}}" class='showadress'>
+        点击添加地址开始点单吧！
+      </view>
+      <view wx:else>
+        <view class='shop_person'>
+          <view class='shop_person_name'>{{addressInfodetail.recieveName}}</view>
+          <view class='shop_person_phone'>{{addressInfodetail.mobile}}</view>
+        </view>
+        <view class='shop_desc'>{{addressInfodetail.address}}{{addressInfodetail.addressDetail}}</view>
+      </view>
+    </view>
+
+    <!-- 发起人 -->
+    <view class='shop pay_detail'>
+
+      <view class='fqr_detail'>
+        <view class='fqr_detail_left'>
+          <image class='icon_fqr' src='../../../Images/Recomand/fqr.png'></image>
+          <image class='head_path' src="{{initiatorUser.icon}}"></image>
+          <text>{{initiatorUser.nickName}}</text>
+        </view>
+
+        <view class='fqr_detail_r' bindtap='quitCloseAction'>
+          退出
+        </view>
+      </view>
+
+      <!-- 产品名称 -->
+      <view class='product'>
+        <!-- xunhuan -->
+        <block wx:for="{{mychooseProudct}}" wx:for-item="proudct" wx:for-index="proudctId"  wx:key="index">
+          <view class='product_name'>
+            <view class='product_name_n'>{{proudct.name}}</view>
+            <view class='product_name_num'>x{{proudct.numbers}}</view>
+            <view class='product_name_price'>￥{{proudct.salePrice}}</view>
+            <van-stepper value="{{ proudct.numbers }}" data-product="{{proudct}}" integer min="0" max="99999" step="1" bind:change="onChange" plus-class="jia" minus-class="jian" input-class="numinput" />
+          </view>
+        </block>
+
+
+
+      </view>
+      <!-- 总计 -->
+      <view class='total'>
+        <view class='total_left'>总计</view>
+        <view class='total_money'>￥{{totalPrice}}</view>
+      </view>
+    </view>
+    <block wx:for="{{ALLpresonAddList}}" wx:for-item="person" wx:for-index="personId"  wx:key="index">
+
+      <!-- 参与人 2 带锁住按钮-->
+      <view class='shop pay_detail' wx:if="person.list.length>0">
+
+        <view class='fqr_detail'>
+          <view class='fqr_detail_left'>
+            <image class='icon_fqr' src='../../../Images/Recomand/suo.png' wx:if="{{person.participantUser.lock}}"></image>
+            <image class='head_path' src='{{person.participantUser.icon}}'></image>
+            <text>{{person.participantUser.nickName}}</text>
+          </view>
+          <view class='fqr_detail_r' catchtap='tichuAction' data-participantuserid="{{person.participantUser.id}}">
+            移除
+          </view>
+        </view>
+        <block wx:for="{{person.participantUserProducts}}" wx:for-item="proudctx" wx:for-index="proudctId">
+          <!-- 产品名称 -->
+          <view class='product'>
+            <!-- xunhuan -->
+            <view class='product_name'>
+              <view class='product_name_n'>{{proudctx.name}}</view>
+              <view class='product_name_num'>x{{proudctx.amount}}</view>
+              <view class='product_name_price'>￥{{proudctx.price}}</view>
+              <!-- <van-stepper value="{{ value }}" integer min="1" max="99999" step="1" bind:change="onChange" plus-class="jia" minus-class="jian" input-class="numinput" /> -->
+            </view>
+
+          </view>
+        </block>
+
+        <!-- 总计 -->
+        <view class='total'>
+          <view class='total_left'>总计</view>
+          <view class='total_money'>￥{{person.participantTotalPrice}}</view>
+        </view>
+      </view>
+      <!-- 参与人 1-->
+      <view class='shop pay_detail' wx:else>
+        <view class='fqr_detail'>
+          <view class='fqr_detail_left'>
+            <image class='icon_fqr' src=''></image>
+            <image class='head_path' src='../../../Images/Recomand/fqr.png'></image>
+            <text>张三</text>
+          </view>
+          <view class='fqr_detail_r'>
+            移除
+          </view>
+        </view>
+      </view>
+
+
+    </block>
+
+  </view>
+
+  <text class='circle yqhy' style="{{isIphoneX?'bottom:200rpx':''}}">邀请\n好友</text>
+  <button  class='circletouMin' open-type="share" id="1"> </button>
+  <view class='circle qdd' catchtap='diananAction'>去点单</view>
+
+  <van-submit-bar label="总计：" price="{{ order_total_price * 100 }}" button-text="去结算" tip="{{shipmentMessage}}" bind:submit="onClickButton">
+    <span slot="tip" class="closeTip">
+      <span>
+        <van-icon size="16px" name="close" />
+      </span>
+    </span>
+  </van-submit-bar>
+
+</view>

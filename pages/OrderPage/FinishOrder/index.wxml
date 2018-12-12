@@ -1,0 +1,14 @@
+<!-- 自取订单--已完成订单详情 -->
+<!--pages/OrderPage/FinishOrder/index.wxml-->
+<view>
+  <van-order-card ordernum="{{orderInfo.orderNo}}" shopname="订单详情" ordertime="{{orderInfo.created}}" orderstate="{{orderInfo.status}}" ordermoney="{{orderInfo.payAmont}}" distributionFee = "{{orderInfo.distributionFee}}" deliveryCost = "{{orderInfo.deliveryCost}}" totalmoney="{{orderInfo.payableAmount}}" ></van-order-card>
+  
+  <van-blue-card msgData="{{items}}" shopname="{{shopname}}">
+  </van-blue-card>
+
+  <van-blue-button size="large">
+    <text>联系客服</text>
+    <image src='../../../Images/Order/callPhone.png'></image>
+  </van-blue-button>
+
+</view>

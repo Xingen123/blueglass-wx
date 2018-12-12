@@ -1,0 +1,27 @@
+.Mytitleclass {
+  font-family: PingFangSC - Medium;
+  font-size: 36rpx;
+  color: #000;
+}
+
+.titleViewClass {
+  margin-top: 20rpx;
+  background-color: #fff;
+  text-align: center;
+}
+
+.Myinfoclass {
+
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #9b9b9b;
+  white-space: pre-line;
+}
+.myinfoBackView
+{
+    margin-right: 69rpx;
+  margin-left: 69rpx;
+  width: clac(100% - 138rpx);
+
+}
+

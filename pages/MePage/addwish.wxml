@@ -1,0 +1,37 @@
+<!--pages/MePage/addwish.wxml-->
+<!-- <text>pages/MePage/addwish.wxml</text> -->
+<view class='editcontainer'>
+  <text class='title'>这个愿望我想很久了</text>
+  <view class='inputview'>
+    <input type='text' class='inputtext' placeholder='写下我的心愿' placeholder-style="font-family: PingFangSC-Regular;font-size: 26rpx;color: #9B9B9B;" bindinput="nameInput" value='{{name}}'></input>
+  </view>
+  <text class='title'>钱包君的养肥目标</text>
+  <view class='inputview'>
+    <input type='number' class='inputtext' placeholder='输入心愿金额' placeholder-style="font-family: PingFangSC-Regular;font-size: 26rpx;color: #9B9B9B;" bindinput="phoneInput" value='{{targetMoney}}'></input>
+  </view>
+  <text class='addphoto'>添加心愿图片</text>
+  <block wx:if='{{image_url == "../../Images/shop/addImage_Icon.png"}}'>
+    <view class='main' bindtap='addImageAction'>
+      <image src='{{image_url}}' mode='widthFix' class="main_img_"></image>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='main' bindtap='addImageAction'>
+      <image src='{{image_url}}' mode='widthFix' class="main_img"></image>
+    </view>
+  </block>
+
+
+  <block wx:if='{{desireId}}'>
+    <view class='_logoutview'>
+      <text class='deletetext' catchtap='delet'>删除</text>
+      <text class='surettext' catchtap='logout'>保存</text>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class='logoutview' catchtap='logout'>
+      <text class='logouttext'>BiuBiuBiu～心愿起航！</text>
+    </view>
+  </block>
+</view>

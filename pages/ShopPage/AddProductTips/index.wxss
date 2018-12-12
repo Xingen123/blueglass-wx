@@ -1,0 +1,35 @@
+.Mytitleclass {
+ font-family: PingFangSC-Medium;
+font-size: 38rpx;
+color: #01A0EB;
+}
+.backView
+{
+  background-color: #fcfcfc;
+}
+.titleViewClass {
+  margin-top: 20rpx;
+  background-color: #fff;
+  text-align: center;
+}
+
+.Myinfoclass {
+ margin-right: 20rpx;
+  margin-left: 20rpx;
+margin-top: 65rpx;
+margin-bottom: 35rpx;
+ font-family: PingFangSC-Medium;
+font-size: 28rpx;
+color: #4A4A4A;
+text-align: center;
+}
+.myinfoBackView
+{
+  margin-top: 50rpx;
+  margin-right: 30rpx;
+  margin-left: 30rpx;
+  background-color: #ffffff;
+box-shadow: 0 4rpx 40rpx 0 rgba(204,204,204,0.50);
+display: flex;
+}
+

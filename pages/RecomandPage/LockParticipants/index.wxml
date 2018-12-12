@@ -1,0 +1,122 @@
+<!--多人一起点单-购物车页（参与人）锁住  >
+<!--pages/RecomandPage/submitOrder/index.wxml-->
+<view>
+  <view style='padding-bottom:120px;'>
+    <view class='shop'>
+      <view class='shop_nearby'>
+        <view class='shop_nearby_left'>附近门店</view>
+        <view class='shop_nearby_right'>编辑</view>
+      </view>
+      <!-- 收货地址 -->
+      <view wx:if="" class='showadress'>
+        点击添加地址开始点单吧！
+      </view>
+      <view wx:else>
+        <view class='shop_person'>
+          <view class='shop_person_name'>徐局吗</view>
+          <view class='shop_person_phone'>1311231321</view>
+        </view>
+        <view class='shop_desc'>撒美女的萨达大厦打卡打卡大圣克鲁斯卡阿莱克斯</view>
+      </view>
+    </view>
+
+    <!-- 发起人 -->
+    <view class='shop pay_detail'>
+
+      <view class='fqr_detail'>
+        <view class='fqr_detail_left'>
+          <image class='icon_fqr' src='../../../Images/Recomand/fqr.png'></image>
+          <image class='head_path' src='../../../Images/Recomand/fqr.png'></image>
+          <text>张三(发起人)</text>
+        </view>
+
+        <!-- <view class='fqr_detail_r'>
+          退出
+        </view> -->
+
+      </view>
+
+      <!-- 产品名称 -->
+      <view class='product'>
+        <!-- xunhuan -->
+        <view class='product_name'>
+          <view class='product_name_n'>产品名称酸奶</view>
+          <view class='product_name_num'>x1</view>
+          <view class='product_name_price'>￥45</view>
+          <van-stepper value="{{ value }}" integer min="1" max="99999" step="1" bind:change="onChange" plus-class="jia" minus-class="jian" input-class="numinput" />
+        </view>
+
+        <!-- xunhuan -->
+        <view class='product_name'>
+          <view class='product_name_n'>产品名称酸奶</view>
+          <view class='product_name_num'>x1</view>
+          <view class='product_name_price'>￥45</view>
+          <van-stepper value="{{ value }}" integer min="1" max="99999" step="1" bind:change="onChange" plus-class="jia" minus-class="jian" input-class="numinput" />
+        </view>
+      </view>
+      <!-- 总计 -->
+      <view class='total'>
+        <view class='total_left'>总计</view>
+        <view class='total_money'>￥96</view>
+      </view>
+    </view>
+
+    <!-- 参与人 1-->
+    <view class='shop pay_detail'>
+      <view class='fqr_detail'>
+        <view class='fqr_detail_left'>
+          <image class='icon_fqr' src=''></image>
+          <image class='head_path' src='../../../Images/Recomand/fqr.png'></image>
+          <text>张三</text>
+        </view>
+        <!-- <view class='fqr_detail_r'>
+          踢出
+        </view> -->
+      </view>
+    </view>
+
+    <!-- 参与人 2 带锁住按钮-->
+    <view class='shop pay_detail'>
+
+      <view class='fqr_detail'>
+        <view class='fqr_detail_left'>
+          <image class='icon_fqr' src='../../../Images/Recomand/suo.png'></image>
+          <image class='head_path' src='../../../Images/Recomand/fqr.png'></image>
+          <text>张三</text>
+        </view>
+        <view class='fqr_detail_r'>
+          退出
+        </view>
+      </view>
+
+      <!-- 产品名称 -->
+      <view class='product'>
+        <!-- xunhuan -->
+        <view class='product_name'>
+          <view class='product_name_n'>产品名称酸奶</view>
+          <view class='product_name_num'>x1</view>
+          <view class='product_name_price'>￥45</view>
+          <van-stepper value="{{ value }}" integer min="1" max="99999" step="1" bind:change="onChange" plus-class="jia" minus-class="jian" input-class="numinput" />
+        </view>
+
+      </view>
+      <!-- 总计 -->
+      <view class='total'>
+        <view class='total_left'>总计</view>
+        <view class='total_money'>￥45</view>
+      </view>
+    </view>
+  </view>
+
+  <text class='circle yqhy'>邀请\n好友</text>
+  <view class='circle qdd'>去点单</view>
+
+  <van-submit-bar loading label="总计：" price="{{ 3050 }}" labeltext="运费:" freight="免运费" button-text="去结算" tip="满128元无配送费" bind:submit="onClickButton">
+    <span slot="tip" class="closeTip">
+      <span>
+        <van-icon size="16px" name="close" />
+      </span>
+    </span>
+  </van-submit-bar>
+
+</view>

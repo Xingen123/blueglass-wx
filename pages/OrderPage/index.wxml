@@ -1,0 +1,171 @@
+<!--订单列表  lancelot-->
+
+<view class="backView">
+  <!-- tab切换 -->
+  <view class="page">
+    <view class="navbar">
+      <block wx:for="{{tabs}}" wx:key="*this">
+        <view id="{{index}}" class="navbar__item {{activeIndex == index ? 'navbar__item_on' : ''}}" bindtap="navTabClick">
+          <view class="navbar_title {{activeIndex == index ? 'navbar_title_cur' : ''}}">{{item.name}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" style="width: 100%;height:{{clientHeight?clientHeight+'px':'auto'}};padding-top:120rpx;">
+    <swiper-item>
+      <view class='collage'>
+        <block wx:for="{{collagingOrderlist}}" wx:for-item="item" wx:key="index" wx:for-index="idx">
+          <view class='noPayListView'>
+            <view class='swiper_con boxshoaw' catchtap='noPayListViewAction' data-orderid="{{item.orderId}}" data-type="{{item.type}}">
+              <view class='noPayListView_Title'>
+                <text class='noPayListView_shop' catchtap='goParenterAction' data-partnerid="{{item.partnerId}}">{{item.merchantName}} ></text>
+                <text class='noPayListView_staus'>{{item.type}}</text>
+              </view>
+              <view class='noPayListView_line'></view>
+              <view class='noPayListView_detail'>
+
+                <block wx:for="{{item.productInfos}}" wx:for-item="mitem" wx:for-index="midx">
+                  <view class='noPayListView_qindanView'>
+                    <view class='noPayListView_qindanView_left'>
+                      <image src='../../Images/Recomand/ddjd_cur.png'></image>
+                      <text class='noPayListView_myQingdan'>{{mitem.name}}</text>
+                    </view>
+                    <text class='noPayListView_myQingdan'>X{{mitem.amount}}</text>
+                  </view>
+                </block>
+                <view class='noPayListView_totalview'>
+                  <text class='noPayListView_totalviewText'>共{{item.productInfos.length}}件商品</text>
+                </view>
+                <view class='noPayListView_totalview pay_status' wx:if="{{item.status == '等待支付'}}">
+                  <image src='../../Images/Order/wfk.png'></image>
+                  <text class='noPayListView_stausTitle'>{{item.status}}</text>
+                </view>
+
+                <view class='noPayListView_line'></view>
+              </view>
+              <view class='swiper_con_bot'>
+
+                <view class='noPayListView_jishi'>
+                  <text class='noPayListView_titleforJishi'> </text>
+                  <text class='noPayListView_jishiText'> </text>
+                </view>
+                <button class='noPayListView_button' id="{{idx}}">去付款</button>
+              </view>
+            </view>
+
+          </view>
+
+        </block>
+      </view>
+
+
+
+    </swiper-item>
+
+    <!-- 进行中 -->
+    <swiper-item>
+
+      <view class='noPayListView have_in_hand'>
+        <block wx:for="{{underWayOrderlist}}" wx:for-item="item" wx:for-index="idx"  wx:key="index">
+          <view class='swiper_con boxshoaw' catchtap='underWayListViewAction' data-orderid="{{item.orderId}}" data-type="{{item.type}}" data-orderstatus="{{item.status}}">
+            <view class='noPayListView_Title'>
+              <text class='noPayListView_shop' catchtap='goParenterAction' data-partnerid="{{item.partnerId}}">{{item.merchantName}} ></text>
+              <text class='noPayListView_staus'>{{item.type}}</text>
+            </view>
+            <view class='noPayListView_line'></view>
+            <view class='noPayListView_detail'>
+              <!-- <image src='../../Images/orderList/order_icon.png'></image> -->
+              <block wx:for="{{item.productInfos}}" wx:for-item="mitem" wx:for-index="midx">
+                <view class='noPayListView_qindanView'>
+                  <view class='noPayListView_qindanView_left'>
+                    <image src='../../Images/Recomand/ddjd_cur.png'></image>
+                    <text class='noPayListView_myQingdan'>{{mitem.name}}</text>
+                  </view>
+                  <text class='noPayListView_myQingdan'>X{{mitem.amount}}</text>
+                </view>
+              </block>
+              <view class='noPayListView_totalview'>
+                <text class='noPayListView_totalviewText'>共{{item.productInfos.length}}件商品</text>
+              </view>
+               <view class='noPayListView_totalview pay_status' wx:if="{{item.status=='支付完成'}}">
+                  <image src='../../Images/Order/ywc.png'></image>
+                  <text class='noPayListView_stausTitle'>{{item.status}}</text>
+                </view>
+
+              <view class='noPayListView_line'></view>
+            </view>
+            <view class='swiper_con_jingxing'>
+
+              <button class='comListView_button' id="{{idx}}" catchtap='shouErweiMa' data-orderid="{{item.orderId}}" wx:if="{{item.type=='自取订单'}}">二维码</button>
+              <button class='comListView_button' id="{{idx}}">详情</button>
+            </view>
+          </view>
+        </block>
+
+
+      </view>
+
+    </swiper-item>
+
+    <!-- 已完成 -->
+    <swiper-item>
+      <view class='noPayListView completed'>
+        <block wx:for="{{completeOrderlist}}" wx:for-item="item" wx:for-index="idx"  wx:key="index">
+          <view class='swiper_con boxshoaw' catchtap='finishListViewAction' data-orderid="{{item.orderId}}" data-type="{{item.type}}">
+            <view class='noPayListView_Title'>
+              <text class='noPayListView_shop' catchtap='goParenterAction' data-partnerid="{{item.partnerId}}">{{item.merchantName}}></text>
+              <text class='noPayListView_staus'>{{item.type}}</text>
+            </view>
+            <view class='noPayListView_line'></view>
+            <view class='noPayListView_detail'>
+              <!-- <image src='../../Images/orderList/order_icon.png'></image> -->
+              <block wx:for="{{item.productInfos}}" wx:for-item="mitem" wx:for-index="midx"  wx:key="index">
+                <view class='noPayListView_qindanView'>
+                 <view class='noPayListView_qindanView_left'>
+                    <image src='../../Images/Recomand/ddjd_cur.png'></image>
+                    <text class='noPayListView_myQingdan'>{{mitem.name}}</text>
+                  </view>
+                  <text class='noPayListView_myQingdan'>X{{mitem.amount}}</text>
+                </view>
+              </block>
+              <view class='noPayListView_totalview'>
+                <text class='noPayListView_totalviewText'>共{{item.productInfos.length}}件商品</text>
+              </view>
+               <view class='noPayListView_totalview pay_status' wx:if="{{item.status}}">
+                  <image src='../../Images/Order/wfk.png'></image>
+                  <text class='noPayListView_stausTitle'>{{item.status}}</text>
+                </view>
+              <view class='noPayListView_line'></view>
+
+
+            </view>
+
+            <view class='swiper_con_finish'>
+              <button class='comListView_button' id="{{idx}}">详情</button>
+            </view>
+
+          </view>
+
+        </block>
+
+      </view>
+    </swiper-item>
+  </swiper>
+
+</view>
+
+
+<!--屏幕背景变暗的背景  -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<!--弹出框  -->
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class='purch_ewm'>
+    <canvas style="width: 193px; height: 193px;" canvas-id='myQrcode'></canvas>
+    <p class="purch_qu">取单二维码</p>
+    <p class="purch_show">将二维码出示给店员，完成取餐</p>
+  </view>
+
+
+
+</view>

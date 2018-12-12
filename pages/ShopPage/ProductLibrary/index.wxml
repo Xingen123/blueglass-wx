@@ -1,0 +1,54 @@
+<!--pages/ShopPage/ProductLibrary/index.wxml-->
+<view>
+  <block wx:for="{{myProducts}}" wx:for-item="category" wx:for-index="categoryidx"  wx:key="index">
+    <van-tab title="{{category.category.name}}">
+      <view class=' shangpinBgView'>
+
+        <scroll-view class="nav" scroll-x="true" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+
+
+          <block>
+            <view class="leixingview  {{currentProducts[categoryidx].chooseIndex == productDIYidx ? 'cur_color' : ''}}" bindtap='choosetheDIY' data-index="{{productDIYidx}}" data-categoryidx="{{categoryidx}}" data-products="{{productDIY}}">
+              <text>{{category.category.name}}</text>
+            </view>
+          </block>
+        </scroll-view>
+        <view class='shangbgView'>
+
+          <!-- catchlongtap ='deleteAction' -->
+          <block wx:for="{{category.productDIYList}}" wx:for-item="product" wx:for-index="productidx">
+            <view class='shangpincell' data-product="{{product}}" catchtap='jumpHtml' data-glassType='{{product.productDIY.type}}' data-minPrice='{{product.productDIY.minPrice}}' data-ProductDIYId='{{product.productDIY.id}}'>
+              <view class='imageview'>
+                <image src="{{product.productDIY.background}}"></image>
+              </view>
+              <view class='myshangpininfoView'>
+                <view class='titleView'>
+                  <text class=''> {{product.productDIY.name}}</text>
+
+                </view>
+                <view class='tipsInfoView'>
+                  <text> {{product.productDIY.comment}}</text>
+
+                </view>
+                <view class='moneyView'>
+                  <view class=' moneyInfoview'>
+                    <view class='moneyIcon'>￥{{product.productDIY.minPrice}}起</view>
+                    <view class='moneyTips'>{{product.productDIY.materialAmount}}种原料可搭配</view>
+                  </view>
+                  <!-- <view class='bttonVIew' catchtap='shangxiaAction' data-product="{{product}}">
+                  <text>{{product.isopen==0?'上架':'下架'}}</text>
+
+                  </view> -->
+                </view>
+              </view>
+            </view>
+            <view class='lineclass'>
+            </view>
+          </block>
+
+        </view>
+      </view>
+
+    </van-tab>
+  </block>
+</view>

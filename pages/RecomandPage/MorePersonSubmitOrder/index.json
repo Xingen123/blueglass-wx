@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "提交订单",
+  "usingComponents": {
+    "van-blue-card": "../../dist/blue-card/index",
+    "van-tab": "../../../dist/tab/index",
+    "van-tabs": "../../../dist/tabs/index",
+    "van-submit-bar":"../../../dist/submit-bar/index"
+  }
+}

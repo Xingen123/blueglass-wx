@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "配送中",
+  "usingComponents": {
+    "blue-steps": "../../dist/blue-steps/index",
+    "van-blue-card": "../../dist/blue-card/index",
+    "van-order-card": "../../dist/order-card/index"
+  }
+}

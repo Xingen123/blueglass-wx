@@ -1,0 +1,88 @@
+.backView {
+  width: 100%;
+  height: 100%;
+  background-color: #fcfcfc;
+}
+.addressCellClassback
+{
+    background-color: #fcfcfc;
+}
+.addressCellClass {
+  width:90%;
+  box-shadow: 0 2rpx 40rpx 0 rgba(204,204,204,0.50);
+  border-radius: 6rpx;
+  margin-top: 20rpx;
+  margin-left: 5%;
+  background-color: #ffffff;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+
+.addressCell_title {
+  margin-left: 30rpx;
+  width:calc( 100%-156rpx);
+  margin-top: 35rpx;
+  margin-bottom: 20rpx;  
+  margin-right: 30rpx;
+
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.textTitle {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #000;
+}
+
+.textInfo {
+    margin-top: 20rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #9b9b9b;
+}
+.editClass
+{
+  width: 96rpx;
+  height: 40rpx;
+  display: flex;
+  margin-top: 30rpx;
+  margin-right: 30rpx;
+
+}
+.editVIewclass
+{
+  margin-top: 0rpx;
+  border: 2rpx solid #979797;
+  border-radius: 26rpx;
+  width: 96rpx;
+  text-align: center;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.editVIewclass text
+{
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #9b9b9b;
+}
+
+.logoutview {
+  background: #fff;
+  box-shadow: 0 -7px 71px 0 rgba(234, 234, 234, 0.50);
+  height: 100rpx;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logouttext {
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #01a0eb;
+}

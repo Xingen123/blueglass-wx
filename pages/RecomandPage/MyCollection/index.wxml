@@ -1,0 +1,21 @@
+<!--全部收藏列表  lancelot-->
+<view class='backView'>
+  <block wx:for="{{collectRecordInfos}}" wx:for-item="item" wx:for-index="idx">
+  <view class='addressCellClassback' bindtap='jumpdetail' data-partnerid = '{{item.partnerId}}'>
+    <view class='addressCellClass'>
+      <view class='headIViconClass'>
+        <image src='{{item.wechatIcon}}'></image>
+      </view>
+      <view class='addressCell_title'>
+        <text class='textTitle'>{{item.nickName}}</text>
+        <text class='textInfo'>{{item.levelName}}</text>
+      </view>
+      <view class='editClass'>
+        <view class='editVIewclass'>
+          <text>进店</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  </block>
+</view>

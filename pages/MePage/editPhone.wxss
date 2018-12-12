@@ -1,0 +1,83 @@
+/* pages/MePage/editPhone.wxss */
+
+.editcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.inputview {
+  margin-top: 30rpx;
+  margin-left: 28rpx;
+  width: calc(100% - 56rpx);
+  height: 88rpx;
+  background: #f6f6f6;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+}
+
+.input-placeholder {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #9b9b9b;
+}
+
+.inputtext-code {
+  margin-left: 28rpx;
+  width: calc(100% - 56rpx - 180rpx);
+  height: 88rpx;
+}
+
+.inputtext {
+  margin-left: 28rpx;
+  width: calc(100% - 56rpx);
+  height: 88rpx;
+}
+
+.logoutview {
+  background: #fff;
+  box-shadow: 0 -7px 71px 0 rgba(234, 234, 234, 0.50);
+  height: 100rpx;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logouttext {
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #01a0eb;
+}
+
+.inputview-code {
+  margin-top: 30rpx;
+  margin-left: 28rpx;
+  width: calc(100% - 56rpx);
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #f6f6f6;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bind-codeButton {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #fff;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  line-height: 88rpx;
+}
+
+.buttonview {
+  border-radius: 0, 12rpx, 0, 12rpx;
+  background: #01a0eb;
+  line-height: 88rpx;
+}

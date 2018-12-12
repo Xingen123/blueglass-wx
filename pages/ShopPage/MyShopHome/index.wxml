@@ -1,0 +1,132 @@
+<!-- 店铺菜单详情页面 by lancelot -->
+
+<view class='backView'>
+
+  <!-- <canvas canvas-id='share' class="canvasId" hidden='{{canvasHidden}}'></canvas>  -->
+
+  <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}"
+    next-margin="{{nextMargin}}" class='swiperimg' catchtap='addImageAction' wx:if="{{backgroundIVs.length>0}}">
+    <block wx:for="{{backgroundIVs}}" wx:for-item="item" wx:for-index="idx"  wx:key="index">
+      <swiper-item class='swiperimg'>
+        <image src="{{item}}" class="slide-image" binderror="scrollErrorFunction" data-errorimg="{{idx}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='addImageView' catchtap='addImageAction' wx:else>
+    <text>点击上传背景图片</text>
+
+  </view>
+
+  <view class='titleNameView'>
+    <view class='fountTitleView'>
+      <text class='levelTitleClassText'>等级：</text>
+      <text class='levelClassText'>{{shopLevel}}</text>
+
+    </view>
+    <view class='lastTitleView'>
+      <text class='saleTitleClassText'>销售：</text>
+      <text class='saleClassText'>{{salesVolume}}</text>
+      <text class='saleClassdanweiText'>份</text>
+
+    </view>
+
+  </view>
+
+  <view class='nameViewClass'>
+    <text class='nameTitileclass'>{{nickname}}</text>
+  </view>
+
+
+  <van-tabs active="{{ active }}" color="#01A0EB" line-width="0rpx">
+    <block wx:for="{{categoryList}}" wx:for-item="category" wx:for-index="categoryidx"  wx:key="index">
+      <van-tab title="{{category.category.name}}">
+        <view class=' shangpinBgView'>
+
+          <scroll-view class="nav" scroll-x="true" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+
+
+            <block wx:for="{{category.productDIYList}}" wx:for-item="productDIY" wx:for-index="productDIYidx">
+              <view class="leixingview  {{currentProducts[categoryidx].chooseIndex == productDIYidx ? 'cur_color' : ''}}" bindtap='choosetheDIY' data-index="{{productDIYidx}}" data-categoryidx="{{categoryidx}}" data-products="{{productDIY}}">
+                <text>{{productDIY.productDIY.name}}</text>
+              </view>
+            </block>
+          </scroll-view>
+          <view class='shangbgView' wx:if="{{currentProducts[categoryidx].products.length>0}}">
+
+
+            <block wx:for="{{currentProducts[categoryidx].products}}" wx:for-item="product" wx:for-index="productidx">
+
+              <view class="mark_dialog {{showView?'show':'hide'}}" catchtap='mark_dialog'></view>
+              <view class="sendorForward {{showView?'show':'hide'}}">
+                <button open-type="share"  class='shareFriend' >微信好友</button>
+                <button catchtap='sharePoster'  data-nickname='{{nickname}}' data-headPath="{{icon}}"  data-product='{{product}}' data-glassType='{{product.type}}' data-partnerId='{{product.partnerId}}' data-backgournd='{{product.backgournd}}' data-glassIcon='{{product.glassIcon}}'>朋友圈</button>
+              </view>
+              <view class='shangpincell'>
+
+                <view class='imageview' wx:if="{{product.isLucky=='true'}}">
+                  <image src="../../../Images/shop/fudai.png"></image>
+                </view>
+
+                <view class='imageview' wx:if="{{product.isLucky=='false'}}">
+                  <image src="{{product.icon}}"></image>
+                </view>
+
+                <view class='myshangpininfoView'>
+                  <view class='titleView'>
+                    <text class=''> {{product.name}}</text>
+
+                  </view>
+                  <view class='tipsInfoView'>
+                    <text> {{product.productMaterial}}</text>
+                  </view>
+                  <view class='moneyView'>
+                    <view class=' moneyInfoview'>
+                      <text class='moneyIcon'>￥</text>
+                      <text class='moneyTips'>{{product.salePrice}}</text>
+
+                    </view>
+                    <view class=' bttonVIew'>
+                      <view class='xiaoshowFenTitile'>销售:</view>
+                      <text class='xiaoshoufen'>{{product.salesAmount}}份</text>
+                      <image src='../../../Images/shop/share_icon.png' class='shareBtnView' catchtap='shareProduct' data-nickname='{{nickname}}' data-headPath="{{icon}}" data-product='{{product}}' data-glassType='{{product.type}}' data-partnerId='{{product.partnerId}}' data-backgournd='{{product.backgournd}}' data-glassIcon='{{product.glassIcon}}'></image>
+
+                      <!-- <button class='shareBtnView' open-type="share" id="1" product="{{product}}">
+                      <button class='shareBtnView'open-type="share" id="1" data-product="{{product}}">
+                        <image src='../../../Images/shop/share_icon.png'></image>
+                      </button> -->
+
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view class='lineclass'>
+              </view>
+            </block>
+
+          </view>
+          <view class='addImageViewss' wx:else>
+            <text>暂无上架商品</text>
+          </view>
+        </view>
+
+      </van-tab>
+    </block>
+
+
+
+
+
+  </van-tabs>
+
+
+  <view class='headerIVbackView'>
+    <image src="{{icon}}" class='headerIV'>
+    </image>
+
+  </view>
+
+
+  <view class='editbackView' bindtap='editAction'>
+    <text>编辑</text>
+  </view>
+</view>

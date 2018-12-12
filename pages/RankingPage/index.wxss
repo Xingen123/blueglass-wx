@@ -1,0 +1,159 @@
+/* pages/RankingPage/index.wxss */
+
+.swiperimg {
+  /* border-radius: 12rpx; */
+  height: 320rpx;
+  text-align: center;
+}
+
+.backView {
+  background-color: #fcfcfc;
+}
+
+.slide-image {
+  width:650rpx;
+  /* margin: 0 20rpx; */
+  border-radius: 12rpx;
+  height: 250rpx;
+}
+
+.rankTitleClass {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  justify-content: space-between;
+  display: flex;
+  margin-top: 30rpx;
+  padding-bottom: 0rpx;
+}
+
+.rankTitleClass_Title {
+  font-family: PingFangSC-Medium;
+  font-size: 36rpx;
+  color: #000;
+}
+
+.rankTitleClass_Money {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #4a4a4a;
+}
+
+.rankingCell {
+  /* height: 155rpx; *//* width: 100%; */
+  margin-top: 20rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2rpx 40rpx 0 rgba(204, 204, 204, 0.50);
+}
+
+/* .rankingCell:last-child{
+  margin-bottom:180rpx;
+} */
+
+.myrankingCell {
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  left: 0rpx;
+}
+
+.rankIconClass {
+  /* height: 155rpx; */
+  width: 125rpx;
+  /* margin-top: 49rpx; */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.rankIconClass_image {
+  height: 45rpx;
+  width: 35rpx;
+  align-self: center;
+}
+
+.rankIconClass_image image {
+  height: 100%;
+  width: 100%;
+}
+
+.rankIconClass_NOIV {
+  /* height: 155rpx; */
+  width: 125rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.rankIconClass_NOIV text {
+  font-family: PingFangSC-Semibold;
+  font-size: 32rpx;
+  color: #9b9b9b;
+  align-self: center;
+  /* margin-top: 53rpx; */
+}
+
+.rankIconClass text {
+  font-family: PingFangSC-Semibold;
+  font-size: 26rpx;
+  color: #01a0eb;
+  margin-top: 0rpx;
+  align-self: center;
+}
+
+.headerIVClass {
+  width: 110rpx;
+  /* margin-top: 30rpx; */
+  margin-left: 30rpx;
+  /* height: 155rpx; */
+}
+
+.headerIVClass image {
+  height: 80rpx;
+  border-radius: 40rpx;
+  width: 80rpx;
+}
+
+.titleInfoClass {
+  margin-top: 35rpx;
+  margin-right: 30rpx;
+  margin-left: 30rpx;
+  margin-bottom: 35rpx;
+  width: calc(100% - 435rpx);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleInfoClass_title {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #000;
+}
+
+.titleInfoClass_info {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  margin-top: 5rpx;
+  color: #9b9b9b;
+}
+
+.moneyClass {
+  height: 155rpx;
+  width: 200rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  margin-left: 30rpx;
+}
+
+.moneyClass_text {
+  margin-top: 53rpx;
+  margin-right: 30rpx;
+  font-family: PingFangSC-Semibold;
+  font-size: 36rpx;
+  color: #007aff;
+}

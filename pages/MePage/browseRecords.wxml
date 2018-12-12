@@ -1,0 +1,31 @@
+<!--pages/MePage/browseRecords.wxml-->
+<!-- <text>pages/MePage/browseRecords.wxml</text> -->
+
+<view class='browserecord_container'>
+  <block wx:for="{{browseRecordInfos}}" wx:for-item="item" wx:for-index="idx">
+    <view class='cell_view'>
+      <view class='left_view'>
+        <view class='left_image'></view>
+        <view class='left_line_view'></view>
+      </view>
+      <view class='right_view'>
+        <text class='date'>{{item.date}}</text>
+        <block wx:for="{{item.browseRecordInfos}}" wx:for-item="item_detail" wx:for-index="idx">
+          <view class='inner_view'>
+            <view class='inner_cell_view'>
+              <image class='head_image' src='{{item_detail.wechatIcon}}'></image>
+                <view class='name_view'>
+                  <text class='shop_name'>{{item_detail.nickName}}</text>
+                  <text class='level_name'>{{item_detail.level}}</text>
+                </view>
+              <view class='right_text_view'>
+                <text class='right_text' catchtap='shopClick' data-partnerId='{{item_detail.partnerId}}'>逛一逛</text>
+              </view>
+              <view class='bottom_line_view'></view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>

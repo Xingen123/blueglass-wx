@@ -1,0 +1,4 @@
+<!--pages/ShopPage/MyShop/html.wxml-->
+<!-- <text>pages/ShopPage/MyShop/html.wxml</text> -->
+
+<web-view src="{{htmlUrl}}"></web-view>

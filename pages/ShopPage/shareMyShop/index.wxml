@@ -1,0 +1,84 @@
+<!--合伙人店铺-->
+<!--pages/ShopPage/PartnerShop/idnex.wxml-->
+<block wx:if="{{isNotPatenter==1}}">
+  <view class=" {{showView1? 'show': 'hide'}} " catchtap='mark_first'>
+    <view class="mark_dialog " data-curindex="{{curindex}} "></view>
+    <text class="mark_first showdialog ">
+    想尝试短发机车装？没问题！\n
+    要在店里养只懒猫？完全可以！\n
+    你想要的都可以在这里随意DIY，\n
+    谁让，你的店你说的算！
+  </text>
+  </view>
+
+  <view class="{{showView2? 'show': 'hide'}} " catchtap='mark_second'>
+    <view class="mark_dialog " data-curindex="{{curindex}} "></view>
+    <text class="showdialog mark_second ">
+  酸奶做好啦，叫朋友来测评一下味道？\n
+  分享你的创意，养肥钱包君吧！\n
+</text>
+  </view>
+
+  <view class="{{showView3? 'show': 'hide'}} " catchtap='mark_third'>
+    <view class="mark_dialog " data-curindex=" {{curindex}} "></view>
+    <text class="showdialog mark_third ">
+  泡椒红酒白兰地，\n
+  麻辣薯片巧克力。\n
+  只要你敢想，这里就能实现。\n
+  创建你的独家菜单，你的酸奶你做主！\n
+</text>
+  </view>
+
+  <view class='content'>
+      <view  style="background-image: url({{randPartnerInfos.background}})"  class='bacdground_imgurl'></view>
+    <view class='sologn_con' style='display:none'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" vertical="true" circular="{{circular}}" style='height:70rpx !important;width:90%;' class='sologn'>
+      <block wx:for="{{advertisingInfos}}" wx:for-index="index" wx:for-item="advertis">
+        <swiper-item catchtap='advertisingInfosClick' data-isRedirect="{{advertis.isRedirect}}" data-redirectTarget="{{advertis.redirectTarget}}">
+          <view>{{advertis.name}}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- catchtap='openanimate' -->
+    <image src='../../../Images/shop/wh.png' ></image>
+  </view>
+
+    <view class='shop'>
+      <image src='{{randPartnerInfos.icon}}'></image>
+
+      <view class='shop_right'>
+        <view class='shop_name'>{{randPartnerInfos.shopName}}</view>
+        <view class='shop_dj'>{{randPartnerInfos.shopLevelname}}</view>
+      </view>
+
+      <view class="shop_sale ">
+        <view class='shop_sale_ymc'>已卖出
+          <span>{{randPartnerInfos.salesAmount}}</span>份</view>
+           <!-- catchtap='recordClick' -->
+        <view class='shop_sale_jl' catchtap='addMyCollect' data-existcollect='{{item.existCollect}}' data-partnerId = '{{item.partnerId}}' data-randPartnerInfos="{{randPartnerInfos.existCollect}}">{{existCollect}}</view>
+      </view>
+
+    </view>
+
+    <view class='circle yqhy' catchtap='home'>
+      <image src='../../../Images/shop/home.png' class="{{showView1? 'zindex': ''}} "></image>
+    </view>
+    <view class='circle diy' bindtap='DIYAction' wx:if="{{!randPartnerInfos.mySelf}}" data-partnerid='{{randPartnerInfos.partnerid}}'>
+      <image src='../../../Images/shop/diandan.png' class="{{showView3? 'zindex': ''}} "></image>
+    </view>
+
+  </view>
+</block>
+
+<!-- <block wx:else>
+  <view class='back2View'>
+    <image src='../../../Images/shop/apply_background.png'>
+
+    </image>
+    <view class='tipsView' bindtap='addaction'>
+      <text>
+开门开门！我也要开店！
+      </text>
+    </view>
+  </view>
+</block> -->

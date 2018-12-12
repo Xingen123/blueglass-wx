@@ -1,0 +1,25 @@
+
+<form bindsubmit="formSubmit">
+<view class='addtitle'>
+<text>
+填写创意合伙人的专属开店码
+</text>
+</view>
+  <view class='content'>
+    <block wx:for="{{Length}}" wx:key="item">
+      <input class='iptbox' value="{{Value.length>=index+1?Value[index]:''}}" disabled password='{{ispassword}}' catchtap='Tap'></input>
+    </block>
+  </view>
+  <input name="password" password="{{true}}" class='ipt' maxlength="{{Length}}" focus="{{isFocus}}" bindinput="Focus"></input>
+  <view>
+    <view class="tipsLabel">
+      <text bindtap='pathUclick'>如何获得开店码？</text> 
+    </view>
+  </view>
+</form>
+
+  <view class='kaidianView' bindtap='xiayibu'>
+    <text class='textkaidian'>{{showTips}}</text>
+  </view>
+
+

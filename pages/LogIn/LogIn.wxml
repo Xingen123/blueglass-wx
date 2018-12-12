@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  <image class='logo' src='../../Images/Login/logo.png'></image>
+  <text class='text'>允许授权，是迈向一键登录的第一步～</text>
+  <button class='login' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 微信登录 </button>
+</view>

@@ -1,0 +1,274 @@
+/* pages/ShopPage/ProductLibrary/index.wxss */
+
+.backView {
+  background-color: #fcfcfc;
+  position: relative;
+}
+
+.HeaderView {
+  width: 100%;
+  height: 250rpx;
+}
+
+.HeaderView image {
+  width: 100%;
+  height: 250rpx;
+}
+
+.whiteBgView {
+  width: calc(100% - 52rpx);
+  /* width: 100rpx; */
+  position: absolute;
+  z-index: 100;
+  top: 205rpx;
+  left: 26rpx;
+  height: 162rpx;
+  background: #fff;
+  box-shadow: 0 4rpx 33rpx 0 rgba(223, 223, 223, 0.50);
+  justify-content: space-around;
+  display: flex;
+}
+
+.firstview {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.firsttopView {
+  text-align: center;
+}
+
+.firstEndtView {
+  text-align: center;
+}
+
+.sencondView {
+  margin-top: 25rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.van-tab {
+  background-color: #fcfcfc !important;
+}
+
+.van-tabs__line {
+  border: none !important;
+}
+
+.infoview {
+  z-index: -1;
+  margin-top: 163rpx;
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+}
+
+.bigText {
+  font-family: PingFangSC-Medium;
+  font-size: 48rpx;
+  color: #000;
+}
+
+.samlltext {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #000;
+}
+
+.firstEndtView text {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #4a4a4a;
+}
+
+.firstEndtView image {
+  margin-left: 5rpx;
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.MiddleText {
+  font-family: PingFangSC-Medium;
+  font-size: 40rpx;
+  color: #000;
+}
+
+.nav {
+  height: 60rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #fcfcfc;
+  white-space: nowrap;
+  margin-top: 28rpx;
+  /* border-bottom: 2rpx solid #01a0eb; *//* display: flex !important; *//* justify-content: space-between; */
+}
+
+.leixingview {
+  height: 50rpx;
+  line-height: 50rpx;
+  /* border-radius: 31rpx; *//* padding: 0 20rpx; */
+  margin-left: 20rpx;
+  /* float: left; */
+  display: inline-block;
+  color: #9b9b9b;
+}
+
+.cur_color {
+  border-bottom: 2rpx solid #01a0eb;
+  color: #01a0eb;
+}
+
+/* .cur_color text {
+
+  color: #01A0EB;
+} */
+
+.leixingview text {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.shangbgView {
+  margin-left: 26rpx;
+  margin-right: 26rpx;
+  width: calc (100% -52rpx);
+  margin-top: 36rpx;
+  background: #fff;
+  box-shadow: 0 4rpx 40rpx 0 rgba(204, 204, 204, 0.50);
+  border-radius: 12rpx;
+}
+
+.shangpincell {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.lineclass {
+  height: 2rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  /* border: 1rpx solid #D8D8D8; */
+  background-color: #d8d8d8;
+}
+
+.imageview {
+  width: 192rpx;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  background: #fff;
+}
+
+.imageview image {
+  border-radius: 6rpx;
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.myshangpininfoView {
+  width: calc(100% - 250rpx);
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+  padding-bottom: 20rpx;
+}
+
+.titleView {
+  width: clac(100% - 20rpx);
+  margin-left: 20rpx;
+}
+
+.titleView text {
+  font-family: PingFangSC-Semibold;
+  font-size: 32rpx;
+  color: #000;
+}
+
+.tipsInfoView {
+  width: clac(100% - 20rpx);
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-bottom: 10rpx;
+  /* margin: 0 auto; */
+}
+
+.tipsInfoView text {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #9b9b9b;
+}
+
+.shangpinBgView {
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+}
+
+.moneyView {
+  width: clac(100% - 20rpx);
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.moneyInfoview {
+  /* width: 100rpx; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.moneyIcon {
+  font-family: PingFangSC-Semibold;
+  font-size: 30rpx;
+  color: #9b9b9b;
+}
+
+.moneyTips {
+  font-family: PingFangSC-Semibold;
+  font-size: 24rpx;
+  color: #9b9b9b;
+}
+
+.bttonVIew {
+  margin-top: 20rpx;
+  border: 2rpx solid #01a0eb;
+  border-radius: 20rpx;
+  width: 100rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.bttonVIew text {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #01a0eb;
+}
+
+.editbackView {
+  background-image: linear-gradient(-270deg, #40c6ff 0%, #01a0eb 100%);
+  box-shadow: 0 4rpx 36rpx 0 #c8eeff;
+  border-radius: 45rpx;
+  width: 90rpx;
+  height: 90rpx;
+  position: fixed;
+  z-index: 999;
+  bottom: 30rpx;
+  right: 30rpx;
+  text-align: center;
+  line-height: 90rpx;
+}
+
+.editbackView text {
+  font-family: PingFangSC-Semibold;
+  font-size: 28rpx;
+  color: #fff;
+}

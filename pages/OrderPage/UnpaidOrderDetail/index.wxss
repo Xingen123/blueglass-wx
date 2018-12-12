@@ -1,0 +1,9 @@
+/* pages/OrderPage/UnpaidOrderDetail/index.wxss */
+
+.van-submit-bar{
+  box-shadow: 0px 2px 20px 0 #ccc;
+  border-radius: 6px;
+  width: calc(100%) !important;
+  height: 50px;
+  line-height: 50px;
+}

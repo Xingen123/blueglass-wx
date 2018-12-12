@@ -1,0 +1,10 @@
+<!--pages/MePage/coupoRule.wxml-->
+<!-- <text>pages/MePage/coupoRule.wxml</text> -->
+<view class='contianer'>
+  <text class='title'>优惠券兑换秘籍</text>
+  <text class='desc'>
+  1:优惠券仅限【Blueglass】App兑换呢～
+2:优惠券仅限【Blueglass】App内购买券面指定产品使用哟～
+3:小tips：优惠券有效期30天，超过时间就不能使用了哟～
+  </text>
+</view>

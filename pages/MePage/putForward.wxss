@@ -1,0 +1,77 @@
+/* pages/MePage/putForward.wxss */
+
+.put_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.top_put {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 80rpx;
+}
+
+.title_label {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #000;
+  margin-left: 30rpx;
+}
+
+.inputtext {
+  margin-top: 30rpx;
+  margin-left: 28rpx;
+  width: calc(100% - 56rpx);
+  height: 88rpx;
+  background: #f6f6f6;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+}
+
+.money_label {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #000;
+  margin-right: 30rpx;
+}
+
+.logoutview {
+  background: #fff;
+  box-shadow: 0 -7px 71px 0 rgba(234, 234, 234, 0.50);
+  height: 100rpx;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logouttext {
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #01a0eb;
+}
+
+.bottom_view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25rpx;
+}
+
+.total_money_title {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #000;
+}
+
+.total_money {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #01a0eb;
+  line-height: 40px;
+}

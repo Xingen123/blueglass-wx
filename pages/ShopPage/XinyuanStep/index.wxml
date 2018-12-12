@@ -1,0 +1,35 @@
+<view class='backView'>
+  <view class='whiteView'>
+    <view class='infoView'>
+      <image src='../../../Images/Me/step_1.png'></image>
+      <view class='textView'>
+        <text>给自己设置一个通过努力能实现的心愿吧! 比如：攒20000元去巴萨罗那看帅哥；再比如：存5000元奖励自己一个品质包包</text>
+      </view>
+    </view>
+    <view class='xuxianLine'> </view>
+        <view class='infoView'>
+      <image src='../../../Images/Me/step_2.png'></image>
+      <view class='textView'>
+        <text>每卖出一杯酸奶，都向心愿达成迈出了大大的一步。</text>
+      </view>
+    </view>
+    <view class='xuxianLine'> </view>
+        <view class='infoView'>
+      <image src='../../../Images/Me/step_3.png'></image>
+      <view class='textView'>
+        <text>心愿一点点达成，人生一点点不一样。说不定，哪一天小小的心愿就变成了神圣的信仰～</text>
+      </view>
+    </view>
+     <view class='mybutton' catchtap='gotoxinyuan'>
+  <text>许下我的心愿</text>
+  </view>
+    <view class='tiaoguo' catchtap='gotohome'>
+  <text>暂时跳过</text>
+  </view>
+      <view class='tiaoguo'>
+  </view>
+  </view>
+
+
+ 
+</view>

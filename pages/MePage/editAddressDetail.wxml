@@ -1,0 +1,26 @@
+<!--pages/MePage/editAddressDetail.wxml-->
+<!-- <text>pages/MePage/editAddressDetail.wxml</text> -->
+<view class='editcontainer'>
+  <text class='title'>姓名</text>
+  <view class='inputview'>
+    <input type='text' class='inputtext' placeholder='姓名' placeholder-style="font-family: PingFangSC-Regular;font-size: 26rpx;color: #9B9B9B;" bindinput="nameInput" value='{{name}}'></input>
+  </view>
+  <text class='title'>手机号</text>
+  <view class='inputview'>
+    <input type='text' class='inputtext' placeholder='手机号' placeholder-style="font-family: PingFangSC-Regular;font-size: 26rpx;color: #9B9B9B;" bindinput="phoneInput" value='{{phone}}'></input>
+  </view>
+  <text class='title'>地址</text>
+  <view class='inputview'>
+    <view bindtap="addressInput">
+      <input type='text' class='inputtext' placeholder='地址' placeholder-style="font-family: PingFangSC-Regular;font-size: 26rpx;color: #9B9B9B;"  value='{{address}}'></input>
+    </view>
+  </view>
+  <text class='title'>门牌号</text>
+  <view class='inputview'>
+
+    <input type='text' class='inputtext' placeholder='门牌号' placeholder-style="font-family: PingFangSC-Regular;font-size: 26rpx;color: #9B9B9B;" bindinput="detailInput" value='{{addressDetail}}'></input>
+  </view>
+  <view class='logoutview'>
+    <text class='logouttext' bindtap='logout'>保存</text>
+  </view>
+</view>

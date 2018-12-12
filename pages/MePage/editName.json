@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "编辑昵称",
+  "usingComponents": {
+    "van-field": "../../dist/field/index"
+  }
+}

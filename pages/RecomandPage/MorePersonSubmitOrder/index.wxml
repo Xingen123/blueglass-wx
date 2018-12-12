@@ -1,0 +1,77 @@
+<!--推荐-多人点单-提交订单>
+<!--pages/RecomandPage/MorePersonSubmitOrder/index.wxml-->
+<view class='content'>
+  <!-- 配送 -->
+  <view class='shop'>
+    <view class='shop_nearby'>
+      <view class='shop_nearby_left'>配送地址</view>
+    </view>
+
+    <view class='shop_person'>
+      <view class='shop_person_name'>{{address.recieveName}}</view>
+      <view class='shop_person_phone'>{{address.mobile}}</view>
+    </view>
+
+    <view class='shop_desc'>{{address.addressDetail}}</view>
+  </view>
+
+  <view class='shop pay_detail'>
+    <view class='pay_detail_title'>支付详情</view>
+    <view class='shop_nearby'>
+      <view class='shop_nearby_left'>商品金额</view>
+      <view class='shop_nearby_right'>¥{{orderAmount}}</view>
+    </view>
+    <view class='shop_nearby'>
+      <view class='shop_nearby_left'>配送金额</view>
+      <view class='shop_nearby_right'>¥{{fareAmount}}</view>
+    </view>
+    <view class='shop_nearby'>
+      <view class='shop_nearby_left'>实际金额</view>
+      <view class='pay_money'>¥{{orderAmount+fareAmount}}</view>
+    </view>
+  </view>
+
+
+  <!-- 多人拼单详情 -->
+  <view class='more_pay_order'>
+    <view class="blue-card__title van-multi-ellipsis--l2">订单详情</view>
+    <block wx:for="{{persons}}" wx:for-item="person" wx:for-index="personsidx"  wx:key="index">
+      <view class='order_detail'>
+        <view class='blue-person'>
+          <image  src="{{person.heardPath}}" class="blue-card__headimg thumb-class" />
+          <text  class="blue-card__name van-ellipsis desc-class">{{person.personName}}</text>
+        </view>
+        <van-blue-card msgData="{{person.items}}" shopname="{{shopname}}">
+        </van-blue-card>
+      </view>
+    </block>
+    <!-- 要循环的 -->
+    <!-- <view class='order_detail'>
+        <view class='blue-person'>
+          <image wx:if="{{ heardPath }}" src="{{ heardPath }}" class="blue-card__headimg thumb-class" />
+          <text wx:if="{{ personName }}" class="blue-card__name van-ellipsis desc-class">{{ personName }}</text>
+        </view>
+        <van-blue-card msgData="{{items}}" shopname="{{shopname}}">
+        </van-blue-card>
+      </view>
+
+      
+
+      <view class='order_detail'>
+        <view class='blue-person'>
+          <image wx:if="{{ heardPath }}" src="{{ heardPath }}" class="blue-card__headimg thumb-class" />
+          <text wx:if="{{ personName }}" class="blue-card__name van-ellipsis desc-class">{{ personName }}</text>
+        </view>
+        <van-blue-card msgData="{{items}}" shopname="{{shopname}}">
+        </van-blue-card>
+      </view> -->
+
+  </view>
+
+  <van-submit-bar label="实际支付：" price="{{payAmount}}" button-text="立即支付" bind:submit="onClickButton">
+  </van-submit-bar>
+
+
+
+
+</view>

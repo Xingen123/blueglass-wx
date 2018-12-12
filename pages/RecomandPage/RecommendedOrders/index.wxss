@@ -1,0 +1,619 @@
+.swiperimg {
+  /* border-radius: 12rpx; */
+  height: 404rpx;
+  width: 100%;
+  z-index: -1;
+}
+
+.backView {
+  width: 100%;
+  height: calc(100% -98rpx);
+  background-color: #fcfcfc;
+  padding-bottom: 100rpx;
+}
+
+.xiadanView {
+  width: 100%;
+  height: 98rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+
+.duorenDiandan {
+  background-image: linear-gradient(-270deg, #40c6ff 0%, #01a0eb 100%);
+  box-shadow: 0 4rpx 36rpx 0 #c8eeff;
+  border-radius: 0rpx 39.5rpx 39.5rpx 0;
+  margin-top: 9rpx;
+  margin-bottom: 10rpx;
+  width: 260rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.duorenDiandan text {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.gouwuche {
+  width: 106rpx;
+  height: 98rpx;
+  /* margin-right: 16rpx; *//* margin-top: 6rpx; */
+}
+
+.gouwuche image {
+  width: 98rpx;
+  height: 80rpx;
+}
+
+.slide-image {
+  width: 100%;
+  height: 404rpx;
+}
+
+.headerIVbackView {
+  width: 160rpx;
+  position: absolute;
+  z-index: 100;
+  top: 324rpx;
+  left: 50rpx;
+}
+
+.headerIV {
+  box-shadow: 0 4px 30px 0 rgba(144, 144, 144, 0.50);
+  border-radius: 80px;
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.titleNameView {
+  justify-content: space-between;
+  display: flex;
+}
+
+.longtestView {
+  height: 2000rpx;
+  background-color: #e24;
+}
+
+.fountTitleView {
+  margin-top: 26rpx;
+  margin-left: 247rpx;
+  margin-right: 0rpx;
+  width: 387rpx;
+}
+
+.levelTitleClassText {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #4a4a4a;
+}
+
+.levelClassText {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #000;
+  line-height: 40rpx;
+}
+/* 
+.lastTitleView {
+  margin-top: 26rpx;
+  width: 300rpx;
+  margin-right: 40rpx;
+  height: 45rpx;
+} */
+
+.saleTitleClassText {
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #4a4a4a;
+}
+
+.saleClassText {
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #000;
+  line-height: 40rpx;
+}
+
+.saleClassdanweiText {
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #969696;
+  line-height: 45rpx;
+}
+
+.nameViewClass {
+  margin-top: 23rpx;
+  margin-left: 67rpx;
+}
+
+.nameTitileclass {
+  font-family: PingFangSC-Semibold;
+  font-size: 32rpx;
+  color: #000;
+}
+
+.choosePeisongBtnView {
+  justify-content: space-between;
+  display: flex;
+}
+
+.chooseBtnBackView {
+  width: 350rpx;
+  margin-top: 39rpx;
+  margin-left: 55rpx;
+  display: flex;
+}
+
+.tipsView {
+  width: calc(100% - 350rpx);
+  margin-right: 39rpx;
+  margin-top: 33rpx;
+  text-align: right;
+}
+
+.tipsView image {
+  margin-left: 5rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.guizetipsText {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #9b9b9b;
+}
+
+.navbar {
+  display: flex;
+  /* position: absolute; *//* z-index: 500; */
+  top: 0;
+  width: calc(100% - 60rpx);
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: 52rpx;
+  line-height: 52rpx;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.navbar__item {
+  position: relative;
+  display: block;
+  flex: 1;
+  text-align: center;
+  font-size: 0;
+  height: 52rpx;
+  /* <!-- NavBar的总高度为：height + padding-top + padding-bottom = 68rpx --> */
+}
+
+.navbar__item_on {
+  color: #01a0eb;
+}
+
+.navbar_title {
+  color: #9b9b9b;
+  display: inline-block;
+  font-size: 30rpx;
+  max-width: 8em;
+  text-align: center;
+  border: 2rpx solid #fcfcfc;
+  width: 136rpx;
+  border-radius: 26rpx;
+  height: 52rpx;
+}
+
+.navbar_title_cur {
+  color: #01a0eb;
+  height: 52rpx;
+  border: 2rpx solid #01a0eb;
+  width: 136rpx;
+  border-radius: 26rpx;
+}
+
+.ShangpinBgView {
+  justify-content: space-between;
+  display: flex;
+}
+
+.shangpinLeixingView {
+  margin-top: 30rpx;
+  margin-left: 47rpx;
+  width: 100%;
+}
+
+.leixingtitle {
+  width: 190rpx;
+  height: 50rpx;
+  border: 2rpx solid #9b9b9b;
+  border-radius: 25rpx;
+  color: #9b9b9b;
+  text-align: center;
+}
+
+.leixingtitle text {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #9b9b9b;
+}
+
+.shangcollgeView {
+  width: 100%;
+  height: 100rpx;
+}
+
+.nav {
+  height: 434rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #fcfcfc;
+  font-size: 16px;
+  white-space: nowrap;
+  z-index: 99;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+}
+
+.shangpinInfoview {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  width: 332rpx;
+  height: 434rpx;
+  background-color: #fff;
+}
+
+.nav_img {
+  width: 312rpx;
+  height: 274rpx;
+  /* display: inline-block;
+  text-align: center;
+  position: relative; *//* box-shadow: 0px 0px 10px #dedede; */
+}
+
+.nav_img image {
+  width: 312rpx;
+  height: 274rpx;
+  float: left;
+}
+
+.shangpinname {
+  margin-top: 24rpx;
+  height: 60rpx;
+  text-align: center;
+}
+
+.shangpinname text {
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #4a4a4a;
+}
+
+.jia {
+  border: 1px solid #979797 !important;
+  border-radius: 50% !important;
+  width: 23px !important;
+  height: 23px !important;
+}
+
+.jian {
+  border: 1px solid #979797 !important;
+  border-radius: 50% !important;
+  width: 23px !important;
+  height: 23px !important;
+}
+
+.numinput {
+  border: none !important;
+  width: 23px !important;
+}
+
+.myInfoAddView {
+  width: 120rpx;
+}
+
+.lastView {
+  justify-content: space-between;
+  display: flex;
+}
+
+.moneyView {
+  width: 152rpx;
+  text-align: right;
+  margin-right: 20rpx;
+}
+.moneyView text {
+  font-family: PingFangSC-Regular;
+font-size: 32rpx;
+color: #F14D5C;
+}
+
+.leixingbgView {
+  height: 550rpx;
+}
+
+.addressCellClass {
+  width: 90%;
+  box-shadow: 0 2rpx 40rpx 0 rgba(204, 204, 204, 0.50);
+  border-radius: 6rpx;
+  margin-top: 20rpx;
+  margin-left: 5%;
+  margin-bottom: 10rpx;
+  background-color: #fff;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+
+.addressCell_title {
+  margin-left: 30rpx;
+  width: calc(100% - 156rpx);
+  margin-top: 35rpx;
+  margin-bottom: 20rpx;
+  margin-right: 30rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.textTitle {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #000;
+}
+
+.textInfo {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #9b9b9b;
+}
+
+.editClass {
+  width: 96rpx;
+  height: 40rpx;
+  display: flex;
+  margin-top: 30rpx;
+  margin-right: 30rpx;
+}
+
+.editVIewclass {
+  margin-top: 0rpx;
+  border: 2rpx solid #979797;
+  border-radius: 26rpx;
+  width: 96rpx;
+  text-align: center;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.editVIewclass text {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #9b9b9b;
+}
+
+.textTitleRed {
+  font-family: PingFangSC-Medium;
+  font-size: 46rpx;
+  color: #f14d5c;
+}
+
+.van-tab {
+  background-color: #fcfcfc !important;
+}
+
+.van-tabs__line {
+  border: none !important;
+}
+
+.ziquCellClass {
+  width: 90%;
+  box-shadow: 0 2rpx 40rpx 0 rgba(204, 204, 204, 0.50);
+  border-radius: 6rpx;
+  margin-top: 20rpx;
+  margin-left: 5%;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  height: 224rpx;
+  /* display: flex; *//* height: 224rpx; *//* align-items: center; *//* justify-content: space-between; */
+}
+
+.ziquCell_title {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.ziqutextInfo {
+  width: 138rpx;
+  margin-top: 68rpx;
+  margin-left: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #9b9b9b;
+}
+
+.imageIconView {
+  width: calc(100% - 138rpx);
+  margin-top: 60rpx;
+  text-align: left;
+}
+
+.ziqutextTitle {
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #000;
+}
+
+.imageIconView image {
+  margin-left: 10rpx;
+  width: 26rpx;
+  height: 26rpx;
+}
+
+.ziquInfoDizhiView {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ziquInfoDizhi {
+  margin-top: 10rpx;
+  margin-left: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #9b9b9b;
+  width: calc(100% - 57rpx);
+  text-align: left;
+}
+
+.addimageIconView {
+  margin-top: 10rpx;
+  width: 27rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+}
+
+.addimageIconView image {
+  width: 27rpx;
+  height: 32rpx;
+}
+
+/* .myswiper
+{
+  width: 100%!important;
+    height: 400rpx !important;
+
+} */
+
+/*使屏幕变暗  */
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+/*对话框 */
+
+.commodity_attr_box {
+  height: 547rpx;
+  width: 100%;
+  /* overflow: hidden; */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+  box-shadow: 0 2rpx 24rpx 0 rgba(155, 155, 155, 0.50);
+  border-radius: 12rpx 12rpx 0 0;
+}
+.productIconView
+{
+    height: 220rpx;
+  width: 220rpx;
+  z-index: 2500;
+  bottom: 434rpx;
+  left: calc(50% - 110rpx);
+  position: fixed;
+}
+.productIconView image
+{
+  width: 220rpx;
+  height: 220rpx;
+  box-shadow: 0 16rpx 38rpx 0 rgba(227,227,227,0.50);
+  border-radius: 12rpx;
+}
+
+.lastTitleView {
+  width: 100%;
+  margin-top: 128rpx;
+  margin-right: 40rpx;
+  text-align: center;
+}
+
+.saleTitleClassText {
+  font-family: PingFangSC-Medium;
+  font-size: 26rpx;
+  color: #9b9b9b;
+  line-height: 40rpx;
+}
+
+.saleClassdanweiText {
+  font-family: PingFangSC-Medium;
+  font-size: 26rpx;
+  color: #000;
+  line-height: 45rpx;
+}
+
+.infoText {
+  margin-top: 30rpx;
+  width: calc(100% - 52rpx);
+  margin-left: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #4a4a4a;
+  text-align: center;
+}
+
+.gouwucheAdd {
+  border: 2rpx solid #01a0eb;
+  border-radius: 41rpx;
+  width: 250rpx;
+  height: 66rpx;
+  align-content: center;
+  font-size: 30rpx;
+  color: #01a0eb;
+  line-height: 66rpx;
+  text-align: center;
+  margin-left: calc(50% - 125rpx);
+  bottom: 50rpx;
+  position: fixed;
+}
+.circle {
+  background-image: linear-gradient(-270deg, #02cef7 0%, #01a0eb 100%);
+  box-shadow: 0 4px 33px 0 #c0ebff;
+  position: fixed;
+  bottom: 30px;
+  width: 51.5px;
+  font-size: 13px;
+  color: #fff;
+  border-radius: 50%; 
+  text-align: center;
+}
+.qdd{
+  height: 51.5px;
+  right: 15px;
+  line-height: 51.5px;
+}
+.addImageViewss
+{
+  height: 100rpx;
+  width: 100%;
+  background: #fcfcfc;
+  text-align: center;
+  line-height: 100rpx;
+}
+.addImageViewss text
+{
+  font-family: PingFangSC-Regular;
+font-size: 28rpx;
+color: #4A4A4A;
+}

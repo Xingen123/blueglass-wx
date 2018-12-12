@@ -1,0 +1,8 @@
+<view class="van-badge">
+  <view wx:if="{{ minute }}" class="van-badge__info">{{ minute }}:</view>
+  <slot wx:else name="minute" />
+
+   <view wx:if="{{ second }}" class="van-badge__info">{{ second }}</view>
+  <slot wx:else name="second" />
+
+</view>

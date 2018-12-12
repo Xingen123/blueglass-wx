@@ -1,0 +1,372 @@
+.page {
+  height: 100%;
+}
+
+.backView {
+  background-color: #fcfcfc;
+}
+
+.navbar {
+  display: flex;
+  /* position: absolute; */
+  z-index: 500;
+  top: 0;
+  /* width: calc(100% - 60rpx); */
+  width:100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: 100rpx;
+  line-height: 100rpx;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  background: #fff;
+}
+
+.navbar__item {
+  position: relative;
+  display: block;
+  flex: 1;
+  text-align: center;
+  font-size: 0;
+  /* <!-- NavBar的总高度为：height + padding-top + padding-bottom = 68rpx --> */
+}
+.noPayListView_detail .noPayListView_qindanView:first-child{
+  margin-left: 32rpx;
+}
+.noPayListView_detail .noPayListView_qindanView:first-child image{
+  display: block;
+}
+.noPayListView_qindanView_left{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.noPayListView_qindanView_left image{
+  height: 24.5rpx;
+  width: 24.5rpx;
+  margin-right: 20rpx;
+  display: none;
+}
+.navbar__item_on {
+  color: #01a0eb;
+}
+
+.navbar_title {
+  color: #333;
+  display: inline-block;
+  font-size: 30rpx;
+  max-width: 8em;
+  text-align: center;
+}
+
+.navbar_title_cur {
+  color: #01a0eb;
+  height: 75rpx;
+}
+
+.noPayListView_Title {
+  margin-left: 10rpx;
+  justify-content: space-between;
+  display: flex;
+  margin-top: 26rpx;
+}
+
+.noPayListView_shop {
+  font-size: 32rpx;
+  color: #4a4a4a;
+  margin-left: 10rpx;
+}
+
+.noPayListView_staus {
+  font-size: 32rpx;
+  color: #4a4a4a;
+  margin-right: 10px;
+}
+
+.noPayListView_line {
+  width: 100%;
+  margin-top: 21rpx;
+  height: 2rpx;
+  background-color: #d8d8d8;
+}
+
+.noPayListView_detail {
+  margin-top: 14rpx;
+  display: block;
+}
+
+.noPayListView_totalviewText {
+  font-size: 24rpx;
+  color: #9b9b9b;
+  margin-right: 10px;
+}
+
+.noPayListView_qindanView {
+  margin-left: 79rpx;
+  justify-content: space-between;
+  display: flex;
+  margin-top: 26rpx;
+}
+
+.noPayListView_totalview {
+  margin-left: 79rpx;
+  justify-content: flex-start;
+  margin-top: 26rpx;
+  display: flex;
+  align-items: center;
+}
+.noPayListView_totalview image{
+  height: 31rpx;
+  width: 31rpx;
+  margin-right: 20rpx;
+}
+.pay_status{
+  margin-left: 32rpx;
+}
+.noPayListView_image {
+  width: 24rpx;
+  height: 27rpx;
+}
+
+.noPayListView_myQingdan {
+  font-size: 24rpx;
+  color: #4a4a4a;
+  margin-right: 10px;
+}
+
+.noPayListView_stausTitle {
+  font-family: PingFangSC-Semibold;
+  font-size: 28rpx;
+  color: #4a4a4a;
+}
+
+.swiper {
+  height: 100%;
+}
+
+.haveImage_view {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.noPayListView_image {
+  height: 26rpx;
+  width: 22rpx;
+}
+
+.swiper-item {
+  width: 100%;
+  padding-top: 20rpx;
+  text-align: center;
+}
+
+.swiper_con {
+  width: 690rpx;
+  margin: 0 auto;
+  /* height: 542rpx; */
+  border: 2rpx solid #dedede;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+
+
+.swiper_con_bot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3rpx;
+  height: 90rpx;
+}
+
+.swiper_con_jingxing {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 3rpx;
+  height: 90rpx;
+
+}
+.swiper_con_finish {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 3rpx;  
+  height: 90rpx;
+
+}
+
+.noPayListView_left {
+  margin-left: 10rpx;
+}
+
+.noPayListView_time {
+  font-size: 36rpx;
+  color: #e64340;
+  margin-right: 8rpx;
+}
+
+.noPayListView_person {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.have_in_hand_time {
+  font-size: 36rpx;
+  color: #333;
+  margin-left: 10rpx;
+}
+
+.have_in_hand_button, .noPayListView_button {
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  color: #01a0eb;
+  width: 180rpx;
+  height: 51rpx;
+  line-height: 51rpx;
+  border-radius: 51rpx;
+  border: 1px solid #01a0eb;
+  background: #fff;
+  margin-right: 20px;
+  margin-bottom: 20rpx;
+}
+
+.comListView_button
+{
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  color: #01a0eb;
+  width: 182rpx;
+  height: 51rpx;
+  line-height: 51rpx;
+  border-radius: 51rpx;
+  border: 1px solid #01a0eb;
+  background: #fff;
+  margin-right: 20px;
+  margin-left: 1rpx;
+}
+.noPayListView_jishi
+{
+  margin-left: 32rpx;
+  margin-top: 20;
+  
+}
+.noPayListView_titleforJishi {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #9b9b9b;
+}
+
+.noPayListView_jishiText {
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #000;
+}
+
+.completed_button {
+  background: #ccc;
+  font-size: 30rpx;
+  color: #fff;
+  width: 180rpx;
+  height: 51rpx;
+  line-height: 51rpx;
+  border-radius: 51rpx;
+  margin-right: 10px;
+}
+
+.c333 {
+  color: #333;
+}
+
+.c666 {
+  color: #666;
+}
+
+.c999 {
+  color: #999;
+}
+
+.boxshoaw {
+  box-shadow: 0px 0px 10px #dedede;
+}
+
+.borbot {
+  border-bottom: 2rpx solid #dedede;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+button::after {
+  border: none;
+}
+
+.owt {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.word_end {
+  color: #999;
+}
+
+.bg_end {
+  background: #999;
+}
+
+/*使屏幕变暗  */
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+/*对话框 */
+
+.commodity_attr_box {
+  height: 687rpx;
+  width: calc(100% - 150rpx);
+  /* overflow: hidden; */
+  left: 75rpx;
+  position: fixed;
+  top: calc(50% - 340rpx);
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+  box-shadow: 0 2rpx 24rpx 0 rgba(155, 155, 155, 0.50);
+  border-radius: 12rpx 12rpx 0 0;
+}
+
+.purch_ewm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 95rpx;
+}
+.purch_ewm image{
+  height: 150px;
+  width: 150px;
+}
+.purch_qu{
+  font-size: 15px;
+  color: #4a4a4a;
+  margin-top: 48px;
+}
+.purch_show{
+   font-size: 12px;
+  color: #9b9b9b;
+  margin-top: 5px;  
+}
+

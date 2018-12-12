@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "usingComponents": {
+    "blue-steps": "../../dist/blue-steps/index",
+    "van-blue-card": "../../dist/blue-card/index",
+    "van-order-card": "../../dist/order-card/index",
+    "van-blue-button": "../../dist/blue-button/index",
+    "van-icon": "../../dist/icon/index"
+  }
+}

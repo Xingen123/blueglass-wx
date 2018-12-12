@@ -1,0 +1,18 @@
+<!--pages/MePage/editPhone.wxml-->
+<!-- <text>pages/MePage/editPhone.wxml</text> -->
+
+<view class='editcontainer'>
+  <view class='inputview'>
+    <input type='text' class='inputtext' placeholder='手机号' placeholder-style="font-family: PingFangSC-Regular;font-size: 26rpx;color: #9B9B9B;" bindinput="phoneInput"></input>
+  </view>
+  <view class='midView'></view>
+  <view class='inputview-code'>
+    <input type='text' class='inputtext-code' placeholder='验证码' bindinput="codeInput" ></input>
+    <view class='buttonview'>
+      <button disabled='{{disabled}}' data-id="2" class='bind-codeButton' catchtap='getBindCode'>{{time}}</button>
+    </view>
+  </view>
+  <view class='logoutview'>
+    <text class='logouttext' bindtap='logout'>完成</text>
+  </view>
+</view>

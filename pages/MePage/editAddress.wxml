@@ -1,0 +1,22 @@
+<!--地址列表  lancelot-->
+<view class='backView'>
+  <block wx:for="{{addressInfo}}" wx:for-item="item" wx:for-index="idx">
+    <view class='addressCellClassback' catchtap='chooseAddress' data-addressDetailId="{{idx}}">
+      <view class='addressCellClass'>
+        <view class='addressCell_title'>
+          <text class='textTitle'>{{item.address}}</text>
+          <text class='textInfo'>{{item.recieveName}} {{item.mobile}}</text>
+        </view>
+        <view class='editClass'>
+          <view class='editVIewclass' catchtap='jumpDetail' data-addressDetailId="{{idx}}">
+            <text>编辑</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view class='logoutview'>
+    <text class='logouttext' bindtap='logout'>添加地址</text>
+  </view>
+</view>

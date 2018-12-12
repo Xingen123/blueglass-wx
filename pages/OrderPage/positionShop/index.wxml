@@ -1,0 +1,30 @@
+<!--pages/OrderPage/positionShop/index.wxml-->
+<view class="map_container"> 
+  <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap"></map> 
+</view> 
+<view class="place_info"> 
+  <!-- <text>{{placeData.title}}</text> 
+  <text>{{placeData.address}}</text> 
+  <text>{{placeData.telephone}}</text>  -->
+  <view class='position'>
+    <view class='position_l'>
+      <view>{{placeData.shopname}}</view>
+      <image src='../../../Images/Order/shop.png'></image>
+    </view>
+    <view class='position_r'>
+      <image src='../../../Images/Me/liulan.png'></image>
+      <view>{{placeData.hours}}</view>
+    </view>
+  </view>
+
+  <view class='position_name'>
+    <view>{{placeData.businessAddress}}></view>
+    <image class="position_img" src='../../../Images/Order/address.png'></image>
+  </view>
+
+   <view class='position_name' style='margin-top:20rpx;' catchtap='makePhoneCall' data-contactNumber='{{placeData.contactNumber}}'>
+    <view>{{placeData.contactNumber}} ></view>
+    <image class="position_img2" src='../../../Images/Order/phone.png'></image>
+  </view>
+
+</view>

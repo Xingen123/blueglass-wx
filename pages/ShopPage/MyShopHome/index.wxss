@@ -1,0 +1,412 @@
+button {
+  border: none;
+  background-color: #fff;
+}
+
+button::after {
+  border: none;
+}
+
+.sendorForward {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  background: #fff;
+  z-index: 9991;
+}
+
+.shareFriend {
+  border-bottom: 2rpx solid #dcdcdc;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.mark_dialog {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9990;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  /* display: none; */
+}
+
+.canvasId {
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+  background: #fff;
+  z-index: 9995;
+}
+
+.swiperimg {
+  /* border-radius: 12rpx; */
+  height: 404rpx;
+  width: 100%;
+  z-index: -1;
+}
+
+.backView {
+  background-color: #fcfcfc;
+}
+
+.slide-image {
+  width: 100%;
+  height: 404rpx;
+}
+
+.headerIVbackView {
+  width: 160rpx;
+  position: absolute;
+  z-index: 100;
+  top: 324rpx;
+  left: 50rpx;
+}
+
+.headerIV {
+  box-shadow: 0 4px 30px 0 rgba(144, 144, 144, 0.50);
+  border-radius: 80px;
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.titleNameView {
+  justify-content: space-between;
+  display: flex;
+}
+
+.longtestView {
+  height: 2000rpx;
+  background-color: #e24;
+}
+
+.fountTitleView {
+  margin-top: 26rpx;
+  margin-left: 247rpx;
+  margin-right: 0rpx;
+  width: 387rpx;
+}
+
+.levelTitleClassText {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #4a4a4a;
+}
+
+.levelClassText {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #000;
+  line-height: 40rpx;
+}
+
+.lastTitleView {
+  margin-top: 26rpx;
+  width: 300rpx;
+  margin-right: 40rpx;
+  height: 45rpx;
+}
+
+.saleTitleClassText {
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #4a4a4a;
+}
+
+.saleClassText {
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #000;
+  line-height: 40rpx;
+}
+
+.saleClassdanweiText {
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #969696;
+  line-height: 45rpx;
+}
+
+.nameViewClass {
+  margin-top: 23rpx;
+  margin-left: 67rpx;
+  justify-content: flex-start;
+  display: flex;
+}
+
+.nameTitileclass {
+  font-family: PingFangSC-Semibold;
+  font-size: 32rpx;
+  color: #000;
+}
+
+.bianjiClass {
+  margin-left: 10rpx;
+  width: 87rpx;
+  height: 37rpx;
+  border: 2rpx solid #979797;
+  border-radius: 18.5rpx;
+  text-align: center;
+  line-height: 37rpx;
+}
+
+.bianjiClass text {
+  font-size: 28rpx;
+  color: #979797;
+}
+
+.van-tab {
+  background-color: #fcfcfc !important;
+}
+
+.van-tabs__line {
+  border: none !important;
+}
+
+.nav {
+  height: 60rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #fcfcfc;
+  white-space: nowrap;
+  margin-top: 28rpx;
+  /* display: flex !important;
+  justify-content: space-between; */
+}
+
+.leixingview {
+  border: 1px solid #9b9b9b;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 31rpx;
+  padding: 2rpx 20rpx;
+  margin-left: 20rpx;
+  /* float: left; */
+  display: inline-block;
+  color: #9B9B9B;
+}
+
+.cur_color {
+  border: 2rpx solid #01a0eb;
+  color: #01a0eb;
+}
+
+/* .cur_color text {
+
+  color: #01A0EB;
+} */
+
+.leixingview text {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.shangbgView {
+  margin-left: 26rpx;
+  margin-right: 26rpx;
+  width: calc (100% -52rpx);
+  margin-top: 36rpx;
+  background: #fff;
+  box-shadow: 0 4rpx 40rpx 0 rgba(204, 204, 204, 0.50);
+  border-radius: 12rpx;
+}
+
+.shangpincell {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.lineclass {
+  height: 2rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  /* border: 1rpx solid #D8D8D8; */
+  background-color: #d8d8d8;
+}
+
+.imageview {
+  width: 250rpx;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  background: #fff;
+}
+
+.imageview image {
+  border-radius: 6rpx;
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.myshangpininfoView {
+  width: calc(100% - 250rpx);
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+}
+
+.titleView {
+  width: clac(100% - 20rpx);
+  margin-left: 20rpx;
+}
+
+.titleView text {
+  font-family: PingFangSC-Semibold;
+  font-size: 32rpx;
+  color: #000;
+}
+
+.tipsInfoView {
+  width: clac(100% - 20rpx);
+  margin-left: 20rpx;
+}
+
+.tipsInfoView text {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #9b9b9b;
+}
+
+.shangpinBgView {
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+}
+
+.moneyView {
+  width: clac(100% - 20rpx);
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.moneyInfoview {
+  width: 100rpx;
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.moneyIcon {
+  font-family: PingFangSC-Semibold;
+  font-size: 28rpx;
+  color: #f14d5c;
+  line-height: 40px;
+}
+
+.moneyTips {
+  font-family: PingFangSC-Semibold;
+  font-size: 38rpx;
+  color: #f14d5c;
+  line-height: 40px;
+}
+
+.bttonVIew {
+  margin-top: 20rpx;
+  width: 260rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.xiaoshowFenTitile {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #9b9b9b;
+}
+
+.xiaoshoufen {
+  font-family: PingFangSC-Medium;
+  font-size: 24rpx;
+  color: #000;
+}
+
+.shareBtnView {
+  /* height: 66rpx;
+  width: 74rpx; */
+  height: 50rpx;
+  width: 50rpx;
+  margin-right: 30rpx;
+  margin-bottom: 10rpx;
+  margin-top: -5rpx;
+}
+
+.shareBtnView
+ image {
+  height: 44rpx;
+  width: 44rpx;
+}
+
+.headerIVbackView {
+  width: 160rpx;
+  position: absolute;
+  z-index: 100;
+  top: 324rpx;
+  left: 50rpx;
+}
+
+.editbackView {
+  background-image: linear-gradient(-270deg, #40c6ff 0%, #01a0eb 100%);
+  box-shadow: 0 4rpx 36rpx 0 #c8eeff;
+  border-radius: 45rpx;
+  width: 90rpx;
+  height: 90rpx;
+  position: fixed;
+  z-index: 999;
+  bottom: 115rpx;
+  right: 37rpx;
+  text-align: center;
+  line-height: 90rpx;
+}
+
+.editbackView text {
+  font-family: PingFangSC-Semibold;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.addImageView {
+  height: 404rpx;
+  width: 100%;
+  z-index: -1;
+  background: #d8d8d8;
+  text-align: center;
+  line-height: 404rpx;
+}
+
+.addImageView text {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #4a4a4a;
+}
+
+.addImageViewss {
+  height: 404rpx;
+  width: 100%;
+  background: #fcfcfc;
+  text-align: center;
+  line-height: 404rpx;
+}
+
+.addImageViewss text {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #4a4a4a;
+}

@@ -1,0 +1,49 @@
+<!--pages/MePage/wallatPage.wxml-->
+<!-- <text>pages/MePage/wallatPage.wxml</text> -->
+<view class='wallatcontainer'>
+  <view class='topview'>
+    <view class='titleview'>
+      <text class='balance'>钱包余额</text>
+      <text class='detail' catchtap='jumpDetail'>查看明细</text>
+    </view>
+    <view class='balanceView'>
+      <text class='balanceprecent'>昨日提现比例:{{walletInfo.percent}}</text>
+      <image class='balanceImage' src='../../Images/shop/ask.png' catchtap='clickAsk'></image>
+    </view>
+    <view class='balancenumber'>
+      <text class='money'>¥{{walletInfo.currentBalance}}</text>
+      <text class='action' catchtap='jumpPutForward'>提现</text>
+    </view>
+  </view>
+
+  <block wx:if="{{hasXinyuan}}">
+    <view class='bottomview'>
+      <view class='wish'>
+        <text class='wishtitle'>我的心愿</text>
+        <text class='wishdetail' catchtap='wishdetail'>详情</text>
+      </view>
+      <view class='wishinfo'>
+        <text class='wishinfotitle'>{{desireInfo.name}}</text>
+        <text class='wishdistant'>{{desireInfo.residueAmount}}</text>
+      </view>
+      <van-progress class='progress' color='#01a0eb' percentage='{{desireInfo.desirePercent}}'  pivot-text=""
+  pivot-color="#01a0eb"
+  color="linear-gradient(to right, #02CEF7, #01A0EB)"
+  ></van-progress>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class='bottomview_else'>
+      <view class='wish'>
+        <text class='wishtitle'>我的心愿</text>
+        <text class='wishdetail_else' catchtap='wishhistory'>历史心愿</text>
+      </view>
+      <text class='wishinfotitle_else'>暂无进行中的心愿</text>
+    </view>
+    <view class='addwish'>
+    <text class='addwishtext' bindtap='addwish'>新建心愿</text>
+    </view>
+  </block>
+
+</view>

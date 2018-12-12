@@ -1,0 +1,140 @@
+/* pages/RecomandPage/submitOrder/index.wxss */
+
+.shop, .invite {
+  box-shadow: 0px 2px 20px 0 #ccc;
+  background: #fff;
+  width: calc(100% - 50px);
+  border: 1px solid #dcdcdc;
+  margin: 10px auto;
+  border-radius: 6px;
+  padding: 10px 10px 30px 10px;
+}
+
+.shop_nearby, .invite_shop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.shop_nearby_left {
+  color: #9b9b9b;
+  font-size: 14px;
+}
+
+.shop_nearby_right {
+  color: #4a4a4a;
+  font-size: 14px;
+}
+
+.shop_person {
+  display: flex;
+  margin-top: 10px;
+}
+
+.shop_person_name {
+  color: #4a4a4a;
+  font-size: 16px;
+}
+
+.shop_person_phone {
+  color: #4a4a4a;
+  font-size: 14px;
+  margin-left: 20px;
+  margin-top: 2px;
+}
+
+.shop_desc {
+  margin-top: 10px;
+  color: #4a4a4a;
+  font-size: 14px;
+}
+
+.pay_detail {
+  padding: 20px 10px;
+}
+
+.pay_detail_title {
+  color: #4a4a4a;
+  font-size: 15px;
+}
+
+.pay_money {
+  color: #f14d5c;
+  font-size: 19px;
+}
+
+.invite_shop image {
+  height: 15px;
+  width: 15px;
+}
+
+.invite_shop_left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.invite_shop_left1 {
+  color: #4a4a4a;
+  font-size: 14px;
+}
+
+.invite_shop_left2 {
+  color: #000;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.invite_shop_pos {
+  color: #4a4a4a;
+  font-size: 14px;
+}
+
+.content {
+  padding-bottom: 70px;
+}
+
+.more_pay_order {
+  box-shadow: 0px 2px 20px 0 #ccc;
+  background: #fff;
+  width: calc(100% - 30px);
+  border: 1px solid #dcdcdc;
+  margin: 10px auto;
+  border-radius: 6px;
+}
+.blue-card{
+  box-shadow: 0px 0px 0px #fff !important;
+  background: #fff !important;
+  width:100% !important;
+  border: 0px solid #fff !important;
+  margin: 0px auto !important;
+  border-radius: 0px !important;
+}
+.van-card{
+  border-bottom:0px solid #fff !important;
+}
+.order_detail{
+  border-bottom:1px solid #dcdcdc;
+}
+.blue-person {
+  margin: 9px 15px 10px 15px;
+  display: flex;
+  align-items: center;
+}
+.blue-card__title {
+  padding: 10px 15px 0px 10px;
+  font-size: 16px;
+}
+.blue-card__headimg {
+  height: 33px;
+  width: 33px;
+  border-radius: 50%;
+}
+
+.blue-card__name {
+  font-size: 16px;
+  color: #4a4a4a;
+  vertical-align: middle;
+  margin-left: 10px;
+}

@@ -1,0 +1,174 @@
+<view class='backView'>
+
+  <view class='HeaderView' wx:if="{{backgroundIVs.length>0}}">
+    <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{backgroundIVs}}"  wx:for-item="item">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="150"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    <!-- <image src="{{backgroundIVs[0]}}" > -->
+    <!-- </image> -->
+  </view>
+  <view class='addImageView' wx:else>
+    <text>暂无背景图片</text>
+  </view>
+  <view class='infoview'>
+    <van-tabs active="{{ active }}" color="#01A0EB" line-width="0rpx">
+
+
+     <block wx:for="{{categoryList}}" wx:for-item="category" wx:for-index="categoryidx"  wx:key="index">
+      <van-tab title="{{category.category.name}}">
+        <view class=' shangpinBgView'>
+
+          <scroll-view class="nav" scroll-x="true" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+
+
+            <block wx:for="{{category.productDIYList}}" wx:for-item="productDIY" wx:for-index="productDIYidx">
+              <view class="leixingview  {{currentProducts[categoryidx].chooseIndex == productDIYidx ? 'cur_color' : ''}}"  bindtap='choosetheDIY' data-index="{{productDIYidx}}" data-categoryidx="{{categoryidx}}" data-products="{{productDIY}}">
+                <text>{{productDIY.productDIY.name}}</text>
+              </view>
+            </block>
+          </scroll-view>
+          <view class='shangbgView'wx:if="{{currentProducts[categoryidx].products.length>0}}">
+
+
+            <block wx:for="{{currentProducts[categoryidx].products}}" wx:for-item="product" wx:for-index="productidx">
+              <view class='shangpincell'  catchlongtap ='deleteAction' data-product="{{product}}">
+              <view class='imageview' wx:if="{{product.isLucky=='true'}}">
+                  <image src="../../../Images/shop/fd.png"></image>
+                </view>
+
+                <view class='imageview' wx:if="{{product.isLucky=='false'}}">
+                  <image src="{{product.icon}}"></image>
+                </view>
+                <view class='myshangpininfoView'>
+                  <view class='titleView'>
+                    <text class=''> {{product.name}}</text>
+
+                  </view>
+                  <view class='tipsInfoView'>
+                    <text> {{product.productMaterial}}</text>
+
+                  </view>
+                  <view class='moneyView'>
+                    <view class=' moneyInfoview'>
+                      <text class='moneyIcon'>￥</text>
+                      <text class='moneyTips'>{{product.salePrice}}</text>
+
+                    </view>
+                    <view class='bttonVIew' catchtap='shangxiaAction' data-product="{{product}}">
+                  <text>{{product.isopen==0?'上架':'下架'}}</text>
+                  </view>
+                  </view>
+                </view>
+              </view>
+                <view class='lineclass'>
+              </view>
+            </block>
+
+          </view>
+           <view class='addImageViewss' wx:else>
+          <text>暂无商品</text>
+          </view>
+        </view>
+
+      </van-tab>
+    </block>
+
+
+
+      <!-- <van-tab title="商品">
+        <view class=' shangpinBgView'>
+
+          <scroll-view class="nav" scroll-x="true" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+            <view class='leixingview'>
+              <text>超大杯酸奶</text>
+            </view>
+            <view class='leixingview'>
+              <text>超大杯酸奶</text>
+            </view>
+          </scroll-view>
+          <view class='shangbgView'>
+            <view class='shangpincell'>
+              <view class='imageview'>
+                <image src='https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1541316728&di=7c0962cf9367e519e7f5c1ac43905f51&src=http://img.mp.sohu.com/upload/20170815/c31de52066b745e49c1e789a92148798_th.png'></image>
+              </view>
+              <view class='myshangpininfoView'>
+                <view class='titleView'>
+                  <text class=''> 超大的芒果酸奶</text>
+
+                </view>
+                <view class='tipsInfoView'>
+                  <text> 芒果x2 荔枝x1 马卡龙x1 红心火龙果x1 麻辣薯片x1 木瓜x1 哈密瓜x1</text>
+
+                </view>
+                <view class='moneyView'>
+                  <view class=' moneyInfoview'>
+                    <text class='moneyIcon'>￥</text>
+                    <text class='moneyTips'>50</text>
+
+                  </view>
+                  <view class=' bttonVIew'>
+                  <text>上架</text>
+                  </view>
+                </view>
+
+
+              </view>
+
+            </view>
+          </view>
+
+
+        </view>
+
+
+
+      </van-tab>
+      <van-tab title="商品">
+      </van-tab>
+      <van-tab title="商品">
+      </van-tab>
+      <van-tab title="商品">
+      </van-tab> -->
+
+
+
+
+    </van-tabs>
+  </view>
+
+  <view class='whiteBgView'>
+    <view class='firstview'>
+      <view class='firsttopView'>
+        <text class='bigText'>{{putawayAmount}}</text>
+        <text class='samlltext'>/{{maxAmount}}</text>
+      </view>
+      <view class='firstEndtView'catchtap='showTips'>
+        <text>已上架商品</text>
+        <image src='../../../Images/Recomand/wenhao_icon.png' ></image>
+      </view>
+
+    </view>
+    <view class='sencondView'>
+      <view class='firsttopView'>
+        <text class='MiddleText'>{{productAmount}}</text>
+      </view>
+      <view class='firstEndtView'>
+        <text>已创建产品</text>
+      </view>
+    </view>
+
+
+
+
+  </view>
+  <view class='editbackView' catchtap='editAction'>
+    <text>新建</text>
+  </view>
+    <van-dialog id="van-dialog" />
+
+</view>

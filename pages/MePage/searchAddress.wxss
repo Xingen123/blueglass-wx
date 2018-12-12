@@ -1,0 +1,71 @@
+/* pages/MePage/searchAddress.wxss */
+
+.address_contianer {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputview {
+  margin-top: 10rpx;
+  margin-left: 28rpx;
+  width: calc(100% - 56rpx);
+  height: 88rpx;
+  background: #f6f6f6;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputtext {
+  margin-left: 28rpx;
+  width: calc(100% - 56rpx);
+  height: 88rpx;
+  font-size: 30rpx;
+}
+
+.searchview {
+  margin-top: 80rpx;
+  margin-left: 30rpx;
+  width: calc(100% - 60rpx);
+  align-items: center;
+
+}
+
+.result_view {
+  display: flex;
+  flex-direction: row;
+  margin-left: 30rpx;
+  width: calc(100% - 60rpx);
+  height: 40rpx;
+  justify-content: space-between;
+}
+
+.result_left {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #000;
+}
+
+.addressinfo {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #9b9b9b;
+}
+
+.result_right {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #4a4a4a;
+}
+
+.lineview {
+  background: #d8d8d8;
+  height: 2rpx;
+  margin-left: 30rpx;
+  width: calc(100% - 60rpx);
+}

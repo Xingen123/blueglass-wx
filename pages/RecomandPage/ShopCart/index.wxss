@@ -1,0 +1,4 @@
+/* pages/RecomandPage/ShopCart/index.wxss */
+.closeTip{
+  float: right;
+}

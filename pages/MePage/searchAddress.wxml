@@ -1,0 +1,18 @@
+<!--pages/MePage/searchAddress.wxml-->
+<!-- <text>pages/MePage/searchAddress.wxml</text> -->
+
+<view class='address_contianer'>
+  <view class='inputview'>
+    <input type='text' class='inputtext' placeholder='在这输入地址' bindinput="bindKeyInput"></input>
+  </view>
+  <block wx:for="{{addressArray}}" wx:for-item="item" wx:for-index="idx">
+    <view class='searchview' bindtap='backAction' data-address = "{{item}}">
+      <view class='result_view'>
+        <view class=' result_left'>
+          <text class='name'>{{item.name}}</text>
+        </view>
+      </view>
+      <view class='lineview'></view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,17 @@
+<!--pages/ShopPage/shareShopHOme/index.wxml-->
+<view style='height:100%;width:100%;background:#FDFDFD;'>
+  <canvas canvas-id='share' class="canvasId" style='min-height:463px;width:92%;margin:0 auto;box-shadow:3px 3px 10px #E0E0E0;' hidden='{{canvasHidden}}'></canvas> 
+
+  <!-- <canvas style="width: 55px; height: 55px;" canvas-id="myQrcode"></canvas> -->
+
+  <scroll-view class="nav" scroll-x="true" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+              <!-- <view class="leixingview  {{currentProducts[categoryidx].chooseIndex == productDIYidx ? 'cur_color' : ''}}" bindtap='choosetheDIY' data-index="{{productDIYidx}}" data-categoryidx="{{categoryidx}}" data-products="{{productDIY}}">
+                <text>{{productDIY.productDIY.name}}</text>
+              </view> -->
+            <view>
+              <image wx:for="{{posterStyles}}" wx:for-item="posterStyles" wx:for-index="productDIYidx" src='{{posterStyles}}' catchtap='changeImg' data-imgsrc='{{posterStyles}}' wx:key="index"></image>
+            </view>
+          </scroll-view>
+          <view class='shareDesc'>保存海报，将图片发送给好友</view>
+  <button class='savaImage box-shoaw' catchtap='savaImg'>保存图片</button>
+</view>

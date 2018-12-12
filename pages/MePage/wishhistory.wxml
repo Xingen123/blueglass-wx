@@ -1,0 +1,55 @@
+<!--pages/MePage/wishhistory.wxml-->
+<!-- <text>pages/MePage/wishhistory.wxml</text> -->
+
+<view class='wish_history_contianer'>
+  <block wx:for="{{historyDesireInfo}}" wx:for-item="item" wx:for-index="idx">
+    <view class='miview'></view>
+    <block wx:if="{{item.desirePercent == '100%'}}">
+      <view class='wish_history_cell'>
+        <view class='cell_top_view'>
+          <text class='top_title'>已完成</text>
+        </view>
+        <view class='cell_view'>
+          <text class='cell_title'>心愿名称</text>
+          <text class='cell_info'>{{item.name}}</text>
+        </view>
+        <view class='cell_view'>
+          <text class='cell_title'>目标金额</text>
+          <text class='cell_info'>{{item.targetAmount}}</text>
+        </view>
+        <view class='cell_view'>
+          <text class='cell_title'>起始日期</text>
+          <text class='cell_info'>{{item.startDate}}</text>
+        </view>
+        <view class='cell_view'>
+          <text class='cell_title'>心愿进度</text>
+          <text class='cell_info'>{{item.desirePercent}}</text>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+          <view class='wish_history_cell'>
+        <view class='cell_top_view_gray'>
+          <text class='top_title_gray'>已失效</text>
+        </view>
+        <view class='cell_view'>
+          <text class='cell_title'>心愿名称</text>
+          <text class='cell_info'>{{item.name}}</text>
+        </view>
+        <view class='cell_view'>
+          <text class='cell_title'>目标金额</text>
+          <text class='cell_info'>{{item.targetAmount}}</text>
+        </view>
+        <view class='cell_view'>
+          <text class='cell_title'>起始日期</text>
+          <text class='cell_info'>{{item.startDate}}</text>
+        </view>
+        <view class='cell_view'>
+          <text class='cell_title'>心愿进度</text>
+          <text class='cell_info'>{{item.desirePercent}}</text>
+        </view>
+      </view>
+    </block>
+
+  </block>
+</view>

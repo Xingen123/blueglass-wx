@@ -1,0 +1,31 @@
+/* pages/MePage/edit.wxss */
+
+.editcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.imgHead{
+  position: relative;
+  width:50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+}
+.logoutview {
+  background: #fff;
+  box-shadow: 0 -7px 71px 0 rgba(234, 234, 234, 0.50);
+  height: 100rpx;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logouttext {
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #01a0eb;
+}

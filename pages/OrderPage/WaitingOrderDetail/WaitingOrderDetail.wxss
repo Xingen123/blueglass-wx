@@ -1,0 +1,51 @@
+/* pages/OrderPage/WaitingOrderDetail/WaitingOrderDetail.wxss */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bg {
+  width: 350rpx;
+  height: 350rpx;
+  top: 150rpx;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 175rpx;
+  background-image: linear-gradient(-270deg, #02CEF7 0%, #01A0EB 100%);
+}
+
+.count {
+  margin-top: -70rpx;
+  font-family: DINAlternate-Bold;
+  font-size: 78rpx;
+  color: #fff;
+}
+
+.label {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.arr_time {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.cancel_btn {
+  margin-top: 350rpx;
+  font-family: PingFangSC-Medium;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background: #01a0eb;
+  border-radius: 12rpx;
+  width: calc(100% - 42rpx);
+  height: 90rpx;
+}

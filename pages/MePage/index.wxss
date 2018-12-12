@@ -1,0 +1,253 @@
+/* pages/MePage/index.wxss */
+
+.me_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.headview {
+  width: 100%;
+  height: 120rpx;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nameview {
+  width: 660rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.headimage {
+  width: 90rpx;
+  height: 90rpx;
+  margin-left: 30rpx;
+  border-radius: 45rpx;
+}
+
+.nametextview {
+  display: flex;
+  flex-direction: column;
+  margin-left: 44rpx;
+  text-align: left;
+}
+
+.name {
+  font-family: PingFangSC-Medium;
+  font-size: 36rpx;
+  color: #000;
+}
+
+.shop {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #4a4a4a;
+}
+
+.editbutton {
+  width: 56rpx;
+  height: 40rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #4a4a4a;
+  margin-right: 20rpx;
+}
+
+.progressview {
+  display: flex;
+  flex-direction: row;
+  margin-left: 44rpx;
+  width: calc(100% - 88rpx);
+  height: 50rpx;
+  align-items: center;
+}
+
+.progressimage {
+  width: 626rpx;
+  height: 1rpx;
+  align-items: center;
+}
+.van-progress{
+  height: 20rpx;
+}
+.iconimage {
+  margin-left: 22rpx;
+  width: 34rpx;
+  height: 41rpx;
+}
+
+.swiperimg {
+  /* border-radius: 12rpx; */
+  height: 320rpx;
+  text-align: center;
+}
+
+.slide-image {
+  width: 650rpx;
+  border-radius: 12rpx;
+  height: 250rpx;
+}
+
+.progress {
+  border-radius: 14px;
+  height: 41rpx;
+}
+
+.progresstext {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 40rpx;
+  width: calc(100% - 80rpx);
+}
+
+.targetprogress {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #4a4a4a;
+}
+
+.targetname {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #4a4a4a;
+}
+
+.swiperview {
+  margin-top: 41rpx;
+  width: 100%;
+}
+
+.bottomview {
+  margin-top: 40rpx;
+}
+
+.weui-grids {
+  position: relative;
+  overflow: hidden;
+}
+
+.weui-grids:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  color: #d9d9d9;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.weui-grids:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  color: #d9d9d9;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+
+.weui-grid {
+  position: relative;
+  float: left;
+  padding: 20px 10px;
+  width: 33.33333333%;
+  box-sizing: border-box;
+}
+
+.weui-grid:before {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  color: #d9d9d9;
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+
+.weui-grid:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  color: #d9d9d9;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.weui-grid:active {
+  background-color: #ececec;
+}
+
+.weui-grid__bg {
+  position: relative;
+  float: left;
+  padding: 0px 0px;
+  width: 100%;
+}
+
+.weui-grid__icon {
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 12px 20px 0 rgba(231, 231, 231, 0.50);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weui-grid__icon image {
+  width: 50%;
+  height: 50%;
+}
+
+.weui-grid__icon + .weui-grid__label {
+  margin-top: 10rpx;
+}
+
+.weui-grid__label {
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #4a4a4a;
+}
+
+button::after {
+  border: none;
+}
+
+button {
+  background-color: #fff;
+}
+
+.contact_btn image {
+  vertical-align: middle;
+  width: 66rpx;
+  height: 66rpx;
+}

@@ -1,0 +1,32 @@
+/* pages/OrderPage/DistributionOrderDetail/index.wxss */
+
+.blue-card {
+  margin-top: 20px !important;
+}
+.van-icon{
+  padding-bottom:4px;
+}
+.van-icon-location {
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.purch_ewm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40rpx;
+}
+.purch_ewm image{
+  height: 150px;
+  width: 150px;
+}
+.purch_qu{
+  font-size: 15px;
+  color: #4a4a4a;
+  margin-top: 8px;
+}
+.purch_show{
+   font-size: 12px;
+  color: #9b9b9b;
+  margin-top: 5px;  
+}

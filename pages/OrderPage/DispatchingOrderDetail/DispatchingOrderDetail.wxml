@@ -1,0 +1,28 @@
+<!--pages/OrderPage/DispatchingOrderDetail/DispatchingOrderDetail.wxml-->
+<!-- <text>pages/OrderPage/DispatchingOrderDetail/DispatchingOrderDetail.wxml</text>-->
+<map id='map' style="width: 100%; height: 100vh;">
+  <cover-view class='cover_view'>
+    <view class='top_view'>
+      <view class='left_view'>
+        <text class='shopname'>BlueGlass 温特来店 </text>
+        <image src='../../../Images/Order/shop.png' class='icon'></image>
+      </view>
+      <view class='right_view'>
+        <image src='../../../Images/Order/time.png' class='icon'></image>
+        <text class='shopname'> 07:00-21:00</text>
+      </view>
+    </view>
+    <view class='mid_view'>
+      <view class='mid_border_view'>
+        <text class='addressname'>温特莱中心一层 ></text>
+        <image src='../../../Images/Order/address.png' class='bottom_icon'></image>
+      </view>
+    </view>
+    <view class='mid_view'>
+      <view class='mid_border_view'>
+        <text class='addressname'>010-66666666 ></text>
+        <image src='../../../Images/Order/phone.png' class='bottom_icon'></image>
+        </view>
+      </view>
+  </cover-view>
+</map>

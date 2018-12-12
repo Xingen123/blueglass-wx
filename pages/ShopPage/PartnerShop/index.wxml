@@ -1,0 +1,21 @@
+<!--合伙人店铺-->
+<!--pages/ShopPage/PartnerShop/idnex.wxml-->
+<view class='content'>
+    <view class='sologn'>每天一杯blueglass，天天美滋滋</view>
+
+    <view class='shop'>
+      <image src='../../../Images/Order/address.png'></image>
+      <view class='shop_right'>
+         <view class='shop_name'>Blueglass 温特莱店</view>
+        <view class='shop_dj'>白银店铺</view>
+      </view>
+    </view>
+
+    <view class="shop_sale">
+        <view class='shop_sale_ymc'>已卖出<span>234</span>份</view>
+        <view class='shop_sale_jl'>记录</view>
+    </view>
+
+      <view class='circle yqhy'>首页</view>
+      <view class='circle qdd'>点单</view>
+</view>

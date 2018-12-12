@@ -1,0 +1,366 @@
+/* pages/ShopPage/addProduct/index.wxss */
+
+.probody {
+  background: #dcdcdc;
+  position: relative;
+}
+
+.box-shoaw {
+  background: #fff;
+  box-shadow: 0 4px 40px 0 rgba(215, 215, 215, 0.50);
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.add_steps {
+  width: 100%;
+  white-space: nowrap;
+  background: #fff;
+}
+
+.first {
+  color: #01a0eb;
+}
+
+.add_steps view {
+  display: inline-block;
+  text-align: center;
+  height: 84rpx;
+  line-height: 84rpx;
+  padding: 0 10rpx;
+  background: #fff;
+  box-shadow: 0 4px 40px 0 rgba(215, 215, 215, 0.50);
+}
+
+.add_introduce {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 28rpx;
+  color: #000;
+  padding-right: 40rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 90rpx;
+  z-index: 9;
+}
+
+.material {
+  position: relative;
+  /* padding-top: 80rpx; */
+  padding-bottom: 20rpx;
+}
+
+.glass {
+  text-align: center;
+}
+
+.glass_con_bg {
+  /* height: 600rpx;
+  width: 349.5rpx; */
+  height: 867rpx;
+  width: 750rpx;
+  /* width: 100%; */
+  margin: 0 auto;
+  display: block;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.glass_desc {
+  font-size: 28rpx;
+  color: #9b9b9b;
+}
+
+.money_next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 40rpx;
+  position: fixed;
+  bottom: 300rpx;
+  left: 0;
+  width: calc(100% - 80rpx);
+  z-index: 9;
+}
+
+.circle {
+  background: #fff;
+  box-shadow: 0 -7px 71px 0 rgba(207, 206, 206, 0.5);
+  height: 100rpx;
+  width: 110rpx;
+  border-radius: 50%;
+  line-height: 110rpx;
+  text-align: center;
+}
+
+.price {
+  font-size: 38rpx;
+  color: #01a0eb;
+}
+
+.next {
+  font-size: 26rpx;
+  color: #4a4a4a;
+}
+
+.fruit {
+  position: fixed;
+  bottom: 0;
+  height: 198rpx;
+  background: #fff;
+  box-shadow: 0 -7px 71px 0 rgba(234, 234, 234, 0.50);
+  width: 100%;
+  padding-bottom: 40rpx;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.fruit_class {
+  /* width: 100rpx; */
+  height: 300rpx;
+  padding: 0 30rpx;
+  margin-top: 40rpx;
+  padding-bottom: 40rpx;
+  border-right: 2rpx dashed #200c0c;
+  display: inline-block;
+  text-align: center;
+}
+
+.fruit_img {
+  /* width: 100rpx; */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fruit_img image {
+  height: 100%;
+  width: 100%;
+}
+
+.fruit_class view {
+  font-size: 28rpx;
+  color: #4a4a4a;
+}
+
+.glass_con {
+  position: relative;
+  z-index: 9;
+}
+
+.glass_con_first {
+  position: absolute;
+  left: 228rpx;
+  bottom: 200rpx;
+  z-index: -1;
+  /* overflow:hidden; */
+}
+
+.glass_con_first image {
+  height: 157rpx;
+  width: 286rpx;
+}
+
+.glass_con_second {
+  position: absolute;
+  left: 204rpx;
+  bottom: 356rpx;
+  width: 300rpx;
+  height: 240rpx;
+}
+
+.glass_second_relative {
+  position: relative;
+  overflow: hidden;
+  width: 300rpx;
+  height: 240rpx;
+  z-index: -1;
+}
+
+.glass_second_relative image:nth-child(1) {
+  position: absolute;
+  bottom: 0rpx;
+  left: 0;
+}
+
+.glass_second_relative image:nth-child(2) {
+  position: absolute;
+  bottom: 60rpx;
+  left: 0;
+}
+
+.glass_second_relative image:nth-child(3) {
+  position: absolute;
+  bottom: 120rpx;
+  left: 0;
+}
+
+.glass_second_relative image:nth-child(4) {
+  position: absolute;
+  bottom: 180rpx;
+  left: 0;
+}
+
+.glass_con_second image {
+  height: 157rpx;
+  width: 286rpx;
+  margin-top: 5rpx;
+  margin-left: 10rpx;
+  float: left;
+}
+
+.glass_con_second__thrid {
+  position: absolute;
+  left: 250rpx;
+  bottom: 390rpx;
+  width: 260rpx;
+}
+
+.glass_con_second__thrid image {
+  height: 20rpx;
+  width: 200rpx;
+  margin-top: 5rpx;
+  margin-left: 10rpx;
+  float: left;
+}
+
+.drag {
+  position: absolute;
+  left: 20rpx;
+  top: 20rpx;
+}
+
+.drag_con {
+  position: relative;
+  height: 180rpx;
+  width: 180rpx;
+}
+
+.delete {
+  height: 44rpx;
+  width: 44rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.kd {
+  height: 44rpx;
+  width: 44rpx;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.drag_img {
+  margin-left: 20rpx;
+  margin-top: 22rpx;
+}
+
+movable-area {
+  height: 170rpx;
+  width: 250rpx;
+  position: absolute;
+  top: -137rpx;
+  left: 150rpx;
+}
+
+.shop_cart {
+  width: 560rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 12px;
+  padding: 20rpx 0;
+  z-index: 99999;
+  overflow: hidden;
+  margin-top: 150rpx;
+}
+
+.shop_first {
+  border-bottom: 2rpx solid #dcdcdc;
+  padding-bottom: 20rpx;
+}
+
+.shop_first_del {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.shop_first_title {
+  font-size: 30rpx;
+  color: #4a4a4a;
+  text-align: left;
+  margin-left: 40rpx;
+  margin-bottom: 10rpx;
+}
+
+.shop_first_del image {
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.shop_first_p {
+  font-size: 28rpx;
+  color: #4a4a4a;
+  text-align: left;
+}
+
+.shop_first_btn {
+  border: 1px solid #9b9b9b;
+  border-radius: 25.2rpx;
+  color: #9b9b9b;
+  height: 43rpx;
+  line-height: 43rpx;
+  font-size: 24rpx;
+}
+
+.shop_cart_save {
+  border: 2rpx solid #01a0eb;
+  border-radius: 40px;
+  height: 66rpx;
+  width: 320rpx;
+  color: #01a0eb;
+  text-align: center;
+  line-height: 66rpx;
+  margin: 50rpx auto 0;
+}
+
+.mark_dialog {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 19;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  /* display: none; */
+}
+
+.glass_bg {
+  position: relative;
+}
+
+.glass_bg_2 {
+  position: absolute;
+  left: 248rpx;
+  top: 212rpx;
+  height: 545rpx;
+  width: 297rpx;
+}
+
+.myCanvas {
+  position: fixed;
+  left: 250rpx;
+  top: 215rpx;
+  height: 620rpx;
+  width: 300rpx;
+  /* z-index: 9999999; */
+}

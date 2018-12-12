@@ -1,0 +1,76 @@
+.backView {
+  background-color: #fcfcfc;
+  height: 100%;
+  width: 100%;
+}
+
+.whiteView {
+  background: #fff;
+  box-shadow: 0 -7rpx 71rpx 0 rgba(234, 234, 234, 0.50);
+  border-radius: 12rpx;
+  width: calc(100% - 50rpx);
+  margin-left: 25rpx;
+}
+
+.infoView {
+  width: 100%;
+  height: 243rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.infoView image {
+  margin-left: 20rpx;
+  width: 52rpx;
+  height: 89rpx;
+}
+
+.xuxianLine {
+  border: 1rpx dashed #979797;
+}
+
+.textView {
+  width: calc(100% - 150rpx);
+  margin-left: 30rpx;
+  line-height: 30rpx;
+}
+
+.textView text {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #000;
+}
+
+.mybutton {
+  margin-top: 200rpx;
+  margin-left: calc(50% - 150rpx);
+  height: 88rpx;
+  width: 300rpx;
+  border: 2rpx solid #01a0eb;
+  border-radius: 53rpx;
+  line-height: 88rpx;
+  text-align: center;
+}
+
+.mybutton text {
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #01a0eb;
+  
+}
+.tiaoguo
+{
+  margin-top: 10rpx;
+  margin-left: calc(50% - 100rpx);
+  height: 60rpx;
+  width: 200rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+.tiaoguo text {
+  font-family: PingFangSC-Regular;
+font-size: 24rpx;
+color: #4A4A4A;
+  
+}

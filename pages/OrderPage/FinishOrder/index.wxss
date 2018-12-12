@@ -1,0 +1,11 @@
+/* pages/OrderPage/UnpaidOrderDetail/index.wxss */
+.van-button--large{
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px !important;
+}
+.van-button--large image{
+  height: 22px;
+  width: 20.5px;
+}

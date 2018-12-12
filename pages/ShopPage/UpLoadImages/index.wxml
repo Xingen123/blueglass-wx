@@ -1,0 +1,25 @@
+<!-- 添加图片>
+
+<!--index.wxml-->
+<view class="containerss">
+  <view bindtap="box" class="box">
+    <image disable-scroll="true" catchtap='chooseImage' bindlongtap='longtapAction' wx:for="{{content}}" bindtouchmove="move" bindtouchstart="movestart" bindtouchend="moveend" data-index="{{item.numbers}}" data-imageID="{{item.id}}" data-main="{{mainx}}"
+      class="main {{mainx == item.numbers? 'mainmove':'mainend'}}" style="left:{{start.x}}px; top:{{start.y}}px" src="{{item.icon}}"  wx:key="index">
+      <view class='chooeIVClass' wx:if="{{item.choose}}">
+      </view>
+    </image>
+    <view class='main_img_'>
+      <image src='../../../Images/shop/addImage_Icon.png' mode='widthFix' class="main_img" wx:if="{{content.length<6}}" bindtap='addImageAction'></image>
+
+    </view>
+
+  </view>
+</view>
+
+<view class='footerView'>
+  <text class='delete'>
+    拖动图片调整顺序或长按删除图片
+    </text>
+
+</view>
+<van-dialog id="van-dialog" />

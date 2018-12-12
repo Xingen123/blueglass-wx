@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "van-button": "../../dist/area/index",
+    "van-submit-bar": "../../dist/submit-bar/index"
+  }
+}

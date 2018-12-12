@@ -1,0 +1,59 @@
+@import '../common/index.wxss';
+.blue-card{
+  box-shadow: 0px 2px 20px 0 #cccccc;
+  border-radius: 6px;
+  background: #fff;
+  width:calc(100% - 30px);
+  border: 1px solid #dcdcdc;
+  margin: 0 auto;
+  
+}
+.blue-card__title{
+  padding: 16px 15px 0px 22px;
+  font-size: 16px;
+}
+.van-card {
+  box-sizing: border-box;
+  position: relative;
+  /* height: 100px; */
+  color: #4a4a4a;
+  font-size: 12px;
+  padding: 9px 15px 10px 15px;
+  
+}
+
+.van-card--center {
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.order-card__content{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin:0 0 12px 9px;
+}
+.order-card__desc{
+  color: #9b9b9b;
+  font-size: 14px;
+  margin-right: 30px;
+  min-width: 56px;
+}
+.order-card__ordernum{
+  font-size: 16px;
+  color: #000;
+}
+.order-card__state{
+  color: #01a0eb;
+}
+.order-card__ordermoney{
+  font-size: 16px;
+}
+.order-card__discountmoney{
+  font-size: 16px;
+}
+.order-card__totalmoney{
+  font-size: 17px;
+  color: #f14d5c;
+}

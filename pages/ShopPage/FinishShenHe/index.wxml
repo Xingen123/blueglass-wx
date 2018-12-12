@@ -1,0 +1,18 @@
+<view class='back2View'>
+  <image src='../../../Images/shop/apply_background.png'>
+
+  </image>
+  <view class='kaidianView' bindtap='textkaidian'>
+    <text class='textkaidian'>经营一个牛气哄哄的店吧</text>
+  </view>
+
+  <view class='titleView'>
+  <text>精英天才说的就是你吧！</text>
+  </view>
+    <view class='infoView'>
+  <text>恭喜成为Blueglass   
+第{{sequence}}位创意合伙人啦   
+快去装饰你的梦想店吧   
+  </text>
+  </view>
+</view>

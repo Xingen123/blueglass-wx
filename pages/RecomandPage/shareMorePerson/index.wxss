@@ -1,0 +1,255 @@
+/* pages/RecomandPage/submitOrder/index.wxss */
+
+.van-tabs__line {
+  /* border:1px solid #01A0EB !important; *//* background-color:#fff !important; */
+}
+
+.shop, .invite {
+  box-shadow: 0px 2px 20px 0 #ccc;
+  background: #fff;
+  width: calc(100% - 50px);
+  border: 1px solid #dcdcdc;
+  margin: 10px auto;
+  border-radius: 6px;
+  padding: 10px 10px 30px 10px;
+}
+
+.shop_nearby, .invite_shop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.shop_nearby_left {
+  color: #9b9b9b;
+  font-size: 14px;
+}
+
+.shop_nearby_right {
+  color: #4a4a4a;
+  font-size: 14px;
+}
+
+.shop_person {
+  display: flex;
+  margin-top: 10px;
+}
+
+.shop_person_name {
+  color: #4a4a4a;
+  font-size: 16px;
+}
+
+.shop_person_phone {
+  color: #4a4a4a;
+  font-size: 14px;
+  margin-left: 20px;
+  margin-top: 2px;
+}
+
+.shop_desc {
+  margin-top: 10px;
+  color: #4a4a4a;
+  font-size: 14px;
+}
+
+.pay_detail {
+  padding: 20px 10px;
+}
+
+.pay_detail_title {
+  color: #4a4a4a;
+  font-size: 15px;
+}
+.circletouMin {
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  bottom: 100px;
+  width: 51.5px;
+  font-size: 13px;
+  color: #fff;
+  border-radius: 50%; 
+  text-align: center;
+    height:45.5px;
+  left: 15px;
+  padding-top: 6px;
+}
+
+.pay_money {
+  color: #f14d5c;
+  font-size: 19px;
+}
+
+.invite_shop image {
+  height: 15px;
+  width: 15px;
+}
+
+.invite_shop_left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.invite_shop_left1 {
+  color: #4a4a4a;
+  font-size: 14px;
+}
+
+.invite_shop_left2 {
+  color: #000;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.invite_shop_pos {
+  color: #4a4a4a;
+  font-size: 14px;
+}
+
+.van-tab__pane {
+  padding-bottom: 70px;
+}
+
+.showadress {
+  font-size: 15px;
+  color: #9b9b9b;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.fqr_detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d8d8d8;
+  padding-bottom: 10px;
+}
+
+.fqr_detail_left {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.icon_fqr {
+  height: 25px;
+  width: 25px;
+  margin-right: 15px;
+}
+
+.head_path {
+  height: 33px;
+  width: 33px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.fqr_detail_left text {
+  font-size: 16px;
+  color: #4a4a4a;
+}
+
+.fqr_detail_r {
+  color: #01a0eb;
+  font-size: 14px;
+  border: 1px solid #01a0eb;
+  border-radius: 13px;
+  padding: 2px 13px;
+}
+
+/* 产品名称酸奶 */
+
+.product {
+}
+
+.product_name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.product_name_n {
+  font-size: 14px;
+  color: #4a4a4a;
+  width: 25%;
+  overflow: hidden; /*自动隐藏文字*/
+  text-overflow: ellipsis; /*文字隐藏后添加省略号*/
+  white-space: nowrap; /*强制不换行*/
+}
+
+.product_name_num {
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+.product_name_price {
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+.jia {
+  border: 1px solid #01a0eb !important;
+  border-radius: 50% !important;
+  width: 23px !important;
+  height: 23px !important;
+}
+
+.jian {
+  border: 1px solid #979797 !important;
+  border-radius: 50% !important;
+  width: 23px !important;
+  height: 23px !important;
+}
+
+.numinput {
+  border: none !important;
+  width: 23px !important;
+}
+
+.total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.total_left {
+  font-size: 16px;
+  color: #4a4a4a;
+}
+
+.total_money {
+  font-size: 14px;
+  color: #f14d5c;
+}
+
+.circle {
+  background-image: linear-gradient(-270deg, #02cef7 0%, #01a0eb 100%);
+  box-shadow: 0 4px 33px 0 #c0ebff;
+  position: fixed;
+  bottom: 100px;
+  width: 51.5px;
+  font-size: 13px;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.yqhy {
+  height: 45.5px;
+  left: 15px;
+  padding-top: 6px;
+}
+
+.qdd {
+  height: 51.5px;
+  right: 15px;
+  line-height: 51.5px;
+}
+
+.closeTip {
+  float: right;
+}

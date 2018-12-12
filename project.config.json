@@ -1,0 +1,200 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"miniprogram": {
+		"name": "miniprogram-custom-component",
+		"version": "1.0.0",
+		"description": "",
+		"miniprogram": "dist",
+		"devDependencies": {},
+		"dependencies": {}
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"nodeModules": true,
+		"uglifyFileName": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.0",
+	"appid": "wx5a66f145c9524db1",
+	"projectname": "BlueGlass",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"color": "#666666",
+	"selectedColor": "#0080ba",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 23,
+			"list": [
+				{
+					"id": -1,
+					"name": "购买记录",
+					"pathName": "pages/MePage/shopLevel",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/MePage/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的菜单",
+					"pathName": "pages/ShopPage/MyShopHome/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "上下架",
+					"pathName": "pages/ShopPage/MyProductlibrary/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "图片剪切",
+					"pathName": "pages/ShopPage/UpLoadImages/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "头像",
+					"pathName": "pages/Upload/upload",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "编辑",
+					"pathName": "pages/MePage/edit",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "心愿进度",
+					"pathName": "pages/MePage/addwish",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "新建心愿",
+					"pathName": "pages/ShopPage/XinyuanStep/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的钱包",
+					"pathName": "pages/MePage/wallatPage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "推荐店铺",
+					"pathName": "pages/RecomandPage/RecomandIndex/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分享海报",
+					"pathName": "pages/ShopPage/shareShopHOme/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的店铺",
+					"pathName": "pages/ShopPage/shareMyShop/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的菜单",
+					"pathName": "pages/ShopPage/MyShopHome/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分享",
+					"pathName": "pages/ShopPage/shareMyShop/index",
+					"query": ""
+				},
+				{
+					"id": 15,
+					"name": "条款",
+					"pathName": "pages/ShopPage/myapplyView/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "排行榜",
+					"pathName": "pages/RankingPage/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "点单",
+					"pathName": "pages/RecomandPage/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的店铺",
+					"pathName": "pages/ShopPage/MyShop/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "保存图片",
+					"pathName": "pages/ShopPage/MyShop/MyshopShare/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提交订单",
+					"pathName": "pages/RecomandPage/submitOrder/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提交订单",
+					"pathName": "pages/RecomandPage/ShopCart/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提交订单",
+					"pathName": "pages/RecomandPage/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "dian",
+					"pathName": "pages/ShopPage/shareMyShop/index"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,18 @@
+<!--进行中订单-配送中-自取订单--待领取 bin-->
+<!--pages/OrderPage/PurchaseOrder/index.wxml-->
+<view>
+
+  <view class='purch_ewm'>
+      <canvas style="width: 150px; height: 150px;" canvas-id="myQrcode"></canvas>
+      <p class="purch_qu">取单二维码</p>
+      <p class="purch_show">将二维码出示给店员，完成取餐</p>
+  </view>
+<van-blue-button size="large" catchtap='merchantInfo' data-merchantId='{{merchantInfo.merchantId}}'>
+   <van-icon name="location" />{{merchantInfo.merchantAddress}} 
+</van-blue-button>
+  <van-order-card ordernum="{{orderInfo.orderNo}}" shopname="订单详情" ordertime="{{orderInfo.created}}" orderstate="{{orderInfo.status}}" ordermoney="{{orderInfo.payAmont}}" totalmoney="{{orderInfo.payableAmount}}"></van-order-card>
+
+    <van-blue-card msgData="{{items}}" shopname="{{shopname}}">
+  </van-blue-card>
+
+</view>

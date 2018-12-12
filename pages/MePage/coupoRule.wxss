@@ -1,0 +1,24 @@
+/* pages/MePage/coupoRule.wxss */
+
+.contianer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left:  69rpx;
+  margin-right: 69rpx;
+  width: calc(100%-138rpx);
+}
+
+.title {
+  font-family: PingFangSC-Medium;
+  font-size: 36rpx;
+  color: #000;
+}
+
+.desc {
+  margin-top: 27rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #9b9b9b;
+  line-height: 50rpx;
+}

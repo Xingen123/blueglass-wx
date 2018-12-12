@@ -1,0 +1,6 @@
+<!--pages/ShopPage/MyShop/MyshopShare/index.wxml-->
+<canvas style='height:1250rpx;width:90%;margin:0 auto; margin-bottom:200rpx; background:white;box-shadow:3px 3px 10px #E0E0E0;' hidden='{{canvasHidden}}'  canvas-id="firstCanvas"></canvas>
+<cover-view class='share'>
+    <cover-view class='shareText'>保存海报，将图片发送给好友。</cover-view>
+    <button bindtap='savaImg' class='savaImg'>保存图片</button>
+</cover-view>

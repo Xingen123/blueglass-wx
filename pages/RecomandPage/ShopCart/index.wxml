@@ -1,0 +1,16 @@
+<!--推荐---查看购物车 bin-->
+<!--pages/RecomandPage/ShopCart/index.wxml-->
+<view>
+  <van-blue-card msgData="{{items}}" shopname="{{shopname}}">
+  </van-blue-card>
+
+  <van-submit-bar 
+  label="总计：" 
+  price="{{ totalPrice * 100 }}" 
+  button-text="去结算" 
+  bind:submit="onClickButton">
+  <span slot="tip" class="closeTip">
+    <span><van-icon size="16px" name="close" /></span>
+  </span>
+  </van-submit-bar>
+</view>

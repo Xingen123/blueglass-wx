@@ -1,0 +1,15 @@
+<!--自取、配送订单规则 lancelot-->
+<view class='backView'>
+  <view class='titleViewClass'>
+    <text class='Mytitleclass'>福袋酸奶是什么？</text>
+
+  </view>
+  <view class='myinfoBackView'>
+    <view class='Myinfoclass'>
+      <text>朋友在收到你超赞的创意酸奶之前，并不知道自己购买的酸奶由哪些原料组成。
+
+开放你的脑洞吧尽情搭配吧！再为它想一个全宇宙最让人好奇的名字，给朋友一个永生难忘的记忆叭～
+</text>
+    </view>
+  </view>
+</view>

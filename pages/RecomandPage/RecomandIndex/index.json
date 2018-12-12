@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "推荐店铺",
+  "usingComponents": {
+    "van-button": "../../dist/area/index",
+    "van-submit-bar": "../../dist/submit-bar/index"
+  }
+}

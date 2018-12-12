@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "点单",
+  "usingComponents": {
+    "van-tab": "../../dist/tab/index",
+    "van-tabs": "../../dist/tabs/index",
+    "van-stepper": "../../dist/stepper/index"
+  }
+}

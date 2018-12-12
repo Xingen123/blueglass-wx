@@ -1,0 +1,45 @@
+<!--地址列表  lancelot-->
+<view class='backView'>
+  <view class='addressCellClassback'>
+    <view class='addressCellClass'>
+      <view class='addressCell_title'>
+        <text class='textTitle'>这是地址这是一个地址这是地址这是一个地址这是地址这是一个地址址地址址</text>
+        <text class='textInfo'>姓名电话 843548569345</text>
+      </view>
+      <view class='editClass'>
+        <view class='editVIewclass'>
+          <text>编辑</text>
+        </view>
+      </view>
+    </view>
+  </view>
+    <view class='addressCellClassback'>
+    <view class='addressCellClass'>
+      <view class='addressCell_title'>
+        <text class='textTitle'>这是地址这是一个地址址地址址</text>
+        <text class='textInfo'>姓名电话 843548569345</text>
+      </view>
+      <view class='editClass'>
+        <view class='editVIewclass'>
+          <text>编辑</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='addressCellClassback'>
+    <view class='addressCellClass'>
+      <view class='addressCell_title'>
+        <text class='textTitle'>这址地址址</text>
+        <text class='textInfo'>姓名电话 843548569345</text>
+      </view>
+      <view class='editClass'>
+        <view class='editVIewclass'>
+          <text>编辑</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</view>

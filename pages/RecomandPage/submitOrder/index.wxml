@@ -1,0 +1,91 @@
+<!--推荐-点单-提交订单    自取-配送-->
+<!-- "pages/RecomandPage/ShopCartMorePerson/index" -->
+<view>
+  <van-tabs type="card" color="#01A0EB" type="line" border="false" line-width="0" active="{{active}}" bind:change="onChange">
+    <van-tab title="自取">
+
+      <view class='invite'>
+
+        <view class='invite_shop'>
+          <view class='invite_shop_left'>
+            <view class='invite_shop_left1'>附近门店</view>
+            <view class='invite_shop_left2'>{{shortName}}</view>
+            <image src='../../../images/Order/shop.png'></image>
+          </view>
+          <image src='../../../images/Order/phone.png'></image>
+        </view>
+
+         <view class='invite_shop'>
+          <view class='invite_shop_pos'>
+            {{location}}
+          </view>
+          <image src='../../../images/Order/address.png'></image>
+        </view>
+
+      </view>
+
+      <view class='shop pay_detail'>
+        <view class='pay_detail_title'>支付详情</view>
+        <view class='shop_nearby'>
+          <view class='shop_nearby_left'>商品金额</view>
+          <view class='shop_nearby_right'>¥{{price}}</view>
+        </view>
+
+        <view class='shop_nearby'>
+          <view class='shop_nearby_left'>实际金额</view>
+          <view class='pay_money'>¥{{price}}</view>
+        </view>
+      </view>
+
+      <van-blue-card msgData="{{items}}" shopname="{{shopname}}">
+      </van-blue-card>
+      <van-submit-bar label="实际支付：" price="{{ price *100}}" button-text="立即支付" bind:submit="onClickButton">
+      </van-submit-bar>
+
+    </van-tab>
+
+
+
+    <!-- 配送 -->
+    <van-tab title="配送">
+      <view class='shop'>
+        <view class='shop_nearby'>
+          <view class='shop_nearby_left'>配送地址</view>
+          <view class='shop_nearby_right' catchtap='chooseAddress'>编辑</view>
+        </view>
+
+        <view class='shop_person'>
+          <view class='shop_person_name'>{{addressInfodetail.recieveName}}</view>
+          <view class='shop_person_phone'>{{addressInfodetail.mobile}}</view>
+        </view>
+
+        <view class='shop_desc'>{{addressInfodetail.address}}{{addressInfodetail.addressDetail}}</view>
+      </view>
+
+      <view class='shop pay_detail'>
+        <view class='pay_detail_title'>支付详情</view>
+        <view class='shop_nearby'>
+          <view class='shop_nearby_left'>商品金额</view>
+          <view class='shop_nearby_right'>¥{{price}}</view>
+        </view>
+        <view class='shop_nearby'>
+          <view class='shop_nearby_left'>配送金额</view>
+          <view class='shop_nearby_right'>¥{{deliveryCost}}</view>
+        </view>
+        <view class='shop_nearby'>
+          <view class='shop_nearby_left'>实际金额</view>
+          <view class='pay_money'>¥{{totalPrice}}</view>
+        </view>
+      </view>
+
+      <van-blue-card msgData="{{items}}" shopname="{{shopname}}">
+      </van-blue-card>
+      <van-submit-bar label="实际支付：" price="{{totalPrice * 100}}" button-text="立即支付" bind:submit="onClickButton">
+      </van-submit-bar>
+
+    </van-tab>
+  </van-tabs>
+
+
+
+</view>

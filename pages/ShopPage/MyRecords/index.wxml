@@ -1,0 +1,48 @@
+<!--pages/ShopPage/MyRecords/index.wxml-->
+<!--pages/MePage/browseRecords.wxml-->
+<!-- <text>pages/MePage/browseRecords.wxml</text> -->
+
+<view class='browserecord_container'>
+<view wx:if="{{purchaseRecordInfos}}">
+  <block  wx:for="{{purchaseRecordInfos}}" wx:for-item="item" wx:for-index="idx">
+    <view class='cell_view'>
+      <view class='left_view'>
+        <view class='left_image'></view>
+        <view class='left_line_view'></view>
+      </view>
+      <view class='right_view'>
+        <text class='date'>{{item.day}}</text>
+       
+          <view class='inner_view'>
+
+            <view class='inner_cell_view'>
+              <image class='head_image' src='{{item.icon}}'></image>
+              <view class='name_view'>
+                <text class='shop_name'>{{item.nickName}}</text>
+                <text class='level_name'>{{item.date}}</text>
+              </view>
+              <view class='bottom_line_view'></view>
+            </view>
+ 
+
+
+
+ <block wx:for="{{item.dayRecordInfos}}" wx:for-item="item_detail" wx:for-index="idx">
+            <view class='fruit_view'>
+              <text class='shop_name'>{{item_detail.productName}}</text>
+              <text class='level_name'>x{{item_detail.amount}}</text>
+            </view>
+        </block>
+          </view>
+      </view>
+    </view>
+  </block>
+</view>
+ 
+ <view  class='noShop' wx:else>
+  <text >还没有卖出酸奶哦！
+只要认真打造，你也可以售出热门酸奶哟！</text>
+</view>
+ 
+
+</view>

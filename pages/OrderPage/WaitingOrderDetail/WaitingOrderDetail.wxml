@@ -1,0 +1,12 @@
+<!--pages/OrderPage/WaitingOrderDetail/WaitingOrderDetail.wxml-->
+<!-- <text>pages/OrderPage/WaitingOrderDetail/WaitingOrderDetail.wxml</text> -->
+
+<view class='container'>
+  <view class='bg'>
+    <text class='count'>{{time}}</text>
+    <text class='label'>平均接单时间</text>
+    <text class='arr_time'>{{receiptTime}}</text>
+  </view>
+  <button class='cancel_btn' catchtap='canleOrder'>取消订单</button>
+</view>
+<van-dialog id="van-dialog" />

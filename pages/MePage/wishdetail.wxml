@@ -1,0 +1,40 @@
+<!--pages/MePage/wishdetail.wxml-->
+<!-- <text>pages/MePage/wishdetail.wxml</text> -->
+
+<view class='wish_detail_container'>
+  <image class='wish_detail_background' src='{{desireInfo.background}}'></image>
+  <view class='top_view'>
+    <text class='top_title'>心愿进度</text>
+    <view class='top_percent_view'>
+      <text class='percent'>{{desireInfo.desirePercent}}</text>
+      <text class='fuhao'></text>
+    </view>
+    <!-- <van-progress class='progress' percent='{{percent}}'></van-progress> -->
+     <van-progress class='progress' color='#01a0eb' percentage='{{desirePercent}}'  pivot-text=""
+  pivot-color="#01a0eb"
+  color="linear-gradient(to right, #02CEF7, #01A0EB)"
+  ></van-progress>
+  </view>
+  <view class='mid_view'>
+    <view class='mid_cell'>
+      <text class='title_cell'>心愿名称</text>
+      <text class='info_cell'>{{desireInfo.name}}</text>
+    </view>
+    <view class='mid_cell'>
+      <text class='title_cell'>目标金额</text>
+      <text class='info_cell'>{{desireInfo.targetAmount}}</text>
+    </view>
+    <view class='mid_cell'>
+      <text class='title_cell'>起始时间</text>
+      <text class='info_cell'>{{desireInfo.startDate}}</text>
+    </view>
+  </view>
+  <view class='view_mid'>
+  </view>
+  <view class='bottom_view' catchtap='jumpdetail'>
+    <text class='history_wish'>历史心愿</text>
+    <view class='right-arrow'></view>
+  </view>
+
+  <view class='circle_view' catchtap='changewish'>修改</view>
+</view>

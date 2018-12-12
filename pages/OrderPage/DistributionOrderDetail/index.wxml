@@ -1,0 +1,46 @@
+<!--进行中订单-配送中-订单详情  bin-->
+<!--pages/OrderPage/DistributionOrderDetail/index.wxml-->
+<view>
+
+  <!-- <view class='cur_position'>
+    <view class='cur_position_img'>
+      <image src="../../../Images/Order/cur_pos.png" alt=""></image>
+      <text>当前位置</text>
+    </view>
+    <view class='cur_position_img'>
+      <image src="../../../Images/Order/call_dir.png" alt=""></image>
+      <text>联系骑手</text>
+    </view>
+  </view> -->
+
+  <!-- <blue-steps steps="{{ steps }}" active="{{ active }}" direction="vertical" active-color="#01A0EB" /> -->
+ <!-- 
+
+  * 实际支付：totalmoney
+discountmoney="{{orderInfo.orderId}}"  优惠
+   -->
+  <van-order-card ordernum="{{orderInfo.orderNo}}" shopname="订单详情" ordertime="{{orderInfo.created}}" orderstate="{{orderInfo.status}}" ordermoney="{{orderInfo.payAmont}}" distributionFee = "{{orderInfo.distributionFee}}" deliveryCost = "{{orderInfo.deliveryCost}}" totalmoney="{{orderInfo.payableAmount}}" ></van-order-card>
+
+   <!-- 配送 -->
+  <view class='shop'>
+    <view class='shop_nearby'>
+      <view class='shop_nearby_left'>配送地址</view>
+    </view>
+
+    <view class='shop_person'>
+      <view class='shop_person_name'>{{addressInfo.recieveName}}</view>
+      <view class='shop_person_phone'>{{addressInfo.mobile}}</view>
+    </view>
+    <view class='shop_desc'>{{addressInfo.address}}</view>
+  </view>
+
+
+  
+  <van-blue-card msgData="{{items}}" shopname="{{shopname}}">
+  </van-blue-card>
+
+  
+
+
+
+</view>

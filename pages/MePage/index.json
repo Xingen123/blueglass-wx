@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的",
+  "component": true,
+  "usingComponents": {
+    "van-row": "../../dist/row/index",
+    "van-col": "../../dist/col/index",
+    "van-progress": "../../dist/progress/index"
+  }
+}

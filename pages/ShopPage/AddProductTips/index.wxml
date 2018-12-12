@@ -1,0 +1,14 @@
+<!--自取、配送订单规则 lancelot-->
+<view class='backView'>
+  <view class='titleViewClass'>
+    <text class='Mytitleclass'>如何创造C位出道的DIY花式酸奶？     </text>
+
+  </view>
+  <view class='myinfoBackView'>
+    <view class='Myinfoclass'>
+      <text>争夺C位的紧张时刻！
+DIY花式有3层，你可以在每一层加入你的脑洞原料～
+这里没有“标品”，只看你的脑洞有多大！</text>
+    </view>
+  </view>
+</view>

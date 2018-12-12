@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "优惠券",
+  "usingComponents": {
+    "van-row": "../../dist/row/index",
+    "van-col": "../../dist/col/index",
+    "van-progress": "../../dist/progress/index"
+  }
+}

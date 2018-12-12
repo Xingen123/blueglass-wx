@@ -1,0 +1,33 @@
+<!--pages/MePage/inviteCode.wxml-->
+<!-- <text>pages/MePage/inviteCode.wxml</text> -->
+
+<view class='invitecontainer'>
+  <view class='topview'>
+    <!-- <text class='toptitle'>邀请好友步骤的示意图</text> -->
+    <image src='{{background}}' class='logo'></image>
+  </view>
+  <view class='midview'>
+    <text class='invitecodetitle'>开店码</text>
+    <block wx:for="{{inviteCodeInfos}}" wx:for-item="item" wx:for-index="idx">
+      <view class='invitecodecell'>
+        <text class='invitecode'>{{item.inviteCode}}</text>
+        <text class='copybutton' bindtap='copyAction' data-code="{{item.inviteCode}}" wx:if='{{item.status=="INITIALIZATION"}}'>点击复制</text>
+        <text class='copybutton_gray' wx:if='{{item.status=="C_USED"}}'>已使用</text>
+        <text class='copybutton' wx:if='{{item.status=="C_COPY"}}'>已复制</text>
+        </view>
+    </block>
+    </view>
+    <view class='bottomview'>
+      <text class='recordtitle'>邀请记录</text>
+      <block wx:for="{{inviteRecordInfos}}" wx:for-item="item" wx:for-index="idx">
+        <view class='recordinfo'>
+          <image class='headimage' src="{{item.icon}}"></image>
+          <view class='nameinfo'>
+            <text class='name'>{{item.nickName}}</text>
+            <text class='desc'>{{item.inviteDate}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  
+  </view>

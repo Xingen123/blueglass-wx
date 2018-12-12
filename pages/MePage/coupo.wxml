@@ -1,0 +1,41 @@
+<!--pages/MePage/coupo.wxml-->
+<!-- <text>pages/MePage/coupo.wxml</text> -->
+<view class='container'>
+  <view class='topview'>
+    <text class='toptitle'>{{tenGiftTicket.name}}</text>
+    <text class='topdesc'>{{tenGiftTicket.remark}}</text>
+    <text class='currentnum'>{{tenGiftTicket.buyAmount?tenGiftTicket.buyAmount:0}}</text>
+    <!-- <van-progress class='progress' color="#01a0eb" percent='{{percent}}'></van-progress> -->
+
+    <van-progress custom-class='progress' color='#01a0eb' percentage='{{percent}}'  pivot-text="{{tenGiftTicket.buyAmount}}"
+  pivot-color="#01a0eb"
+  color="linear-gradient(to right, #02CEF7, #01A0EB)"
+  ></van-progress>
+
+  </view>
+  <view class='ruleview'>
+    <text class='leffruletext'>我的优惠券</text>
+    <text class='rightruletext' bindtap='ruleAction'>兑换规则</text>
+  </view>
+ <block wx:for="{{giftTicketInfos}}" wx:for-item="item" wx:for-index="idx">    <view class='bottomview'>
+      <view class='couponameview'>
+        <text class='couponametext'>{{item.name}}</text>
+      </view>
+      <!-- <view class='lineview'>
+      </view> -->
+      <view class='couponcodeview'>
+        <view class='couponcodeviewleft'>
+          <text class='coupontimetext'>{{item.exceedTime}}</text>
+        </view>
+        <view class='couponcodeviewright'>
+          <text class='couponcodetitle'>兑换码：</text>
+          <text class='couponcode'>{{item.code}}</text>
+        </view>
+      </view>
+      <view class='buttonview'>
+        <view class='copybutton' bindtap='copy' data-code="{{item.code}}">点击复制</view>
+      </view>
+    </view>
+  </block>
+  <text class='bottomtext'>*价值45元的酸奶优惠券仅限 Blueglass APP 使用</text>
+</view>

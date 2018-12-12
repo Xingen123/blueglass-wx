@@ -1,0 +1,61 @@
+<!--pages/MePage/index.wxml-->
+<!-- <text>pages/MePage/index.wxml</text> -->
+<view class='me_container'>
+  <view class='headview'>
+    <view class='nameview'>
+      <image class='headimage' src='{{myinfo.wechatIcon}}' ></image>
+      <view class='nametextview'>
+        <text class='name'>{{myinfo.nickName}}</text>
+        <block wx:if="{{isPartner}}">
+          <text class='shop'>{{myinfo.shopLevelInfo.shopLevelName}}</text>
+        </block>
+      </view>
+    </view>
+    <text class='editbutton' bindtap='editAction'>编辑</text>
+  </view>
+  <view>
+    <block wx:if="{{isPartner}}">
+      <view class='progressview'>
+        <view class='progressimage'>
+
+          <van-progress custom-class='progress' color='#01a0eb' percentage='{{myinfo.desireInfo.desirePercent}}' pivot-text="" pivot-color="#01a0eb" color="linear-gradient(to right, #02CEF7, #01A0EB)"></van-progress>
+
+        </view>
+        <image class='iconimage' src='../../Images/Me/flag.png'></image>
+      </view>
+    </block>
+  </view>
+  <view class='progresstext'>
+    <text class='targetprogress'>{{myinfo.desireInfo.residueAmount}}</text>
+    <text class='targetname'>{{myinfo.desireInfo.name}}</text>
+  </view>
+  <view class='swiperview'>
+    <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}"
+      next-margin="{{nextMargin}}" class='swiperimg'>
+      <block wx:for="{{imgUrls}}" wx:for-item="item" wx:for-index="idx"  wx:key="index">
+        <swiper-item class='swiperimg'  catchtap='advertisingInfosClick' data-redirectTarget="{{item.redirectTarget}}">
+          <image src="{{item.icon}}" class="slide-image" binderror="scrollErrorFunction" data-errorimg="{{idx}}" bindtap='clickScroll' data-recommendid="{{item.recommendId}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='bottomview'>
+    <view class="weui-grids">
+      <view class="weui-grid" wx:for="{{routers}}" wx:key="name">
+        <view class='weui-grid__bg' bindtap='jumpDetail' data-url="{{item.url}}">
+          <view class="weui-grid__icon">
+            <block wx:if="{{item.name == '联系客服'}}">
+              <button open-type="contact" class='contact_btn'>
+                <image src="{{item.icon}}" mode="scaleToFill" />
+              </button>
+            </block>
+            <block wx:else>
+              <image src="{{item.icon}}" mode="scaleToFill" />
+            </block>
+          </view>
+          <text class="weui-grid__label">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

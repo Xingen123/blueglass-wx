@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "多人点单",
+  "usingComponents": {
+    "van-blue-card": "../../dist/blue-card/index",
+    "van-tab": "../../../dist/tab/index",
+    "van-dialog": "../../../dist/dialog/index",
+    "van-tabs": "../../../dist/tabs/index",
+    "van-stepper":"../../../dist/stepper/index",
+    "van-icon": "../../../dist/icon/index",
+    "van-submit-bar":"../../../dist/submit-bar/index"        
+  }
+}

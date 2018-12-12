@@ -1,0 +1,10 @@
+<!--pages/MePage/editName.wxml tengyu 编辑用户姓名 -->
+<!-- <text>pages/MePage/editName.wxml</text> -->
+<view class='editcontainer'>
+  <view class='inputview'>
+    <input type='text' class='inputtext'  placeholder='输入用户名'  bindinput="phoneInput" value='{{name}}'></input>
+  </view>
+  <view class='logoutview'>
+    <text class='logouttext' bindtap='logout'>保存</text>
+  </view>
+</view>

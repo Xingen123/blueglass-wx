@@ -1,0 +1,6 @@
+{
+          "navigationBarTitleText": "等待接单",
+    "usingComponents": {
+      "van-dialog": "../../../dist/dialog/index"
+    }
+}

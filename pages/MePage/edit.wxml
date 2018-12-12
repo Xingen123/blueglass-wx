@@ -1,0 +1,21 @@
+<!--pages/MePage/edit.wxml-- 编辑个人信息页面 tengyu-->
+
+<view class='editcontainer'>
+
+  <view>
+    <van-cell title="用户头像" >  
+      <image class='imgHead' src='{{headUrl}}'></image>
+    </van-cell>
+    <van-cell title="用户昵称" is-link arrow-direction="down" value="{{name}}" url="editName" />
+    <block wx:if="{{phone}}">
+      <van-cell title="绑定手机号"  arrow-direction="down" value="{{phone}}" />
+    </block>
+    <block wx:else>
+      <van-cell title="绑定手机号" is-link arrow-direction="down" value="{{phone}}" url="editPhone" />
+    </block>
+    <van-cell title="地址管理" is-link arrow-direction="down" url="editAddress" />
+  </view>
+  <view class='logoutview'>
+    <text class='logouttext' bindtap='logout'>退出登录</text>
+  </view>
+</view>

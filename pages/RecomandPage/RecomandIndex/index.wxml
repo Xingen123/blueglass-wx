@@ -1,0 +1,67 @@
+<!--合伙人店铺-->
+<!--pages/ShopPage/PartnerShop/idnex.wxml-->
+<view>
+  <view class='sologn_con'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" vertical="true" circular="{{circular}}" style='height:60rpx !important;width:90%;' class='sologn'>
+      <block wx:for="{{advertisingInfos}}" wx:for-index="index" wx:for-item="advertis" wx:key="index">
+        <swiper-item catchtap='advertisingInfosClick' data-isRedirect="{{advertis.isRedirect}}" data-redirectTarget="{{advertis.redirectTarget}}">
+          <view>{{advertis.name}}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- <image src='../../../Images/shop/wh.png'></image> -->
+  </view>
+
+  <swiper bindchange="swiperChange" current-item-id="{{itemId}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay2}}" interval="{{interval}}" duration="{{duration}}" vertical="true" class='recon_con' style="width: 100%;height:{{clientHeight?clientHeight-30+'px':'auto'}}">
+    <block wx:for="{{randPartnerInfos}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+      <swiper-item  item-id="{{item.partnerId}}" >
+        <view class='content'>
+          <!-- <image src='{{item.background}}' class='bacdground_imgurl'></image> -->
+           <view  style="background-image: url({{item.background}})"  class='bacdground_imgurl'></view>
+
+          <view class='shop'>
+
+            <image src='{{item.icon}}'></image>
+
+            <view class='shop_right'>
+              <view class='shop_name'>{{item.shopName}}</view>
+              <view class='shop_dj'>{{item.shopLevelname}}</view>
+            </view>
+
+
+            <view class="shop_sale">
+              <view class='shop_sale_ymc'>
+                
+                <span wx:if="{{item.salesAmount == 0}}">热门新店</span>  
+                <span wx:else>已卖出{{item.salesAmount}}份</span>
+              </view>
+              <!-- <view class='shop_sale_jl' catchtap='addMyCollect' data-existcollect='{{item.existCollect}}'>{{existCollect}}</view> -->
+                <view class="shop_sale_jl" catchtap='addMyCollect' data-existcollect='{{item.existCollect}}' data-partnerId = '{{item.partnerId}}' data-item='{{item}}' data-index='{{index}}'>{{ item.existCollect?"已收藏":"收藏店铺"}}</view>
+                <!-- <view class="shop_sale_jl {{isShowExistCollect?'show':'hide'}}" catchtap='addMyCollect' data-existcollect='{{item.existCollect}}' data-partnerId = '{{item.partnerId}}' wx:if="{{item.existCollect}}">{{item.existCollect?"已收藏":"收藏店铺"}}</view> -->
+            </view>
+
+          </view>
+
+          <view class='circle qbsc' bindtap='qbscAction'>
+            <image src='../../../Images/shop/shouchang.png'></image>
+          </view>
+
+         <view class='sharePeople'  bindtap="sharePeople" data-partnerId='{{item.partnerId}}' data-head="{{item.icon}}" data-background='{{item.background}}' data-shopName='{{item.shopName}}' >
+            <image src='../../../Images/shop/sharePeople.png' ></image>
+         </view>  
+
+
+          <view class='circle diy' bindtap='ddAction' data-partnerId='{{item.partnerId}}' data-shareiv="{{item.background}}">
+            <image src='../../../Images/shop/diandan.png'></image>
+          </view>
+
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+              <view class="mark_dialog {{showView?'show':'hide'}}" catchtap='mark_dialog'></view>
+              <view class="sendorForward {{showView?'show':'hide'}}">
+                <button open-type="share"  class='shareFriend' >微信好友</button>
+                <button catchtap='sharePoster'>朋友圈</button>
+              </view>
+</view>

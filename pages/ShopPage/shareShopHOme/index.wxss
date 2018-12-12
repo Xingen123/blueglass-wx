@@ -1,0 +1,52 @@
+/* pages/ShopPage/shareShopHOme/index.wxss */
+
+button::after {
+  border: none;
+}
+
+button {
+  background-color: #fff;
+}
+
+.savaImage {
+  width: 100%;
+  height: 98rpx;
+  line-height: 98rpx;
+  text-align: center;
+  color: #01a0eb;
+  position: fixed;
+  background: #fff;
+  bottom: 0;
+}
+.canvasId{
+  /* box-shadow: 0 4px 20rpx 0 rgba(204, 204, 204, 0.50); */
+}
+.box-shoaw {
+  box-shadow: 0 0px 20rpx 0 rgba(204, 204, 204, 0.50);
+}
+
+.nav {
+  height: 140rpx;
+  margin-top: 40rpx;
+  margin-left: 30rpx;
+  width: 100%;
+}
+
+.nav image {
+  height: 120rpx;
+  width: 120rpx;
+  margin-right: 20rpx;
+  border: 2rpx solid #dcdcdc;
+  border-radius: 10rpx;
+}
+
+.shareDesc {
+  font-size: 26rpx;
+  color: #4a4a4a;
+  text-align: center;
+  position:fixed;
+bottom: 130rpx;
+right: 0;
+left: 0;
+margin: 0 auto;
+}

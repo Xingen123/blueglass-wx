@@ -1,0 +1,5 @@
+<!--pages/uclickThiTab/uclickBecomePage/uclickBecomePage.wxml-->
+<!-- <text>pages/uclickThiTab/uclickBecomePage/uclickBecomePage.wxml</text>
+<web-view src = "http://mp.weixin.qq.com/s?__biz=MzU1Mjg0MDQ3NQ==&mid=100000146&idx=1&sn=617b57a8d6a1cfd75f4458e5d631f90e&chksm=7bfabde64c8d34f03df3083dd83cdc749b5034db8b8f8a76005073a4cfa7d65f8e49013f0775#rd"></web-view>
+ -->
+<web-view src = "https://mp.weixin.qq.com/s?__biz=MzUzMzUzNjY4Ng==&mid=100006511&idx=1&sn=816c0956e898c701bceb8dc9b5b8d887&chksm=7aa3d0ae4dd459b8046e9a902a43af6c681c66db2c29c1c0f7f30c0eed04563e739b9b36b007#rd"></web-view>

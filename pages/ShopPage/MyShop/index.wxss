@@ -1,0 +1,285 @@
+/* pages/ShopPage/PartnerShop/idnex.wxss */
+
+.content {
+  /* margin-top: 20rpx; */
+
+  margin:20px 20px 0  20px ;
+}
+button {
+  border: none;
+  background-color: #fff;
+}
+
+button::after {
+  border: none;
+}
+.mark_dialog {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9990;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  /* display: none; */
+}
+.shareFriend {
+  border-bottom: 2rpx solid #dcdcdc;
+}
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+.mark_dialog {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9990;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  /* display: none; */
+}
+.sendorForward {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  background: #fff;
+  z-index: 9991;
+}
+.bacdground_imgurl {
+  height: 100%;
+  width: 100%;
+  background-repeat:no-repeat;
+  background-size:cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.sologn_con {
+  /* margin-top:60rpx; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sologn_con image {
+  height: 45rpx;
+  width: 45rpx;
+  margin-left: 15rpx;
+}
+
+.sologn {
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 50rpx;
+  height: 60rpx;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0 10rpx;
+  line-height: 60rpx;
+  width: 80%;
+}
+
+.shop {
+  width:calc(100% - 190rpx);
+
+  /* display: flex;
+  
+  align-items: center;
+  justify-content: flex-start; */
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50rpx 10rpx 10rpx 50rpx;
+  margin-top: 20rpx;
+  padding: 0 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.shop_right {
+
+  display:flex;
+justify-content:space-between;
+width:100%;
+margin-top:10rpx;
+
+  /* margin-left: -50rpx; *//* z-index: -1; */
+}
+
+.shop image {
+  height: 110rpx;
+  width: 110rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: -2rpx;
+}
+
+.shop_name {
+  font-size: 12px;
+  color: #fff;
+  padding-left:80rpx;
+margin-left:10px;
+text-align:left;
+}
+
+.shop_dj {
+  font-size: 12px;
+  color: #fff;
+  margin-left: 20px;
+  padding-right: 20rpx;
+}
+
+.shop_sale {
+  display: flex;
+  align-items: center;
+justify-content:space-between;
+width:100%;
+border-radius:50rpx;
+
+}
+
+.shop_sale_ymc {
+  font-size: 12px;
+padding-left:80rpx;
+margin-left:10px;
+text-align:left;
+
+  color: #fff;
+}
+
+.shop_sale_ymc span {
+  font-size: 14px;
+  /* color: #01a0eb; */
+  color: #fff;
+  line-height: 33px;
+}
+
+.shop_sale_jl {
+  font-size: 12px;
+  /* color: #01a0eb; */
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 0px 16rpx;
+  margin-left: 20rpx;
+  margin-top: 0px;
+}
+
+.circle {
+  /* background-image: linear-gradient(-270deg, #02cef7 0%, #01a0eb 100%); *//* box-shadow: 0 4px 33px 0 #c0ebff; *//* position: fixed; *//* bottom: 100rpx; *//* font-size: 13px; *//* color: #fff; *//* border-radius: 50%; *//* text-align: center; */
+}
+
+.zindex {
+  z-index: 999;
+}
+
+.yqhy image {
+  position: fixed;
+  left: 20rpx;
+  height: 103rpx;
+  width: 103rpx;
+  bottom: 70rpx;
+}
+
+.diy image {
+  position: fixed;
+  right: 20px;
+  height: 154rpx;
+  width: 124rpx;
+  bottom: 70rpx;
+}
+
+.fx image {
+  position: fixed;
+  left: 150rpx;
+  height:103rpx;
+  width: 103rpx;
+  bottom: 70rpx;
+}
+
+.mark_dialog {
+  background: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 990;
+}
+
+.showdialog {
+  padding: 10rpx 20rpx 20rpx 20rpx;
+  font-size: 26rpx;
+  color: #fff;
+  border: 2px dashed #fff;
+  border-radius: 6px;
+  position: fixed;
+  left: 150rpx;
+  bottom: 200rpx;
+  width: 400rpx;
+  height: 150rpx;
+  line-height: 0.7;
+  z-index: 999;
+}
+
+.mark_second {
+  left: 250rpx;
+  line-height: 30rpx;
+  width: 450rpx;
+}
+.mark_third{
+  left:89rpx;
+  bottom:212rpx;
+  width: 450rpx;
+}
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+.back2View
+{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.back2View image
+{
+  width: 100%;
+  height: 100%;
+}
+.tipsView
+{
+    position: fixed;
+    left: 100rpx;
+    right: 100rpx;
+  height: 85rpx;
+  bottom: 60rpx;
+  background-color: #D8D8D8;
+  text-align: center;
+  line-height: 28rpx;
+}
+.tipsView text
+{
+  font-family: PingFangSC-Medium;
+font-size: 28rpx;
+color: #4A4A4A;
+}

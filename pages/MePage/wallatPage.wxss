@@ -1,0 +1,206 @@
+/* pages/MePage/wallatPage.wxss */
+
+.wallatcontainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.topview {
+  display: flex;
+  flex-direction: column;
+  height: 344rpx;
+  background: #fff;
+  box-shadow: 0 4px 40px 0 rgba(215, 215, 215, 0.50);
+  border-radius: 11px;
+  margin-left: 26rpx;
+  width: calc(100% - 52rpx);
+}
+
+.titleview {
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.balance {
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #000;
+  margin-left: 30rpx;
+}
+
+.detail {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #000;
+  margin-right: 30rpx;
+}
+
+.balanceView {
+  margin-top: 70rpx;
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.balanceprecent {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #4a4a4a;
+}
+
+.balanceImage {
+  margin-left: 30rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.balancenumber {
+  display: flex;
+  flex-direction: row;
+  margin-left: 30rpx;
+  width: calc(100% - 60rpx);
+  margin-top: 19rpx;
+  justify-content: space-between;
+}
+
+.money {
+  font-family: DINAlternate-Bold;
+  font-size: 60rpx;
+  color: #4a4a4a;
+}
+
+.action {
+  border: 2rpx solid #01a0eb;
+  border-radius: 25rpx;
+  width: 120rpx;
+  color: #01a0eb;
+  text-align: center;
+  font-size: 30rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  margin-top: 10rpx;
+}
+
+.bottomview {
+  display: flex;
+  flex-direction: column;
+  margin-left: 26rpx;
+  margin-top: 30rpx;
+  height: 306rpx;
+  width: calc(100% - 52rpx);
+  background: #fff;
+  box-shadow: 0 4px 40px 0 rgba(215, 215, 215, 0.50);
+  border-radius: 11px;
+}
+
+.bottomview_else {
+  display: flex;
+  flex-direction: column;
+  margin-left: 26rpx;
+  margin-top: 30rpx;
+  height: 211rpx;
+  width: calc(100% - 52rpx);
+  background: #fff;
+  box-shadow: 0 4px 40px 0 rgba(215, 215, 215, 0.50);
+  border-radius: 11px;
+  align-items: center;
+}
+
+.wish {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 30rpx;
+  width: calc(100% - 60rpx);
+  height: 100rpx;
+  align-items: center;
+}
+
+.wishtitle {
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #000;
+}
+
+.wishdetail {
+  border: 2rpx solid #01a0eb;
+  border-radius: 25rpx;
+  width: 120rpx;
+  color: #01a0eb;
+  text-align: center;
+  font-size: 30rpx;
+  height: 46rpx;
+  margin-top: 10rpx;
+}
+
+.wishdetail_else {
+  border: 2rpx solid #01a0eb;
+  border-radius: 25rpx;
+  width: 165rpx;
+  color: #01a0eb;
+  text-align: center;
+  font-size: 30rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  margin-top: 10rpx;
+}
+
+.wishinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wishinfotitle {
+  font-family: PingFangSC-Semibold;
+  font-size: 36rpx;
+  color: #000;
+}
+
+.wishinfotitle_else {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #9b9b9b;
+  align-content: center;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+
+.wishdistant {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #4a4a4a;
+}
+
+.progress {
+  margin-left: 75rpx;
+  width: calc(100% - 150rpx);
+  margin-top: 44rpx;
+}
+
+.addwish {
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  box-shadow: 0 4px 40px 0 rgba(215, 215, 215, 0.50);
+  border-radius: 12px;
+  margin-left: 26rpx;
+  width: calc(100% - 52rpx);
+  height: 80rpx;
+  margin-top: 20rpx;
+  align-items: center;
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #01a0eb;
+}
+
+.addwishtext{
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #01A0EB;
+}

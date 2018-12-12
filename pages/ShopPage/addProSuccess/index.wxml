@@ -1,0 +1,20 @@
+<!--福袋-->
+<!--pages/ShopPage/addProSuccess/index.wxml-->
+<view class='addpro'>
+  <view class='addpro_title'>给产品命名</view>
+  <input type='text' value="ss" class='addpro_input'></input>
+
+  <view class='addpro_fd'>
+    <view class='addpro_fd_title'>是否设为福袋</view>
+    <image src='../../../Images/shop/wh.png'></image>
+  </view>
+  <view class='box-shoaw addpro_fdcon'>
+    <image src='../../../Images/shop/fd.png' class='addpro_fd_img'></image>
+    <view class='addpro_fd_desc'>给顾客一个惊喜</view>
+  </view>
+</view>
+
+<van-blue-card msgData="{{items}}" shopname="{{shopname}}">
+</van-blue-card>
+
+<van-button type="default" custom-class="submit" bind:click="submit">确认提交</van-button>

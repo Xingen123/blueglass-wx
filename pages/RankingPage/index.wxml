@@ -1,0 +1,145 @@
+<!--排行榜pages/RankingPage/index.wxml-->
+<view class='backView'>
+  <van-tabs active="{{ active }}" bind:change="onChange" color="#01A0EB" line-width="0px">
+    <van-tab title="月度明星店铺">
+      <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}"
+        next-margin="{{nextMargin}}" class='swiperimg'>
+        <block wx:for="{{imgUrlsYear}}" wx:for-item="item" wx:for-index="idx"  wx:key="index">
+          <swiper-item class='swiperimg'  catchtap='advertisingInfosClick' data-redirecttarget="{{item.redirectTarget}}">
+            <image src="{{item.icon}}" class="slide-image" binderror="scrollErrorFunction" data-errorimg="{{idx}}" bindtap='clickScroll' data-recommendid="{{item.recommendId}}" />
+          </swiper-item>
+        </block>
+      </swiper>
+
+      <view class='rankTitleClass'>
+        <text class='rankTitleClass_Title'>月度明星店铺</text>
+        <text class='rankTitleClass_Money'>金额(元)</text>
+      </view>
+      <view style='padding-bottom:90px'>
+        <block wx:for="{{monthList}}" wx:for-item="item" wx:for-index="idx"  wx:key="index">
+          <view class='rankingCell' catchtap='jumpShop' data-id='{{item.id}}'>
+            <view class='rankIconClass' wx:if="{{item.leixing==1}}">
+              <view class='rankIconClass_image'>
+                <image src="{{item.mynumbIcon}}">
+                </image>
+              </view>
+              <text>{{item.numbStr}}</text>
+            </view>
+            <view class='rankIconClass_NOIV' wx:else>
+              <text>{{item.numbStr}}</text>
+            </view>
+
+
+            <view class='headerIVClass'>
+              <image src="{{item.icon}}">
+              </image>
+            </view>
+            <view class='titleInfoClass'>
+              <text class='titleInfoClass_title'>{{item.nickName}}</text>
+              <text class='titleInfoClass_info'>{{item.message}}</text>
+
+            </view>
+
+            <view class='moneyClass'>
+              <text class='moneyClass_text'>{{item.sales}}</text>
+
+            </view>
+          </view>
+
+        </block>
+      </view>
+
+
+      <view class='rankingCell myrankingCell' wx:if="{{isNotPatenter==1}}">
+        <view class='rankIconClass_NOIV'>
+          <text>{{currentPartner.rank}}</text>
+        </view>
+
+        <view class='headerIVClass'>
+          <image src="{{currentPartner.icon}}">
+          </image>
+        </view>
+        <view class='titleInfoClass'>
+          <text class='titleInfoClass_title'>{{currentPartner.nickName}}</text>
+          <text class='titleInfoClass_info'>{{currentPartner.message}}</text>
+
+        </view>
+
+        <view class='moneyClass'>
+          <text class='moneyClass_text'>{{currentPartner.sales}}</text>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="年度明星店铺">
+      <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}"
+        next-margin="{{nextMargin}}" class='swiperimg'>
+        <block wx:for="{{imgUrls}}" wx:for-item="item" wx:for-index="idx"  wx:key="index">
+          <swiper-item class='swiperimg' catchtap='advertisingInfosClick' data-redirecttarget="{{item.redirectTarget}}">
+            <image src="{{item.icon}}" class="slide-image" binderror="scrollErrorFunction" data-errorimg="{{idx}}" bindtap='clickScroll' data-recommendid="{{item.recommendId}}" />
+          </swiper-item>
+        </block>
+      </swiper>
+
+      <view class='rankTitleClass'>
+        <text class='rankTitleClass_Title'>年度明星店铺</text>
+        <text class='rankTitleClass_Money'>金额(元)</text>
+      </view>
+      <view style='padding-bottom:90px'>
+        <block wx:for="{{yearList}}" wx:for-item="item" wx:for-index="idx"  wx:key="index">
+          <view class='rankingCell' catchtap='jumpShop' data-id='{{item.id}}'>
+            <view class='rankIconClass' wx:if="{{item.leixing==1}}">
+              <view class='rankIconClass_image'>
+                <image src="{{item.mynumbIcon}}">
+                </image>
+              </view>
+              <text>{{item.numbStr}}</text>
+            </view>
+            <view class='rankIconClass_NOIV' wx:else>
+              <text>{{item.numbStr}}</text>
+            </view>
+
+
+            <view class='headerIVClass'>
+              <image src="{{item.icon}}">
+              </image>
+            </view>
+            <view class='titleInfoClass'>
+              <text class='titleInfoClass_title'>{{item.nickName}}</text>
+              <text class='titleInfoClass_info'>{{item.message}}</text>
+
+            </view>
+
+            <view class='moneyClass'>
+              <text class='moneyClass_text'>{{item.sales}}</text>
+
+            </view>
+          </view>
+        </block>
+      </view>
+
+      <view class='rankingCell myrankingCell' wx:if="{{isNotPatenter==1}}">
+        <view class='rankIconClass_NOIV'>
+          <text>{{currentyearPartner.rank}}</text>
+        </view>
+
+        <view class='headerIVClass'>
+          <image src="{{currentyearPartner.icon}}">
+          </image>
+        </view>
+        <view class='titleInfoClass'>
+          <text class='titleInfoClass_title'>{{currentyearPartner.nickName}}</text>
+          <text class='titleInfoClass_info'>{{currentyearPartner.message}}</text>
+
+        </view>
+
+        <view class='moneyClass'>
+          <text class='moneyClass_text'>{{currentyearPartner.sales}}</text>
+
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+
+
+
+</view>
