@@ -125,8 +125,16 @@
 
   </view>
 
+<view class="shopButton" >
 
   <view class='editbackView' bindtap='editAction'>
-    <text>编辑</text>
+    编辑
   </view>
+  <view class="compile" bindtap="goShopIndex">
+   点单
+  </view>
+</view>
+
+
+
 </view>

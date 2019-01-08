@@ -1,7 +1,7 @@
 // pages/RecomandPage/submitOrder/index.js
 var url = require('../../../utils/url.js');
 var util = require('../../../utils/util.js');
-
+import Dialog from '../../../dist/dialog/dialog';
 Page({
 
   /**
@@ -9,36 +9,25 @@ Page({
    */
   data: {
     active: 1,
+    couponPrice:0,
+    deliveryPrice:0,
+    couponNum:0,
+    giftTicketId:"",
     shopname: "Blueglass酸奶店 >",
     price: "",
     totalPrice: '',
+    bgLoading:false,
+    coupon:"点击添加优惠券",
+    shareImg: "https://wxmp.clicksdiy.com/makeup/pbag/4.png?" + Math.random(),
+    deliveryCost:"", //配送金额
     items: [
-      // {
-      //   "thumb": "../../Images/Order/address.png",
-      //   "title": "商品标题1",
-      //   "desc": "描述信息",
-      //   "detail": "荔枝**1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1",
-      //   "num": "2",
-      //   "price": "20",
-      // },
-      // {
-      //   "thumb": "../../Images/Order/address.png",
-      //   "title": "商品标题2",
-      //   "desc": "描述信息",
-      //   "detail": "荔枝**1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1",
-      //   "num": "2",
-      //   "price": "20",
-      // }
     ],
     orderId: ''
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options)
-    console.log("wocao")
     var addressInfodetail = JSON.parse(options.addressInfodetail);
     var shoppingCartData = JSON.parse(options.shoppingCartData);
     var that = this;
@@ -57,6 +46,9 @@ Page({
         active: 1
       })
       if (addressInfodetail.addressId) {
+        this.setData({
+          bgLoading: true
+        })
         wx.request({
           url: url.serverUrl + 'mini/partner/calculateDeliveryCost',
           method: 'POST',
@@ -73,14 +65,14 @@ Page({
           },
           success: function(myres) {
             wx.hideLoading();
-          console.log("1")
+
             var mydata = myres.data
             if (mydata.status == "200") {
               that.setData({
                 price: mydata.data.ordertInfo.totalPrice - mydata.data.ordertInfo.deliveryCost,
                 totalPrice: parseFloat(mydata.data.ordertInfo.totalPrice),
                 deliveryCost: mydata.data.ordertInfo.deliveryCost,
-                
+                bgLoading:false
               })
 
             } else {
@@ -101,11 +93,18 @@ Page({
           }
         })
       }
+       let even = {
+        detail:{
+          index:1
+        }
+      }
+      this.onChange(even)
     } else {
       this.setData({
         active: 0
       })
-
+      console.log(555)
+  
 
     }
 
@@ -144,15 +143,44 @@ Page({
 
 
   },
+  shareParekt() {
+    wx.navigateTo({
+      url: '../../MePage/sharePacket',
+    })
+  },
+  goCoupon(e){
+   
+    let price = parseInt(this.data.price)  > 0 ? parseInt(this.data.price) + parseInt(this.data.couponPrice) : parseInt(this.data.totalPrice)//自取总金额
+
+ 
+
+
+    let delivery = parseInt(this.data.totalPrice) + parseInt(this.data.deliveryPrice) //配送总金额  
+
+    let state = e.currentTarget.dataset.state == "ask" ? price : delivery  
+
+    let priceOrder = parseInt(this.data.deliveryCost) + parseInt(this.data.derateCost) 
+
+    console.log(parseInt(this.data.price),parseInt(this.data.couponPrice))
+
+      wx.navigateTo({
+        url: './coupon/index?orderId=' + this.data.orderId + '&money=' + state + "&state=" + e.currentTarget.dataset.state + "&priceOrder=" + priceOrder,
+      })
+  },
   onChange(event) {
     var that = this;
-    console.log(event)
+    console.log(event.detail)
     if (event.detail.index == 0) {
-      console.log("11")
       this.setData({
         isPickup: 1,
-
+        coupon: "点击添加优惠券",
+        couponPrice:0,
+        couponNum:0,
+        giftTicketId: "",
+        bgLoading: true
+        
       })
+
       wx.showLoading({
         title: '正在加载',
       })
@@ -172,17 +200,22 @@ Page({
           },
           success: function (myres) {
             wx.hideLoading();
-
+            console.log(that.data.addressInfodetail.addressId)
             var mydata = myres.data
+            console.log(mydata)
+
             if (mydata.status == "200") {
-              // that.setData({
-              //   price: mydata.data.ordertInfo.totalPrice - mydata.data.ordertInfo.deliveryCost,
-              //   totalPrice: parseFloat(mydata.data.ordertInfo.totalPrice),
-              //   deliveryCost: mydata.data.ordertInfo.deliveryCost
-              // })
+              that.setData({
+                price: mydata.data.ordertInfo.totalPrice, 
+                totalPrice: mydata.data.ordertInfo.totalPrice ,
+                bgLoading: false
+              })
 
             } else {
               wx.hideLoading();
+              that.setData({
+                bgLoading: false
+              })
               wx.showToast({
                 title: mydata.errorMsg,
                 icon: 'none',
@@ -196,7 +229,11 @@ Page({
     } else {
       this.setData({
         isPickup: 0,
-
+        coupon: "点击添加优惠券",
+        deliveryPrice:0,
+        couponNum: 0,
+        giftTicketId: "",
+        bgLoading: true
       })
       wx.showLoading({
         title: '正在加载',
@@ -224,11 +261,35 @@ Page({
               that.setData({
                 price: mydata.data.ordertInfo.totalPrice - mydata.data.ordertInfo.deliveryCost,
                 totalPrice: parseFloat(mydata.data.ordertInfo.totalPrice),
-                deliveryCost: mydata.data.ordertInfo.deliveryCost
+                deliveryCost: mydata.data.ordertInfo.sendPrice,
+                derateCost: mydata.data.ordertInfo.derateCost,
+                bgLoading: false
               })
 
-            } else {
+            } else if (mydata.status == "400") {
+              console.log(that.data.addressInfodetail.addressId)
+              wx.showToast({
+                title: mydata.errorMsg,
+                icon: 'none',
+                duration: 2000
+              })
+              let eventt = {
+                detail: {
+                  index: 0
+                }
+              }
+              that.setData({
+                bgLoading: false,
+                active:0
+              })
+
+              that.onChange(eventt)
+            }
+             else {
               wx.hideLoading();
+              that.setData({
+                bgLoading: false
+              })
               wx.showToast({
                 title: mydata.errorMsg,
                 icon: 'none',
@@ -242,6 +303,9 @@ Page({
         })
       }else{
         wx.hideLoading();
+        that.setData({
+          bgLoading: false
+        })
         wx.showToast({
           title: "请选择地址",
           icon: 'none',
@@ -252,6 +316,18 @@ Page({
 
     }
   },
+  onClickButtonAlert(e){
+    console.log(e)
+    Dialog.confirm({
+      title: e.target.dataset.state,
+      message: '确认后订单将不能更改'
+    }).then(() => {
+      this.onClickButton()
+    }).catch(() => {
+      // on cancel
+    });
+  },
+
   onClickButton: function() {
     var that = this;
     console.log(that.data);
@@ -271,7 +347,7 @@ Page({
     }
 
 
-    util.wxNewPay(wx.getStorageSync('token'), that.data.orderId, function(e) {
+    util.wxNewPay(that.data.giftTicketId,wx.getStorageSync('token'), that.data.orderId, function(e) {
       // wx.navigateBack({
       //   delta: 10
       // })
@@ -336,8 +412,17 @@ Page({
 
   },
   chooseAddress: function() {
+    let allPrice = this.data.totalPrice + this.data.couponNum
+    this.setData({
+      coupon: "点击添加优惠券",
+      totalPrice: allPrice,
+      couponPrice: 0,
+      couponNum: 0,
+      deliveryPrice:0,
+      giftTicketId: ""
+    })
     wx.navigateTo({
-      url: '../../MePage/editAddress?isChoose=1&orderId=' + this.data.orderId,
+      url: '../../MePage/editAddress?isChoose=1&orderId=' + this.data.orderId + '&allPrice=' + allPrice,
     })
   },
   /**

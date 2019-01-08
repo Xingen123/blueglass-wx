@@ -6,9 +6,8 @@
   <van-blue-card msgData="{{items}}" shopname="{{shopname}}">
   </van-blue-card>
 
-  <van-blue-button size="large">
-    <text>联系客服</text>
+  <view class='contact'>
+    <button open-type='contact' plain>联系客服</button>
     <image src='../../../Images/Order/callPhone.png'></image>
-  </van-blue-button>
-
+  </view>
 </view>

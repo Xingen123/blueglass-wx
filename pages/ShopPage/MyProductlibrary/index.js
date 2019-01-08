@@ -24,6 +24,60 @@ Page({
 
 
   },
+  //删除
+  delete(e){
+    let proId = e.currentTarget.dataset.proid.id;
+    console.log(e)
+    Dialog.confirm({
+      title: '确认删除产品',
+      message: '删除后，您需要重新添加产品'
+    }).then(() => {
+      wx.showLoading({
+        title: '加载中',
+      })
+      wx.request({
+        url: serverUrl.serverUrl + 'mini/partner/deleteProduct',
+        data: {
+          token: wx.getStorageSync('token'),
+          productId: proId,
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded',
+          'Accept': 'application/json'
+        },
+        method: 'POST',
+        success: (res)=> {
+          wx.hideLoading()
+          this.requestNetWork()
+            wx.showToast({
+              title: '删除成功',
+              icon:"success",
+              duration: 2000
+            })
+            console.log(res)
+        }
+      });
+    }).catch(() => {
+      // on cancel
+   
+    })
+  },
+  compile(e){
+    let proId = e.currentTarget.dataset.proid.id;
+    console.log(proId)
+    wx.navigateTo({
+      url: './modification/index?productId=' + proId,
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },
   requestNetWork: function () {
     var that = this;
 

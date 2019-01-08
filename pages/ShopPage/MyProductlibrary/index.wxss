@@ -54,13 +54,22 @@
 .van-tabs__line {
   border: none !important;
 }
-
+.delete{
+ width:50rpx;
+ height:50rpx; 
+ margin-left: 30rpx;
+}
+.delete image{
+ width:100%;
+ height:100%; 
+}
 .infoview {
   z-index: -1;
   margin-top: 163rpx;
   background-color: #fcfcfc;
   display: flex;
   flex-direction: column;
+  padding-bottom: 150rpx;
 }
 
 .bigText {
@@ -146,7 +155,7 @@
   background-color: #fff;
   display: flex;
   justify-content: space-between;
-
+  padding:  20rpx;
 }
 .lineclass
 {
@@ -172,7 +181,6 @@
 
 .myshangpininfoView {
   width: calc(100% - 250rpx);
-  margin-left: 20rpx;
   display: flex;
   flex-direction: column;
   margin-top: 30rpx;
@@ -211,11 +219,13 @@
   margin-left: 20rpx;
   margin-right: 20rpx;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
+  align-items: center;
+
 }
 
 .moneyInfoview {
-  width: 100rpx;
+  width: 70rpx;
   text-align: left;
   display: flex;
   justify-content: flex-start;
@@ -236,32 +246,36 @@
 }
 .bttonVIew
 {
-  margin-top: 20rpx;
-  border: 2rpx solid #4A4A4A;
+ border: 2rpx solid #4A4A4A;
 border-radius: 20rpx;
 width: 100rpx;
 height: 40rpx;
-line-height: 35rpx;
+line-height: 30rpx;
 text-align: center;
 color: #4A4A4A;
+margin-left: 45rpx;
+}
+.bttonVIew:last-child{
+  margin-left: 10rpx;
 }
 .bttonVIew text
 {
   font-family: PingFangSC-Regular;
-  font-size: 30rpx;
+  font-size: 26rpx;
   color: #4A4A4A;
 }
 .editbackView
 {
 background-image: linear-gradient(-270deg, #40C6FF 0%, #01A0EB 100%);
 box-shadow: 0 4rpx 36rpx 0 #C8EEFF;
-border-radius: 45rpx;
-width: 90rpx;
-height: 90rpx;
+width:100%;
+height: 98rpx;
 position: fixed;
-z-index: 999;
-bottom: 115rpx;
-right: 37rpx;
+z-index: 10;
+bottom:0;
+right: 0;
+left: 0;
+margin: 0 auto;
 text-align: center;
 line-height: 90rpx;
 box-sizing: border-box;

@@ -187,7 +187,7 @@
 <view class="xiadanView {{isIphoneX?'linkCon':''}} ">
 
   <view class='duorenDiandan' catchtap='morePersonClick' data-nickName="{{partnerInfo.nickName}}" data-icon='{{partnerInfo.icon}}'>
-    <text> 多人点单免运费</text>
+    <text> 多人点单减运费</text>
   </view>
   <view class=' gouwuche' catchtap='shopCartClick'>
     <image src='../../Images/Recomand/gouwuCheShop.png'></image>
@@ -226,4 +226,13 @@
   <!-- <view class='productIconView' style='background:#fff' wx:else>
     <image src="{{currentproduct.icon}}"></image>
   </view> -->
+
 </view>
+<view class='shareParekt' bindtap='shareParekt'>
+<image src='{{shareImg}}' ></image>
+</view>
+<!-- </view> -->
+<!-- </view> -->
+
+<button wx:if="{{ldata}}" open-type="openSetting" bindopensetting='handler'>点击授权并获取位置信息</button>
+

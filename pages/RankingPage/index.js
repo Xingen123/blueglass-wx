@@ -182,12 +182,12 @@ Page({
   },
 
   requestNetWork: function(taptype) {
-    var that = this;
+    let that = this;
     wx.showLoading({
       title: '正在加载',
     })
     wx.request({
-      url: serverUrl.serverUrl + '/mini/partner/rankingList?token=' + wx.getStorageSync('token') + '&type=' + taptype,
+      url: serverUrl.serverUrl + 'mini/partner/rankingList?token=' + wx.getStorageSync('token') + '&type=' + taptype,
       data: {},
       header: {
         //设置参数内容类型为x-www-form-urlencoded
@@ -197,10 +197,13 @@ Page({
       method: 'POST',
       success: function(res) {
         wx.hideLoading();
-        console.log(res)
+        console.log(taptype)
+        let listA = res.data
+
         if (taptype == 'MONTH') {
+         
           that.setData({
-            monthList: res.data.data.ranking,
+            monthList: listA.data.ranking,
             imgUrls: res.data.data.bannerImages,
 
           });

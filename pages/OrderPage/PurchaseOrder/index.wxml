@@ -16,3 +16,8 @@
   </van-blue-card>
 
 </view>
+<cover-view class='shareParekt' wx:if="{{shareParektBox}}">
+<cover-image class='shareParektHide' src='../../../Images/coupon/hide.png' bindtap='shareParektHide'></cover-image>
+<cover-image src='{{shareImg}}' class='shareParektimg' bindtap='shareParekt'></cover-image>
+</cover-view>
+

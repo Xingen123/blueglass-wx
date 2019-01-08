@@ -167,7 +167,7 @@
   width: 690rpx;
   margin: 0 auto;
   /* height: 542rpx; */
-  border: 2rpx solid #dedede;
+  border: 2rpx solid white;
   margin-bottom: 20rpx;
   border-radius: 10rpx;
   background-color: #fff;

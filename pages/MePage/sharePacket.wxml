@@ -1,0 +1,67 @@
+<!--pages/MePage/sharePacket.wxml-->
+
+<!--pages/MePage/inviteCode.wxml-->
+<!-- <text>pages/MePage/inviteCode.wxml</text> -->
+
+<view class='invitecontainer'>
+    <view class='topview'>
+    <cover-view class='detailed' bindtap='detailed'>详细规则</cover-view>
+      <!-- <text class='toptitle'>邀请好友步骤的示意图</text>
+      <image src='{{background}}' class='logo'></image> -->
+      <swiper
+    indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}"
+    interval="{{interval}}"
+    duration="{{duration}}"
+    style="height:500rpx"
+  >
+    <block >
+      <swiper-item  wx:for-item="item"  wx:key="index">
+        <image src="{{background}}" class="slide-image"  />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="success">
+    <view class="successNum">
+      <view class="num">
+         {{successAmount}}
+      </view>
+      <view class="text">
+        成功邀请/人
+      </view>
+    </view>
+  
+    <view class="successMoney" bindtap='goSharePacket'>
+      <view class="num">
+        {{giftValue}}
+      </view>
+      <view class="text" >
+        元红包奖励 >
+      </view>
+    </view>
+  </view> 
+    </view>
+      <view class='bottomview'>
+        <text class='recordtitle'>邀请记录</text>
+        <view wx:for="{{inviteRecordInfos}}" wx:for-item="item" wx:for-index="idx" wx:if="{{inviteRecordInfos.length>0}}">
+          <view class='recordinfo'>
+            <image class='headimage' src="{{item.weedfsId}}"></image>
+            <view class='nameinfo'>
+              <text class='name'>{{item.reciveUserName}}</text>
+              <text class='desc'>{{item.reciveDate}}</text>
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{inviteRecordInfos.length==0}}" style='width:509rpx;padding-top:80rpx; line-height:46rpx;margin:0 auto;color:rgba(72,72,72,0.8);font-size:24rpx; white-space:pre-line;text-align:center;'>
+        还没有成功邀请好友呦！
+点击右下角把100元红包分享给好友吧！
+多邀多得无限累计，邀请10人能拿1000元红包哦！再厉害一点邀请100人能拿到
+10000元红包呢！</view>
+      </view>
+    
+    </view>
+    <view class='bottomButton'>
+      <button bindtap='sharePeople' plain>分享朋友圈领红包</button>
+      
+     <button open-type="share"  plain>邀请好友领红包</button>
+    </view>

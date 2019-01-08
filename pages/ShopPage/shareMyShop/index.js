@@ -10,6 +10,7 @@ Page({
     randPartnerInfos: {},
     advertisingInfos: [],
     indicatorDots: false,
+    shareImg: "https://wxmp.clicksdiy.com/makeup/pbag/4.png?" + Math.random(),
     autoplay: true,
     circular: true,
     interval: 2000,
@@ -21,27 +22,106 @@ Page({
     curindex: 0,
     isNotPatenter: 0,
     // partnerId: '',
-    partnerId: ''
+    partnerId: '',
+    sendUserId:"",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options,"options5")
     if (wx.getStorageSync('token')) {
-      console.log(options)
+      if (options.giftTicketId) {
+        console.log(options.keyId,"这就是keyId！！！！")
+        wx.request({
+          url: url.serverUrl + 'mini/partner/sendGiftTicket',
+          method: 'POST',
+          header: {
+            //设置参数内容类型为x-www-form-urlencoded
+            'content-type': 'application/x-www-form-urlencoded',
+            'Accept': 'application/json'
+          },
+          data: {
+            token: wx.getStorageSync('token'),
+            ticketId: options.giftTicketId,
+            keyId:options.keyId
+          },
+          success: (res) => {
+          
+           if(res.data.status == 200){
+             wx.showToast({
+               title: "领取成功",
+               icon:"success",
+               duration: 2000
+             })
+           }else{
+             wx.showToast({
+               title: "优惠券已被领取",
+               icon:"none"
+              })
+           }
+          },
+          fail:(err) => {
+            console.log(err)
+          }
+        })
+      }
       this.setData({
         partnerId: options.partnerid,
         isNotPatenter: 1,
       })
-      this.myShopInfo()
-      // this.myShopInfo()
+      if (options.partnerid && options.sendUserId){
+       this.setData({
+         sendUserId: options.sendUserId
+       })
+     }
+      this.shop(options.sendUserId)
+      console.log("有token")
     } else {
-      wx.reLaunch({
-        url: '../../LogIn/LogIn',
+      console.log("无token")
+      let sendUserId = options.sendUserId ? '../../LogIn/LogIn?sendUserId=' + options.sendUserId : '../../LogIn/LogIn'
+      wx.setStorage({
+        key: 'partnerid',
+        data: options.partnerid,
+        success:function() {
+          wx.navigateTo({
+            url: sendUserId,
+          })
+        }
       })
+     
     }
+  },
+  shareParekt() {
+    wx.navigateTo({
+      url: '../../MePage/sharePacket',
+    })
+  },
+  shop(sendUserId){
+    console.log(sendUserId)
+    wx.request({
+      url: url.serverUrl + 'mini/partner/check/isBindPhone',
+      method: 'POST',
+      header: {
+        //设置参数内容类型为x-www-form-urlencoded
+        'content-type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'
+      },
+      data: {
+        token: wx.getStorageSync('token'),
+      },
+      success: (res)=> {
+        if (res.data.data.phone){
+          this.myShopInfo()
+          console.log("绑定")
+        }else{
+          console.log("没绑定")
+          wx.reLaunch({
+            url: '../../RecomandPage/RecomandIndex/index?isPhone=isPhone&sendUserId=' + sendUserId + '&partnerid=' + this.data.partnerid,
+          })
+        }
+      }
+      })
   },
 
   /**
@@ -92,11 +172,7 @@ Page({
             })
           }
         } else {
-          wx.showToast({
-            title: data.errorMsg,
-            icon: 'none',
-            duration: 2000
-          })
+
         }
       }
     })
@@ -140,49 +216,16 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
+   
+    return {
+      title: this.data.randPartnerInfos.shopName + ":酸奶店里走一走,不买不是好朋友!",
+      imageUrl: this.data.randPartnerInfos.background,
+      success: function () {
 
-  },
-
-
-  isPartner() {
-    let that = this;
-    wx.request({
-      url: url.serverUrl + 'mini/partner/isPartner',
-      method: 'POST',
-      header: {
-        //设置参数内容类型为x-www-form-urlencoded
-        'content-type': 'application/x-www-form-urlencoded',
-        'Accept': 'application/json'
-      },
-      data: {
-        token: wx.getStorageSync('token'),
-      },
-      success: function(res) {
-        console.log(res.data,"isPartner :res.data")
-        url.logoutAction(res)
-
-        var data = res.data
-        if (data.status == "200") {
-          if (data.data.partnerId) {
-            that.setData({
-              isNotPatenter: 1
-            })
-            console.log("跳转")
-            that.myShopInfo()
-          }
-          //todo tengyu
-        } else {
-          wx.showToast({
-            title: data.errorMsg,
-            icon: 'none',
-            duration: 2000
-          })
-        }
       }
-    })
+    }
   },
   myShopInfo() {
-    console.log("myShopInfo被调用")
     let that = this;
     wx.request({
       url: url.serverUrl + 'mini/partner/getPartnerShopInfo?',
@@ -197,7 +240,7 @@ Page({
         partnerId: that.data.partnerId
       },
       success: function(res) {
-        console.log("myShopInfo被调用后的返回", res)
+        console.log(res)
         var data = res.data
         if (data.status == "200") {
           if (data.data.existCollect) {
@@ -212,14 +255,23 @@ Page({
           that.setData({
             randPartnerInfos: data.data,
           })
-
-          console.log(that.data.randPartnerInfos, "成功成功成功成功成功成功")
-        } else {
-          wx.showToast({
-            title: data.errorMsg,
-            icon: 'none',
-            duration: 2000
+        } 
+        else if (data.status == "400"){
+          wx.reLaunch({
+            url: '../../RecomandPage/RecomandIndex/index',
           })
+        }
+        else {
+          wx.setStorage({
+            key: 'partnerid',
+            data: that.data.partnerId,
+            success: function () {
+              wx.reLaunch({
+                url: '../../LogIn/LogIn',
+              })
+            }
+          })
+         
         }
       }
     })

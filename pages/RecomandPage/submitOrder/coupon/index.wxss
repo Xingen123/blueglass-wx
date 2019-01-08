@@ -1,0 +1,44 @@
+/* pages/RecomandPage/submitOrder/coupon/index.wxss */
+.packet{
+    width:698rpx;
+    height:301rpx;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 5rpx 20rpx 0px rgba(215,215,215,0.5);
+    border-radius:12rpx;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    text-align: center;
+}
+.packet text{
+    height:56rpx;
+    display: block;
+    margin: 0 auto;
+    font-size:40rpx;
+font-family:PingFangSC-Medium;
+font-weight:500;
+    color:rgba(0,0,0,1);
+   padding-top: 40rpx;
+}
+.packet view{
+    font-size:24rpx;
+    line-height:33rpx;
+}
+.packet image{
+    display: block;
+    margin: 0 auto;
+    margin-top: 40rpx;
+    width: 613rpx;
+    height: 2rpx;
+    
+}
+.packet view:nth-child(3){
+    margin-top: 30rpx;
+    width:613rpx;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30rpx;
+}
+.packet view:nth-child(4){
+    margin-top: 15rpx;
+    color:rgba(155,155,155,1);
+}

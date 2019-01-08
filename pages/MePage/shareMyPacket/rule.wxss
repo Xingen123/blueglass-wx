@@ -1,0 +1,31 @@
+/* pages/MePage/shareMyPacket/rule.wxss */
+.Mytitleclass {
+    font-family: PingFangSC - Medium;
+    font-size: 36rpx;
+    color: #000;
+  }
+  
+  .titleViewClass {
+    margin-top: 20rpx;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .Myinfoclass {
+  
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #9b9b9b;
+    white-space: pre-line;
+  }
+  .myinfoBackView
+  {
+    text-align:justify;
+  
+      margin-right: 20rpx;
+    margin-left: 20rpx;
+    width: 100%-40rpx;
+  
+  }
+  
+  

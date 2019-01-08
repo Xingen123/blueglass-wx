@@ -38,4 +38,5 @@
     </view>
   </block>
   <text class='bottomtext'>*价值45元的酸奶优惠券仅限 Blueglass APP 使用</text>
+  <button bindtap='goSharePacket'>我的红包</button>
 </view>

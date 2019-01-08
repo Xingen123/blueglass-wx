@@ -13,4 +13,5 @@
     <span><van-icon size="16px" name="close" /></span>
   </span>
   </van-submit-bar>
+<van-dialog id="van-dialog" message-align="{{messageAlign}}" bind:getphonenumber="bindgetphonenumber"/>
 </view>

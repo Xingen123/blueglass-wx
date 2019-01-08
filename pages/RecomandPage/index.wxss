@@ -9,7 +9,7 @@
   width: 100%;
   height: calc(100% - 98rpx);
   background-color: #fcfcfc;
-  padding-bottom: 100rpx;
+  padding-bottom: 150rpx;
 }
 
 .showadress {
@@ -244,16 +244,17 @@
 .shangpinLeixingView {
   margin-top: 30rpx;
   margin-left: 47rpx;
-  width: 100%;
 }
 
 .leixingtitle {
-  width: 190rpx;
+  padding: 0 20rpx;
   height: 50rpx;
   border: 2rpx solid #9b9b9b;
   border-radius: 25rpx;
   color: #9b9b9b;
   text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 .leixingtitle text {
@@ -266,9 +267,21 @@
   width: 100%;
   height: 100rpx;
 }
+.shareParekt{
+position:fixed;
+right:20px;
+height:115rpx;
+width:115rpx;
+bottom:200rpx;
+z-index:100;
 
+}
+.shareParekt image{
+width: 100%;
+height: 100%;
+}
 .nav {
-  height: 434rpx;
+  height: 480rpx;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
@@ -287,7 +300,7 @@
   margin-left: 10rpx;
   margin-right: 10rpx;
   width: 332rpx;
-  height: 434rpx;
+  height: 480rpx;
   background-color: #fff;
 }
 
@@ -301,13 +314,18 @@
 
 .nav_img image {
   width: 312rpx;
-  height: 274rpx;
+  height: 312rpx;
   float: left;
+  border-radius: 5rpx;
 }
 
 .shangpinname {
-  margin-top: 24rpx;
-  height: 60rpx;
+  width: 100%;
+  padding-right: 10rpx;
+  overflow: hidden;
+
+  margin-top: 60rpx;
+  height: 80rpx;
   text-align: center;
 }
 
@@ -315,6 +333,7 @@
   font-family: PingFangSC-Medium;
   font-size: 32rpx;
   color: #4a4a4a;
+white-space:pre-wrap;
 }
 
 .jia {
@@ -349,6 +368,9 @@
   width: 152rpx;
   text-align: right;
   margin-right: 20rpx;
+    display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .moneyView text {
@@ -358,7 +380,7 @@
 }
 
 .leixingbgView {
-  height: 550rpx;
+  height: 570rpx;
 }
 
 .addressCellClass {

@@ -57,11 +57,19 @@
                     <view class=' moneyInfoview'>
                       <text class='moneyIcon'>￥</text>
                       <text class='moneyTips'>{{product.salePrice}}</text>
-
+                    </view>
+                    <view class='delete' catchtap="delete" data-proId="{{product}}" data-index="{{productidx}}" wx:if="{{product.isopen==0}}">
+                      <image src='../../../Images/coupon/delete.png'></image>
+                    </view>
+                    <view class='delete' catchtap="delete" data-proId="{{product}}" wx:if="{{product.isopen==1}}">
+                     
+                    </view>
+                    <view  class='bttonVIew' catchtap="compile"  data-proId="{{product}}">
+                        <text >编辑</text>
                     </view>
                     <view class='bttonVIew' catchtap='shangxiaAction' data-product="{{product}}">
-                  <text>{{product.isopen==0?'上架':'下架'}}</text>
-                  </view>
+                      <text>{{product.isopen==0?'上架':'下架'}}</text>
+                    </view>
                   </view>
                 </view>
               </view>
@@ -167,7 +175,7 @@
 
   </view>
   <view class='editbackView' catchtap='editAction'>
-    <text>新建</text>
+    <text>新建产品</text>
   </view>
     <van-dialog id="van-dialog" />
 

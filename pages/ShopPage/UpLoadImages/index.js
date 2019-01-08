@@ -151,6 +151,7 @@ Page({
     i = data.i ? data.i : 0,//当前上传的哪张图片
     success = data.success ? data.success : 0,//上传成功的个数
     fail = data.fail ? data.fail : 0;//上传失败的个数
+    console.log(data.url,data.path[i],wx.getStorageSync('token'),"这是uplodingIMG")
     wx.uploadFile({
       url: data.url,
       filePath: data.path[i],

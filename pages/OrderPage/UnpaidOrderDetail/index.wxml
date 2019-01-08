@@ -11,7 +11,7 @@
   * 实际支付：totalmoney
 discountmoney="{{orderInfo.orderId}}"  优惠
    -->
-  <van-order-card ordernum="{{orderInfo.orderNo}}" shopname="订单详情" ordertime="{{orderInfo.created}}" orderstate="{{orderInfo.status}}" ordermoney="{{orderInfo.payAmont}}" distributionFee = "{{orderInfo.distributionFee}}" deliveryCost = "{{orderInfo.deliveryCost}}" totalmoney="{{orderInfo.payableAmount}}" ></van-order-card>
+  <van-order-card ordernum="{{orderInfo.orderNo}}" shopname="订单详情" ordertime="{{orderInfo.created}}" orderstate="{{orderInfo.status}}" ordermoney="{{orderInfo.payAmont}}" distributionFee = "{{orderInfo.distributionFee}}" deliveryCost = "{{orderInfo.actuallyPaid}}" totalmoney="{{orderInfo.payableAmount}}" ></van-order-card>
 
 <van-blue-button size="large" catchtap='canleOrder'>取消订单</van-blue-button>
 

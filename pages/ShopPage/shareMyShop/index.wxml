@@ -66,10 +66,21 @@
     <view class='circle diy' bindtap='DIYAction' wx:if="{{!randPartnerInfos.mySelf}}" data-partnerid='{{randPartnerInfos.partnerid}}'>
       <image src='../../../Images/shop/diandan.png' class="{{showView3? 'zindex': ''}} "></image>
     </view>
-
+    <view class='shareParekt' bindtap='shareParekt'>
+      <image src='{{shareImg}}' ></image>
+    </view>
   </view>
 </block>
 
+<view wx:if="{{showCoupon}}" class='bgCoupon' catchtap="bgCoupon">
+
+
+
+</view>
+<!-- <view class='bgCouponview' catchtap="bgCoupon" wx:if="{{showCoupon}}">
+    <image src='../../../Images/coupon/coupon.jpg'></image>
+ 
+</view> -->
 <!-- <block wx:else>
   <view class='back2View'>
     <image src='../../../Images/shop/apply_background.png'>

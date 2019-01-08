@@ -407,9 +407,9 @@ Page({
                 if (res.data.status == 200) {
                   var productListData = JSON.stringify(res.data.data);
                   var multiTradeId = that.data.multiTradeId;
-
+                  console.log(res.data.data.derateCost,"A页面")
                   wx.navigateTo({
-                    url: '../MorePersonSubmitOrder/index?productListData=' + productListData + '&multiTradeId=' + multiTradeId + '&partnerId=' + that.data.partnerId + '&addressId=' + that.data.addressInfodetail.addressId,
+                    url: '../MorePersonSubmitOrder/index?productListData=' + productListData + '&multiTradeId=' + multiTradeId + '&partnerId=' + that.data.partnerId + '&addressId=' + that.data.addressInfodetail.addressId + '&derateCost=' + res.data.data.derateCost,
                   })
                 } else {
                   wx.showToast({

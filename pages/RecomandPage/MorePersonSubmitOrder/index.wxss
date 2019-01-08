@@ -16,7 +16,30 @@
   justify-content: space-between;
   margin-top: 10px;
 }
+.coupon{
+  box-shadow:0px 2px 20px 0 #ccc;
+background:#fff;
+width:calc(100% - 50px);
+border:1px solid #dcdcdc;
+margin:10px auto;
+border-radius:6px;
+padding:10px ;
 
+}
+.title{
+  font-size:28rpx;
+  color:rgba(155,155,155,1);
+}
+.couponSelect text{
+  color: rgba(74,74,74,1);
+  padding-left: 10rpx;
+}
+.couponSelect{
+  font-size:28rpx;
+  color:rgba(0,160,232,1);
+  text-align: right;
+  margin-top: 50rpx;
+}
 .shop_nearby_left {
   color: #9b9b9b;
   font-size: 14px;

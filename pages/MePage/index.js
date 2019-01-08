@@ -10,6 +10,7 @@ Page({
     imgUrls: [
 
     ],
+    index:1,
     indicatorDots: true,
     indicatorColor: '#D8D8D8',
     indicatorActiveColor: '#9B9B9B',
@@ -31,12 +32,12 @@ Page({
         icon: '../../Images/Me/liulan.png',
         code: '10'
       },
-      // {
-      //   name: '优惠券',
-      //   url: 'coupo',
-      //   icon: '../../Images/Me/youhuiquan.png',
-      //   code: '11'
-      // },
+      {
+        name: '优惠券',
+        url: 'shareMyPacket/index',
+        icon: '../../Images/Me/youhuiquan.png',
+        code: '11'
+      },
       {
         name: '联系客服',
         url: '/pages/Course/course',
@@ -74,12 +75,21 @@ Page({
   },
   jumpDetail: function(event) {
     var url = event.currentTarget.dataset.url;
-
+    console.log(url)
     wx.navigateTo({
       url: url,
     })
   },
-
+  sharePacket(){
+    wx.navigateTo({
+      url: "./sharePacket",
+    })
+  },
+  swiperIndex(e){
+    this.setData({
+      index: e.detail.current + 1
+    })
+  },
   editAction: function(options) {
     let that = this;
 
@@ -141,7 +151,7 @@ Page({
         token: wx.getStorageSync('token')
       },
       success: function(res) {
-        console.log(res.data.data.bannerImageInfos)
+        console.log(res.data.data)
         url.logoutAction(res)
 
         var data = res.data
@@ -149,7 +159,8 @@ Page({
           that.setData({
             isPartner: res.data.data.isPartner,
             myinfo: res.data.data,
-            imgUrls: res.data.data.bannerImageInfos
+            imgUrls: res.data.data.bannerImageInfos,
+            myActivity: res.data.data.myActivity
           });
 
           if (that.data.isPartner == false) {
@@ -160,12 +171,12 @@ Page({
                   icon: '../../Images/Me/liulan.png',
                   code: '10'
                 },
-                // {
-                //   name: '优惠券',
-                //   url: 'coupo',
-                //   icon: '../../Images/Me/youhuiquan.png',
-                //   code: '11'
-                // },
+                {
+                  name: '优惠券',
+                  url: 'shareMyPacket/index',
+                  icon: '../../Images/Me/youhuiquan.png',
+                  code: '11'
+                },
                 {
                   name: '联系客服',
                   url: '/pages/Course/course',
@@ -183,12 +194,12 @@ Page({
                   icon: '../../Images/Me/liulan.png',
                   code: '10'
                 },
-                // {
-                //   name: '优惠券',
-                //   url: 'coupo',
-                //   icon: '../../Images/Me/youhuiquan.png',
-                //   code: '11'
-                // },
+                {
+                  name: '优惠券',
+                  url: 'shareMyPacket/index',
+                  icon: '../../Images/Me/youhuiquan.png',
+                  code: '11'
+                },
                 {
                   name: '联系客服',
                   url: '/pages/Course/course',

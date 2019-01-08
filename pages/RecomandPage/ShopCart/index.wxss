@@ -2,3 +2,6 @@
 .closeTip{
   float: right;
 }
+.van-dialog__message van-dialog__message text{
+  text-align: center;
+}

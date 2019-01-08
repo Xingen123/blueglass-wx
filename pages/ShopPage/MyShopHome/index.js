@@ -40,7 +40,8 @@ Page({
     screenWidth: '',       //设备屏幕宽度
     name:'',
     icon:'',
-    salesAmount:''
+    salesAmount:'',
+    productIdIndex:""
   },
 
   /**
@@ -48,6 +49,7 @@ Page({
    */
   onLoad: function(options) {
     let that = this
+
     showView: (options.showView == "true" ? true : false),
       //获取用户设备信息，屏幕宽度
       wx.getSystemInfo({
@@ -70,14 +72,14 @@ Page({
       // shareicon: e.currentTarget.dataset.product.icon,
       // salesAmount: e.currentTarget.dataset.product.salesAmount
     })
-
+    let fuDai = e.currentTarget.dataset.product.isLucky == "true" ? "https://clickvideo.oss-cn-beijing.aliyuncs.com/blueglass/acf3cc74-48ba-43c6-a653-b04b3b4e2f5f.png" : e.currentTarget.dataset.product.icon;
     let productSession = {
       name: e.currentTarget.dataset.product.name,
       nickname: e.currentTarget.dataset.nickname,
       headpath: e.currentTarget.dataset.headpath,
       shareicon: e.currentTarget.dataset.product.icon,
       salesAmount: e.currentTarget.dataset.product.salesAmount,
-      backgournd: e.currentTarget.dataset.product.backgournd,
+      backgournd: fuDai,
       glassType: e.currentTarget.dataset.product.type,
       isLucky: e.currentTarget.dataset.product.isLucky,
       glassIcon: e.currentTarget.dataset.product.glassIcon,
@@ -90,6 +92,13 @@ Page({
     this.setData({
       showView: false
     })
+  },
+  goShopIndex(){
+    console.log(this.data.productIdIndex)
+      wx.navigateTo({
+      // //   url: '../index?partnerId=' + e.currentTarget.dataset.partnerid + '&shareiv=' + e.currentTarget.dataset.shareiv + '&shopName=' + e.currentTarget.dataset.shopname
+        url: '../../RecomandPage/index?partnerId=' + this.data.productIdIndex
+      })
   },
   // 分享海报
   sharePoster(e){
@@ -128,7 +137,7 @@ Page({
       success: function(res) {
         wx.hideLoading();
         serverUrl.logoutAction(res)
-
+        console.log(res.data.data.partnerId)
         if (res.data.status == 200) {
           that.setData({
             icon: res.data.data.icon,
@@ -137,6 +146,7 @@ Page({
             shopLevel: res.data.data.shopLevel,
             backgroundIVs: res.data.data.background,
             categoryList: res.data.data.myProducts,
+            productIdIndex: res.data.data.partnerId
           });
           var currentDIYList = [];
 
@@ -265,13 +275,14 @@ Page({
    
     if (res.from == 'button') {
       let product = wx.getStorageSync('productSession');
-      console.log(typeof product.isLucky)
+      console.log(product)
       var isLucky = product.isLucky == "true" ? "../../../Images/shop/fudai.png" : product.shareicon;
       
       
       return {
+        
         title: product.name + '：这杯酸奶有魔力，喝了1秒变仙女！',
-        path: '/pages/ShopPage/shareMyShop/index?partnerid=' + product.partnerId,
+        path: '/pages/RecomandPage/index?shopName=' + product.nickname + '&partnerId=' + product.partnerId, 
         desc: '',
         imageUrl: isLucky,
         success(res) {

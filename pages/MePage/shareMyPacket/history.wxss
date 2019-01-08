@@ -1,0 +1,31 @@
+/* pages/MePage/shareMyPacket/history.wxss */
+.historyBox{
+    width:698rpx;
+height:146rpx;
+background:rgba(255,255,255,1);
+box-shadow:0px 5rpx 20rpx 0px rgba(215,215,215,0.5);
+border-radius:12rpx;
+margin: 0 auto;
+font-size:24rpx;
+margin-top: 29rpx;
+}
+.historyBox text{
+    display: block;
+    width:240px;
+    height: 33rpx;
+font-weight:400;
+color:rgba(0,0,0,1);
+line-height:33rpx;
+padding-top: 29rpx;
+padding-left: 29rpx;
+}
+.historyBox_last{
+    padding-top: 29rpx;
+padding-left: 29rpx;
+padding-right: 29rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.text{
+    color: #9B9B9B;
+}

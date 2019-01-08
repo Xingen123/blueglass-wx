@@ -9,11 +9,16 @@ Page({
    */
   data: {
     // isIphoneX:"",
+    shareImg: "https://wxmp.clicksdiy.com/makeup/pbag/4.png?" + Math.random(),
+    shareIma: "https://wxmp.clicksdiy.com/makeup/pbag/1.png?" + Math.random(),
+    shareImb: "https://wxmp.clicksdiy.com/makeup/pbag/2.png?" + Math.random(),
+    sendUserId:"",
     showView:false,
     name: "",
     head: "",
     background:"",
     itemId:"",
+    current:0,
     token: wx.getStorageSync('token'),
     randPartnerInfos:[],
     advertisingInfos:[],
@@ -22,15 +27,16 @@ Page({
     autoplay2: false,
     circular:true,
     interval: 2500,
-    duration: 1000,
+    duration: 500,
     shopData: [],
     existCollect:"",
+    isBindPhoneId:"",
     isShowExistCollect:false,
     clientHeight:'',
     isFirstLoad: true,
-
-
-    //add by jacky for 加载更多
+    box: false,
+    succseBox:false,
+    isBindPhone:false,
     cur: 0,//改变当前索引
     index: 0//当前的索引
   },
@@ -39,6 +45,38 @@ Page({
       indicatorDots: !this.data.indicatorDots
     })
   },
+  bgBlack(){
+    this.setData({
+      succseBox:false
+    })
+    if (this.data.isBindPhoneId){
+    console.log(this.data.isBindPhoneId)
+      wx.navigateTo({
+        url: '../../ShopPage/shareMyShop/index?partnerid=' + this.data.isBindPhoneId
+      })
+    }
+  },
+  changeGoodsSwip: function (detail) {
+    if (detail.detail.source == "touch") {
+      //当页面卡死的时候，current的值会变成0 
+      if (detail.detail.current == 0) {
+        //有时候这算是正常情况，所以暂定连续出现3次就是卡了
+        let swiperError = this.data.swiperError
+        swiperError += 1
+        this.setData({ swiperError: swiperError })
+        if (swiperError >= 3) { //在开关被触发3次以上
+          console.error(this.data.swiperError)
+          this.setData({ current: this.data.preIndex });//，重置current为正确索引
+          this.setData({ swiperError: 0 })
+        }
+      } else {//正常轮播时，记录正确页码索引
+        this.setData({ preIndex: detail.detail.current });
+        //将开关重置为0
+        this.setData({ swiperError: 0 })
+      }
+    }
+  },
+
   changeAutoplay: function (e) {
     this.setData({
       autoplay: !this.data.autoplay
@@ -63,11 +101,74 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // console.log(app)
-    // let isIphoneX = app.globalData.isIphoneX;
-    // this.setData({
-    //   isIphoneX: isIphoneX
-    // })
+    // let aaa = wx.getStorageSync("newApp")
+    // if (aaa == "show") {
+    //   this.setData({
+    //     box: true
+    //   })
+    //   wx.setStorageSync("newApp", "1")
+    //   let bbb = wx.getStorageSync("newApp")
+    // }
+
+    //没有授权手机号显示
+   
+    if (options.isPhone == "isPhone"){
+      this.setData({
+        isBindPhone:true
+      })
+      if (options.partnerid){
+        this.setData({
+          isBindPhoneId: options.partnerid
+        })
+      }
+    } 
+    else if (options.isPhone == "isPhoneYzm"){
+      this.setData({
+        succseBox: true,
+        isBindPhone:false
+      })
+    }
+
+    if (options.sendUserId){
+      this.setData({
+        sendUserId: options.sendUserId
+      })
+    }
+    console.log(options.sendUserId,137)
+    
+    // 用户版本更新
+    if (wx.canIUse("getUpdateManager")) {
+      let updateManager = wx.getUpdateManager();
+      updateManager.onCheckForUpdate((res) => {
+        // 请求完新版本信息的回调
+        console.log(res.hasUpdate,12);
+       
+      })
+      updateManager.onUpdateReady(() => {
+        wx.showModal({
+          title: '又又又升级啦！',
+          content: '升级后的它更快、更顺、更全面！体验一下？',
+          success: (res) => {
+            if (res.confirm) {
+              // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
+              updateManager.applyUpdate();
+              // wx.setStorageSync("newApp", "show")
+            } else if (res.cancel) {
+              return false;
+            }
+          }
+        })
+      })
+      updateManager.onUpdateFailed(() => {
+        // 新的版本下载失败
+        wx.hideLoading();
+        wx.showModal({
+          title: '升级失败',
+          content: '新版本下载失败，请检查网络！',
+          showCancel: false
+        });
+      });
+    }
     let that = this
     wx.getSystemInfo({
       success: function (res) {
@@ -90,9 +191,94 @@ Page({
     console.log(this.data.itemId)
     // this.fenXiang(partnerid)
   },
-  sharePeople(e){
+  play(){
     this.setData({
-      showView: true
+      box:false
+    })
+  },
+  bindgetphonenumber(e){
+
+    let encryptedData = e.detail.encryptedData;
+    let iv = e.detail.iv;
+    if (encryptedData) {
+      this.bindSuccse(encryptedData, iv)
+    } else {
+      wx.navigateTo({
+        url: '../../MePage/editPhone?typecode=1&sendUserId' + this.data.sendUserId,
+      })
+    }
+  },
+  bindSuccse(encryptedData,iv){
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.request({
+      url: url.serverUrl + 'mini/partner/decryptMobile',
+      method: 'POST',
+      header: {
+        //设置参数内容类型为x-www-form-urlencoded
+        'content-type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'
+      },
+      data: {
+        token: wx.getStorageSync('token'),
+        encryptedData: encryptedData,
+        iv:iv
+      },
+      success: (res)=> {
+        wx.hideLoading()
+        if (res.data.status == 200 ){
+          this.receiveGiftTicket(res.data.data.mobile)
+          this.setData({
+            isBindPhone:false
+          })
+        }
+      }
+    })  
+  },
+  shareParekt(){
+    wx.navigateTo({
+      url: '../../MePage/sharePacket',
+    })
+  },
+  receiveGiftTicket(phone){
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.request({
+      url: url.serverUrl + 'mini/partner/receiveGiftTicket',
+      method: 'POST',
+      header: {
+        //设置参数内容类型为x-www-form-urlencoded
+        'content-type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'
+      },
+      data: {
+        token: wx.getStorageSync('token'),
+        phone: phone,
+        sendUserId:this.data.sendUserId
+      },
+      success: (res) => {
+        wx.hideLoading()
+        if (res.data.status == 200) {
+          this.setData({
+            succseBox: true
+          })
+        }
+      },
+      fail:(err)=> {
+        wx.hideLoading()
+        wx.showModal({
+          title: err.data,
+        })
+      }
+    })  
+  },
+  sharePeople(e){
+
+    this.setData({
+      showView: true,
+      current:e.currentTarget.dataset.current
     })
     this.fenXiang(e.currentTarget.dataset.partnerid)
     console.log(e.currentTarget.dataset)
@@ -107,9 +293,10 @@ Page({
         text:"酸奶店里走一走，不买不是好朋友!",
       wxIcon: e.currentTarget.dataset.head
     }
+    console.log(productDataset)
     wx.setStorageSync('productDataset', productDataset)
    
-    console.log(wx.getStorageSync('productDataset'))
+    
   },
   fenXiang(partnerid) {
     console.log(partnerid)
@@ -180,31 +367,20 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function (e) {
+   
   },
 
   swiperChange(e) {
     var that = this;
     let current = e.detail.current;
-    let source = e.detail.source;
     let count = this.data.randPartnerInfos.length - 1;
-    console.log(e)
-    let itemId = e.detail.currentItemId;
-    let index = e.detail.current;
-    let name = this.data.randPartnerInfos[index].shopName;
-    let head = this.data.randPartnerInfos[index].icon;
-    let background = this.data.randPartnerInfos[index].background;
-    that.setData({
-      // index: current,
-      itemId: itemId,
-      name:name,
-      head:head,
-      background:background
+    this.setData({
+      current:current
     })
-    console.log(this.data.itemId)
     if (current === count)
     {
       //请求更多数据
-      that.partnerRecommend()
+      that.allSwiper()
     }
   },
 
@@ -212,18 +388,20 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function (res) {
+    let current = this.data.current;
+    let itemId = this.data.randPartnerInfos[current].partnerId;
+    let name = this.data.randPartnerInfos[current].shopName;
+    let background = this.data.randPartnerInfos[current].background;
+
     this.setData({
       showView: false
     })
-    var that = this;
-    //  console.log(wx.getStorageSync('productDataset'))
-    // console.log(that.data.itemId);
-    if (that.data.itemId) {
+    if (itemId) {
       return {
-        title: that.data.name + ':酸奶店里走一走，不买不是好朋友',
-        path: '/pages/ShopPage/shareMyShop/index?partnerid=' + that.data.itemId,
+        title: name + ':酸奶店里走一走，不买不是好朋友',
+        path: '/pages/ShopPage/shareMyShop/index?partnerid=' + itemId,
         // desc: '',
-        imageUrl: that.data.background,
+        imageUrl: background,
         success: function (res) {
           console.log(res)
         }
@@ -268,7 +446,7 @@ Page({
           that.setData({
             randPartnerInfos: randPartnerInfos
           })
-          console.log('xxxxx');
+         
 
             // e.currentTarget.dataset.existcollect = !e.currentTarget.dataset.existcollect
           if (!e.currentTarget.dataset.item.existCollect ) {
@@ -300,6 +478,41 @@ Page({
       }
     })
   },
+allSwiper(){
+  wx.showLoading({
+    title: '加载中...',
+  })
+  wx.request({
+    url: url.serverUrl + 'mini/partner/partnerRecommend',
+    method: 'POST',
+    header: {
+      //设置参数内容类型为x-www-form-urlencoded
+      'content-type': 'application/x-www-form-urlencoded',
+      'Accept': 'application/json'
+    },
+    data: {
+      token: wx.getStorageSync('token')
+    },
+    success: (res) => {
+      wx.hideLoading()
+        let randPartnerInfos = this.data.randPartnerInfos
+        this.setData({
+          randPartnerInfos: [...randPartnerInfos, ...res.data.data.randPartnerInfos]
+          // this.data.randPartnerInfos.concat(res.data.data.randPartnerInfos)
+        })
+        console.log(this.data.randPartnerInfos)
+    },
+    fail:(err)=>{
+      wx.hideLoading()
+      wx.showToast({
+        title: data.errorMsg,
+        icon: 'none', 
+        duration: 2000
+      })
+    }
+  })
+},
+
   partnerRecommend(){
     let that = this;
     wx.request({
@@ -402,7 +615,7 @@ Page({
   ddAction(e) {
     console.log(e)
     wx.navigateTo({
-      url: '../index?partnerId=' + e.currentTarget.dataset.partnerid + '&shareiv=' + e.currentTarget.dataset.shareiv
+      url: '../index?partnerId=' + e.currentTarget.dataset.partnerid + '&shareiv=' + e.currentTarget.dataset.shareiv + '&shopName=' + e.currentTarget.dataset.shopname
       // url: '../index?partnerId=23b4f5247c43463db4d141f2b0df193a'
     })
   },

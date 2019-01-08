@@ -1,0 +1,7 @@
+<!--pages/RecomandPage/submitOrder/coupon/index.wxml-->
+            <view class="packet"  wx:for="{{giftTickets}}" wx:for-item="item" wx:key="{{index}}" catchtap='goBack' data-id='{{item.giftTicketId}}' data-name='{{item.giftName}}' data-money='{{item.giftValue}}'>
+                <text>{{item.giftName}}</text>
+                <image src="https://clickvideo.oss-cn-beijing.aliyuncs.com/blueglass/40ded5a0-a046-4acc-8d21-be2290c2e173.png"></image>
+                <view>{{item.comment}}</view>    
+                <view>有效期至：{{item.exceeTime}}</view>  
+            </view>

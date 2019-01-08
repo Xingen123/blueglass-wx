@@ -49,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 23,
+			"current": 70,
 			"list": [
 				{
 					"id": -1,
@@ -192,7 +192,290 @@
 				{
 					"id": -1,
 					"name": "dian",
-					"pathName": "pages/ShopPage/shareMyShop/index"
+					"pathName": "pages/ShopPage/shareMyShop/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "xx",
+					"pathName": "pages/ShopPage/shareMyShop/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "红包",
+					"pathName": "pages/MePage/shareMyPacket/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "历史",
+					"pathName": "pages/MePage/shareMyPacket/history",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "邀请码",
+					"pathName": "pages/MePage/inviteCode",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "SSS",
+					"pathName": "pages/RecomandPage/submitOrder/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "SSS",
+					"pathName": "pages/RecomandPage/submitOrder/index",
+					"query": ""
+				},
+				{
+					"id": 30,
+					"name": "SSS",
+					"pathName": "pages/RecomandPage/submitOrder/coupon/index",
+					"query": "orderId=56D77632C6414BB284D2F05769EA1BD8&money=65"
+				},
+				{
+					"id": -1,
+					"name": "SSS",
+					"pathName": "pages/ShopPage/shareMyShop/index",
+					"query": "orderId=56D77632C6414BB284D2F05769EA1BD8&money=65"
+				},
+				{
+					"id": -1,
+					"name": "SSS",
+					"pathName": "pages/ShopPage/shareMyShop/index",
+					"query": "orderId=56D77632C6414BB284D2F05769EA1BD8&money=65"
+				},
+				{
+					"id": -1,
+					"name": "SSS",
+					"pathName": "pages/RecomandPage/MyCollection/index",
+					"query": "orderId=56D77632C6414BB284D2F05769EA1BD8&money=65"
+				},
+				{
+					"id": -1,
+					"name": "SSS",
+					"pathName": "pages/MePage/inviteCode",
+					"query": "orderId=56D77632C6414BB284D2F05769EA1BD8&money=65"
+				},
+				{
+					"id": 35,
+					"name": "SSS",
+					"pathName": "pages/ShopPage/shareMyShop/index",
+					"query": "partnerid=CF3B98BD46504278B1FCE4664870CE32&giftTicketId=B3505AE689F54DE5ADC46C16E8AC308D"
+				},
+				{
+					"id": -1,
+					"name": "SSS",
+					"pathName": "pages/RecomandPage/MorePersonSubmitOrder/index",
+					"query": "addressId=5F03D5803DC8425281229212A433BA9F&derateCost=0&multiTradeId=A12235BA5380425CB069E32DF400C635&partnerId=A2CA7C67CEE84DEFB4425948F34387C5"
+				},
+				{
+					"id": -1,
+					"name": "SSS",
+					"pathName": "pages/RecomandPage/submitOrder/index",
+					"query": "addressId=5F03D5803DC8425281229212A433BA9F&derateCost=0&multiTradeId=A12235BA5380425CB069E32DF400C635&partnerId=A2CA7C67CEE84DEFB4425948F34387C5"
+				},
+				{
+					"id": -1,
+					"name": "SSS",
+					"pathName": "pages/MePage/inviteCode",
+					"query": "addressId=5F03D5803DC8425281229212A433BA9F&derateCost=0&multiTradeId=A12235BA5380425CB069E32DF400C635&partnerId=A2CA7C67CEE84DEFB4425948F34387C5"
+				},
+				{
+					"id": -1,
+					"name": "SSS",
+					"pathName": "pages/MePage/inviteCode",
+					"query": "addressId=5F03D5803DC8425281229212A433BA9F&derateCost=0&multiTradeId=A12235BA5380425CB069E32DF400C635&partnerId=A2CA7C67CEE84DEFB4425948F34387C5"
+				},
+				{
+					"id": -1,
+					"name": "开店码",
+					"pathName": "pages/ShopPage/InvitationCode/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "产品库",
+					"pathName": "pages/ShopPage/MyProductlibrary/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "编辑",
+					"pathName": "pages/ShopPage/MyProductlibrary/modification/index",
+					"query": ""
+				},
+				{
+					"id": 43,
+					"name": "编辑",
+					"pathName": "pages/ShopPage/MyProductlibrary/modification/index",
+					"query": "productId=444EEE1DA3A545C992047B43794A07A0"
+				},
+				{
+					"id": -1,
+					"name": "编辑",
+					"pathName": "pages/ShopPage/MyProductlibrary/index",
+					"query": "productId=444EEE1DA3A545C992047B43794A07A0"
+				},
+				{
+					"id": -1,
+					"name": "店铺",
+					"pathName": "pages/ShopPage/MyShop/index",
+					"query": "productId=444EEE1DA3A545C992047B43794A07A0"
+				},
+				{
+					"id": -1,
+					"name": "店铺",
+					"pathName": "pages/ShopPage/MyShopHome/index",
+					"query": "productId=444EEE1DA3A545C992047B43794A07A0"
+				},
+				{
+					"id": 47,
+					"name": "模拟更新",
+					"pathName": "pages/RecomandPage/RecomandIndex/index",
+					"query": "productId=444EEE1DA3A545C992047B43794A07A0"
+				},
+				{
+					"id": -1,
+					"name": "1",
+					"pathName": "pages/ShopPage/MyShop/index",
+					"query": "productId=444EEE1DA3A545C992047B43794A07A0"
+				},
+				{
+					"id": -1,
+					"name": "客服",
+					"pathName": "pages/OrderPage/FinishOrder/index",
+					"query": "productId=444EEE1DA3A545C992047B43794A07A0"
+				},
+				{
+					"id": -1,
+					"name": "客服",
+					"pathName": "pages/MePage/index",
+					"query": "productId=444EEE1DA3A545C992047B43794A07A0"
+				},
+				{
+					"id": -1,
+					"name": "邀请好友",
+					"pathName": "pages/MePage/sharePacket",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "邀请好友",
+					"pathName": "pages/RecomandPage/RecomandIndex/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "ss",
+					"pathName": "pages/MePage/sharePacket",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "ss",
+					"pathName": "pages/ShopPage/MyShop/MyshopShare/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "邀请好友",
+					"pathName": "pages/MePage/sharePacket",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "邀请好友",
+					"pathName": "pages/MePage/sharePacket",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/ShopPage/shareMyShop/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/MePage/shareMyPacket/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/MePage/sharePacket",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "yaoqing",
+					"pathName": "pages/MePage/sharePacket",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "yaoqing",
+					"pathName": "pages/MePage/sharePacket",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "yaoqing",
+					"pathName": "pages/OrderPage/PurchaseOrder/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "556",
+					"pathName": "pages/MePage/sharePacket",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "556",
+					"pathName": "pages/MePage/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "556",
+					"pathName": "pages/MePage/sharePacket",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "11",
+					"pathName": "pages/RecomandPage/RecomandIndex/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "11",
+					"pathName": "pages/RecomandPage/RecomandIndex/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "11",
+					"pathName": "pages/MePage/sharePacket",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/RecomandPage/ShopCart/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/RecomandPage/submitOrder/index",
+					"query": "partnerId=537F92787EBE4965B6B610D30C815D83&merchantId=f2f6df8e-588d-11e7-b244-00163e003d73&addressId=5F03D5803DC8425281229212A433BA9F&payableAmount=108&isPickup=1&shortName=世贸天阶店&location=北京市朝阳区世贸天阶地下南街B-117&addressInfodetail={\"address\":\"常营-地铁站\",\"addressDetail\":\"（ '▿ ' ）\",\"city\":\"北京市\",\"latitude\":39.925707476979255,\"mobile\":\"15006786952\",\"recieveName\":\"邢恩\",\"addressId\":\"5F03D5803DC8425281229212A433BA9F\",\"longitude\":116.5988997517974}&orderId=115555E2A17D4EEA84A65D0FDA7C326F&shoppingCartData=[{\"productDIYname\":\"疯狂冷萃DIY\",\"amount\":3,\"productId\":\"277961689ADE4D41907E741E2CA2C2EA\",\"totalPrice\":108,\"materials\":\"标准杯x1\",\"price\":36,\"icon\":\"https://clickvideo.oss-cn-beijing.aliyuncs.com/blueglass/75605da2-a51f-4cc7-a0bd-bf697ca23ee1.png\",\"name\":\"10小时原味冷萃酸奶\",\"id\":\"EF44BD0B473B4695ABD3F2B3E7A6FC1E\",\"isLucky\":\"false\"}]&totalPrice=108&deliveryCost=0"
 				}
 			]
 		}

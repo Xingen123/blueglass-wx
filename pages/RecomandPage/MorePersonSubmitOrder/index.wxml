@@ -14,6 +14,11 @@
 
     <view class='shop_desc'>{{address.addressDetail}}</view>
   </view>
+    <!-- 优惠券 -->
+    <view class='coupon'>
+      <view class='title'>优惠券</view>
+      <view class='couponSelect' catchtap='goCoupon' data-state='manyOrder'>{{coupon}}<text>></text></view>
+    </view>
 
   <view class='shop pay_detail'>
     <view class='pay_detail_title'>支付详情</view>
@@ -22,12 +27,22 @@
       <view class='shop_nearby_right'>¥{{orderAmount}}</view>
     </view>
     <view class='shop_nearby'>
+      <view class='shop_nearby_left'>优惠金额</view>
+      <view class='shop_nearby_right' wx:if="{{deliveryPrice != 0 }}">-¥{{deliveryPrice}}</view>
+      <view class='shop_nearby_right'wx:else>¥{{deliveryPrice}}</view>
+    </view>
+    <view class='shop_nearby'>
       <view class='shop_nearby_left'>配送金额</view>
       <view class='shop_nearby_right'>¥{{fareAmount}}</view>
     </view>
     <view class='shop_nearby'>
+      <view class='shop_nearby_left'>配送减免</view>
+      <view class='shop_nearby_right' wx:if="{{derateCost != 0 }}">-¥{{derateCost}}</view>
+      <view class='shop_nearby_right'wx:else>¥{{derateCost}}</view>
+    </view>
+    <view class='shop_nearby'>
       <view class='shop_nearby_left'>实际金额</view>
-      <view class='pay_money'>¥{{orderAmount+fareAmount}}</view>
+      <view class='pay_money'>¥{{price}}</view>
     </view>
   </view>
 

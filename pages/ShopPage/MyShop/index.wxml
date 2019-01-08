@@ -34,10 +34,10 @@
      <view  style="background-image: url({{randPartnerInfos.background}})"  class='bacdground_imgurl'></view>
     <!-- <image src='{{randPartnerInfos.background}}' bindload="imageLoad" style="width:{{ images.width }}rpx; height:{{ images.height }}rpx;" class='bacdground_imgurl'></image> -->
     <view class='sologn_con'>
-    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" vertical="true" circular="{{circular}}" style='height:60rpx !important;width:90%;' class='sologn'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" vertical="true" circular="{{circular}}"  class='sologn'>
       <block wx:for="{{advertisingInfos}}" wx:for-index="index" wx:for-item="advertis"  wx:key="index">
-        <swiper-item catchtap='advertisingInfosClick' data-isRedirect="{{advertis.isRedirect}}" data-redirectTarget="{{advertis.redirectTarget}}">
-          <view>{{advertis.name}}</view>
+        <swiper-item catchtap='advertisingInfosClick' data-isRedirect="{{advertis.isRedirect}}"    data-redirectTarget="{{advertis.redirectTarget}}">
+          <view class='swiperBox' style="width:630rpx !important;">{{advertis.name}}</view>
         </swiper-item>
       </block>
     </swiper>
@@ -72,7 +72,12 @@
     <button class='circle fx'  catchtap='goShare'  id="1" data-shopName='{{randPartnerInfos.shopName}}' data-background='{{randPartnerInfos.background}}'data-partnerid='{{randPartnerInfos.partnerId}}'>
       <image src='../../../Images/shop/share.png' class="{{showView2? 'zindex': ''}} "></image>
    </button>
-    <view class='circle diy' bindtap='DIYAction' data-partnerid='{{randPartnerInfos.partnerId}}'>
+
+   <view class="circle shopList" bindtap='DIYAction' data-partnerid='{{randPartnerInfos.partnerId}}'>
+    <image src='../../../Images/coupon/list.png' class="{{showView2? 'zindex': ''}} "></image>
+   </view>
+
+    <view class='circle diy' bindtap='editAction' data-partnerid='{{randPartnerInfos.partnerId}}'>
       <image src='../../../Images/shop/diy.png' class="{{showView3? 'zindex': ''}} "></image>
     </view>
 

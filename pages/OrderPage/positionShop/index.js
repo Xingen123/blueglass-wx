@@ -9,14 +9,15 @@ Page({
     markers: [],
     latitude: '',
     longitude: '',
-    placeData: {}
+    placeData: {},
+    merchantAddress: []
   },
   makertap: function (e) {
     var that = this;
     var id = e.markerId;
     console.log(e)
-    that.showSearchInfo(wxMarkerData, id);
-    that.changeMarkerColor(wxMarkerData, id);
+    that.showSearchInfo(that.data.merchantAddress, id);
+    //that.changeMarkerColor(wxMarkerData, id);
   },
   onLoad: function (options) {
     var that = this;
@@ -33,9 +34,10 @@ Page({
     // console.log(data[i])
     console.log(data)
     console.log(i)
-    data.forEach((j)=>{
+    data.forEach((j, index)=>{
       console.log(j)
-      if(i == j.id){
+      if(i == index){
+        wx.setStorageSync('merchantInfo', j);
         that.setData({
           placeData: {
             shopname: j.businessName,
@@ -85,7 +87,7 @@ Page({
           latitude: res.latitude,
           longitude: res.longitude
         })
-        that.nearbyRecommends();
+        //that.nearbyRecommends();
       },
       fail: function (res) {
         console.log('拒绝授权')
@@ -117,7 +119,7 @@ Page({
           // 发起POI检索请求 
           that.setData({
             placeData: {
-              shopname: wxMarkerData[0].businessName,
+              shopname: wxMarkerData[0].shortName,
               hours: wxMarkerData[0].hours,
               businessAddress: wxMarkerData[0].businessAddress,
               contactNumber: wxMarkerData[0].contactNumber,
@@ -127,9 +129,15 @@ Page({
           for (var i = 0; i < wxMarkerData.length; i++) {
             var maskerObj = {};
             var callout = {};
+            maskerObj.id = i;
             maskerObj.iconPath = "../../../Images/Me/marker_red.png";
             maskerObj.latitude = wxMarkerData[i].latitude;
             maskerObj.longitude = wxMarkerData[i].longitude;
+            callout.content = wxMarkerData[i].shortName;
+            callout.fontSize = 14,
+            maskerObj.display = "ALWAYS";
+            maskerObj.callout = callout;
+            
             newMarkers.push(maskerObj);
             that.setData({
               markers: newMarkers,

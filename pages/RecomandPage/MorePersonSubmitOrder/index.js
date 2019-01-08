@@ -12,28 +12,52 @@ Page({
     items: [
       
     ],
-    
+    coupon:"点击添加优惠券",
+    deliveryPrice:0,
+    giftTicketId:"",
+    orderMoney:0
   },
+  goCoupon(e){
+   console.log("商品金额"+parseInt(this.data.orderAmount) ,"优惠券金额 "+parseInt(this.data.deliveryPrice) )
 
+    let delivery = parseInt(this.data.orderAmount) //商品金额  + 优惠券金额 
+
+
+    let priceOrder = parseInt(this.data.fareAmount) - parseInt(this.data.derateCost) //配送金额  
+
+    console.log('配送金额'+priceOrder)
+
+      wx.navigateTo({
+        url: '../submitOrder/coupon/index?orderId=' + this.data.orderId + '&money=' + delivery + "&state=" + e.currentTarget.dataset.state + "&priceOrder=" + priceOrder,
+      })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var productListData = JSON.parse(options.productListData);
-    console.log(productListData);
+    
+    let payMoney = options.derateCost > 0 ? options.derateCost : productListData.sendPrice;
+    let priceOrderMoney = productListData.orderAmount + productListData.sendPrice - productListData.derateCost;
+    console.log("实际支付" + productListData);
+
     this.setData(
       {
         address: productListData.addressInfo,
         initiatorUser: productListData.initiatorUser,
         multiTradeId: options.multiTradeId,
         participantInfos: productListData.participantInfos,
-        payAmount: parseFloat(productListData.payAmount) *100,
+        payAmount: parseFloat(priceOrderMoney) *100,
         orderAmount: productListData.orderAmount,
         shipment: productListData.shipment,
-        fareAmount: productListData.deliveryCost,
+        deliveryCost: options.deliveryCost,
+        fareAmount: productListData.sendPrice,
+
+        derateCost: options.derateCost,
         orderId: productListData.orderId,
         partnerId: options.partnerId,
-        addressId: options.addressId
+        addressId: options.addressId,
+        price: priceOrderMoney 
       })
     var persons = [];
     for (var i = 0; i < this.data.participantInfos.length; i++) {
@@ -54,7 +78,7 @@ Page({
         item.thumb = this.data.participantInfos[i].participantUserProducts[j].icon
         item.detail = this.data.participantInfos[i].participantUserProducts[j].comment;
         item.num = this.data.participantInfos[i].participantUserProducts[j].amount;
-        item.price = this.data.participantInfos[i].participantUserProducts[j].price;
+        item.price = this.data.participantInfos[i].participantUserProducts[j].price / this.data.participantInfos[i].participantUserProducts[j].amount;
         item.isLucky = 'false'
         items.push(item);
       }
@@ -71,7 +95,7 @@ Page({
 
     
 
-    console.log(productListData);
+    console.log(productListData,666);
   },
 
   /**
@@ -104,7 +128,8 @@ Page({
         multiTradeId: that.data.multiTradeId,
         addressId: that.data.addressId,
         partnerId: that.data.partnerId,
-        orderId: that.data.orderId
+        orderId: that.data.orderId,
+        giftTicketId:that.data.giftTicketId
       },
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT  
       // header: {}, // 设置请求的 header  
@@ -131,7 +156,7 @@ Page({
               //   url: '../../OrderPage/WaitingOrderDetail/WaitingOrderDetail?orderId=' + res.data.data.paymentInfo.orderId,
               // })
               wx.navigateTo({
-                url: '../DistributionOrderDetail/index?orderId=' + res.data.data.paymentInfo.orderId,
+                url: '../../OrderPage/DistributionOrderDetail/index?orderId=' + res.data.data.paymentInfo.orderId,
               })
               
                           },

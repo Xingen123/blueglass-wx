@@ -8,8 +8,10 @@ Page({
    */
   data: {
     shopname: "",
+    shareImg: "https://wxmp.clicksdiy.com/makeup/pbag/6.png?" + Math.random(),
     items: [
     ],
+    shareParektBox:true,
     steps: [
     ]
   },
@@ -19,6 +21,16 @@ Page({
    */
   onLoad: function (options) {
     this.loadOrderData(options);
+  },
+  shareParekt() {
+    wx.navigateTo({
+      url: '../../MePage/sharePacket',
+    })
+  },
+  shareParektHide(){
+    this.setData({
+      shareParektBox:false
+    })
   },
   merchantInfo(e){
     console.log(e)
@@ -78,7 +90,7 @@ Page({
             that.setData({
               items: items,
               shopname: data.data.productDetails[i].nickName,
-
+              
             })
           }
 

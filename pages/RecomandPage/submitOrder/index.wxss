@@ -13,7 +13,41 @@
   border-radius: 6px;
   padding: 10px 10px 30px 10px;
 }
+.coupon{
+  box-shadow:0px 2px 20px 0 #ccc;
+background:#fff;
+width:calc(100% - 50px);
+border:1px solid #dcdcdc;
+margin:10px auto;
+border-radius:6px;
+padding:10px ;
 
+}
+.bgloading{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 10000;
+  background: rgba(74,74,74,0.3);
+}
+.title{
+  font-size:28rpx;
+  color:rgba(155,155,155,1);
+}
+.couponSelect text{
+  color: rgba(74,74,74,1);
+  padding-left: 10rpx;
+}
+.couponSelect{
+  font-size:28rpx;
+  color:rgba(0,160,232,1);
+  text-align: right;
+  margin-top: 50rpx;
+}
 .shop_nearby, .invite_shop {
   display: flex;
   align-items: center;
@@ -96,4 +130,16 @@
 }
 .van-tab__pane{
   padding-bottom: 70px;
+}
+.shareParekt{
+position:fixed;
+right:20px;
+height:115rpx;
+width:115rpx;
+bottom:200rpx;
+
+}
+.shareParekt image{
+width: 100%;
+height: 100%;
 }

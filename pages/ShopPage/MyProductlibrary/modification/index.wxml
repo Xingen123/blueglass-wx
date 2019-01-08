@@ -1,0 +1,45 @@
+<!--pages/ShopPage/MyProductlibrary/modification/index.wxml-->
+<view class="box">
+  <view class="" >
+    
+      <text class="product" >
+        产品图片
+      </text>  
+      <view class="productBg" catchtap="fileImage">
+        <image class="productBgImg" src="{{icon}}" >
+          
+        </image>
+        <view class="productBgImage" >
+            <image src="../../../../Images/coupon/photo.png" >
+          
+            </image>  
+        </view>
+        
+      </view>
+  </view>
+
+  <view class="" >
+    <text class="product" >
+      产品名称
+    </text>  
+    <view class="" hover-class="none" >
+        <input class="nameInput" placeholder="{{name}}" style="color:{{inputColor}}" bindinput="focus"/>
+    </view>
+  </view>
+
+
+  <view class="" >
+    <text class="product" >
+      原料明细
+    </text>  
+    <view class="materials" >
+      {{materials}}
+    </view>
+  </view>
+
+
+    
+</view>
+<view class="save" catchtap="submit">
+    保存
+</view>

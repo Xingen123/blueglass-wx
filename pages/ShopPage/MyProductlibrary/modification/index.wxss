@@ -1,0 +1,78 @@
+/* pages/ShopPage/MyProductlibrary/modification/index.wxss */
+.box{
+    padding-left:36rpx; 
+}
+.product{
+    font-size:30rpx;
+    font-family:PingFangSC-Semibold;
+    font-weight:600;
+    color:rgba(74,74,74,1);
+    
+}
+.save{
+    width:750rpx;
+    height:98rpx;
+    background:rgba(0,160,232,1); 
+    font-size:36rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    text-align: center;
+    color:rgba(255,255,255,1);
+    line-height:98rpx;
+}
+.productBg{
+    width:250rpx;
+height:250rpx;
+border-radius:5px;
+margin-top: 20rpx;
+position: relative;
+}
+.productBgImg{
+    width: 100%;
+    height:100%;
+    border-radius:5px;
+}
+.productBgImage{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius:5px;
+    z-index: 1;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.productBgImage image{
+    width:80rpx;
+    height:80rpx;
+    border-radius:5px;
+}
+.nameInput{
+    width:650rpx;
+height:98rpx;
+background:rgba(255,255,255,1);
+border-radius:5rpx;
+border:2rpx solid rgba(242,242,242,1);
+margin-top: 20rpx;
+font-size:28rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+padding-left: 15rpx;
+color:rgb(72,72,72);
+}
+.materials{
+    font-size:28rpx;
+    font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(74,74,74,1);
+margin-top: 17rpx;
+}

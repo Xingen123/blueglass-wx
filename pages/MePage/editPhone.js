@@ -14,13 +14,19 @@ Page({
     currentTime: 61,
     phone: null,
     code: null,
-    typecode:""
+    typecode:"",
+    sendUserId:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (options.sendUserId){
+      this.setData({
+        sendUserId: options.sendUserId
+      })
+    }
     this.setData({
       typecode : options.typecode
     })
@@ -74,18 +80,28 @@ Page({
         console.log(res.data)
         var data = res.data
         if (data.status == "200") {
-          wx.setStorageSync('phone', that.data.phone)
-          if (that.data.typecode == "1"){
-            wx.reLaunch({
-              url: '../RecomandPage/RecomandIndex/index',
-            })
+          let partnerid = wx.getStorageSync('partnerid');
+          if (partnerid){
+
+            wx.navigateTo({
+              url: '../ShopPage/shareMyShop/index?partnerid='+partnerid,
+            })      
+          }else{
+            wx.setStorageSync('phone', that.data.phone)
+            if (that.data.typecode == "1") {
+                console.log(5555)
+              that.receiveGiftTicket(that.data.phone)
+              // wx.reLaunch({
+              //   url: '../RecomandPage/RecomandIndex/index?isPhone=isPhoneYzm&sendUserId=' + that.data.sendUserId,
+              // })
+            }
+            else {
+              wx.navigateBack({
+                delta: "1"
+              })
+            }
           }
-          else
-          {
-            wx.navigateBack({
-              delta:"1"
-            })
-          }
+          
 
         } else {
           wx.showToast({
@@ -97,7 +113,41 @@ Page({
       }
     })
   },
-
+  receiveGiftTicket(phone) {
+    console.log(phone, this.data.sendUserId)
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.request({
+      url: url.serverUrl + 'mini/partner/receiveGiftTicket',
+      method: 'POST',
+      header: {
+        //设置参数内容类型为x-www-form-urlencoded
+        'content-type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'
+      },
+      data: {
+        token: wx.getStorageSync('token'),
+        phone: phone,
+        sendUserId: this.data.sendUserId
+      },
+      success: (res) => {
+        console.log(res, 9999)
+        wx.hideLoading()
+        if (res.data.status == 200) {
+           wx.reLaunch({
+             url: '../RecomandPage/RecomandIndex/index?isPhone=isPhoneYzm&sendUserId=' + this.data.sendUserId,
+           })
+        }
+      },
+      fail: (err) => {
+        wx.hideLoading()
+        wx.showModal({
+          title: err.data,
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

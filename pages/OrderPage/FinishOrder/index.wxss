@@ -1,11 +1,19 @@
 /* pages/OrderPage/UnpaidOrderDetail/index.wxss */
-.van-button--large{
-  display: flex !important;
+
+
+.contact{
+  display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content:space-between;
   padding: 0 20px !important;
+   box-shadow:1px 1px 5rpx #ADADAD;
 }
-.van-button--large image{
+button{
+  text-align: left;
+  background: white!important;
+  border: 1px solid white!important;
+}
+.contact image{
   height: 22px;
   width: 20.5px;
 }

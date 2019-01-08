@@ -9,7 +9,12 @@ Page({
    */
   data: {
     inviteCodeInfos:[],
-    inviteRecordInfos:[]
+    inviteRecordInfos:[],
+    imgUrls: [],
+    indicatorDots: false,
+    autoplay: false,
+    interval: 5000,
+    duration: 1000
   },
 
   copyAction:function(e){
@@ -32,7 +37,11 @@ Page({
       }
     })
   },
-
+  goSharePacket(){
+    wx.navigateTo({
+      url: 'shareMyPacket/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -59,7 +68,9 @@ Page({
           that.setData({
             inviteCodeInfos: res.data.data.inviteCodeInfos,
             inviteRecordInfos: res.data.data.inviteRecordInfos,
-            background: res.data.data.background
+            background: res.data.data.background,
+            giftValue:res.data.data.giftValue,
+            successAmount:res.data.data.successAmount
           });
         } else {
           wx.showToast({

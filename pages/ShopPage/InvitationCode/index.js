@@ -5,12 +5,14 @@ Page({
    * 页面的初始数据 
    */
   data: {
-    Length: 5, //输入框个数 
+    // Length: 5, //输入框个数 
     isFocus: true, //聚焦 
     Value: "", //输入的内容 
-    ispassword: false, //是否密文显示 true为密文， false为明文。
+    // ispassword: false, //是否密文显示 true为密文， false为明文。
     showTips: '下一步',
-    path:""
+    path:"",
+    bottom:0,
+    color:"rgba(155,155,155,1)"
   },
   pathUclick() {
       wx.navigateTo({
@@ -21,31 +23,31 @@ Page({
       });
   },
   Focus(e) {
-    var that = this;
-    that.setData({
-      showTips: '下一步'
-    })
     console.log(e.detail.value);
     var inputValue = e.detail.value;
-    that.setData({
-      Value: inputValue,
-    })
-    // if(e.detail.value.length==5)
-    // {
-
-
-
-    // }
-
+    if (inputValue){
+      this.setData({
+        Value: inputValue,
+        color: "rgba(0,160,232,1)"
+      })
+    }else{
+      this.setData({
+        Value: inputValue,
+        color: "rgba(155,155,155,1)"
+      })
+    }
+   
   },
-  Tap() {
-    var that = this;
-    that.setData({
-      isFocus: true,
+  keyboard(e){
+    let keyHeight = e.detail.height
+    this.setData({
+      bottom: keyHeight 
     })
   },
-  formSubmit(e) {
-    console.log(e.detail.value.password);
+  keyboardOff(){
+    this.setData({
+      bottom: 0
+    })
   },
 
   /**
@@ -71,39 +73,44 @@ Page({
 
   xiayibu: function() {
     let that = this;
-    wx.request({
-      url: url.serverUrl + 'mini/partner/joinPartnerByInviteCode',
-      method: 'POST',
-      header: {
-        //设置参数内容类型为x-www-form-urlencoded
-        'content-type': 'application/x-www-form-urlencoded',
-        'Accept': 'application/json'
-      },
-      data: {
-        token: wx.getStorageSync('token'),
-        inviteCode: that.data.Value
-        // token:"6000001740059476",
-      },
-      success: function(res) {
-        console.log(res.data)
-        var data = res.data
-        if (data.status == "200") {
-          wx.navigateTo({
-            url: '../myapplyView/index?value=' + that.data.Value,
-          })
-          //todo tengyu
-        } else {
-          that.setData({
-            showTips: data.errorMsg,
-          })
-          wx.showToast({
-            title: data.errorMsg,
-            icon: 'none',
-            duration: 2000
-          })
+    if (that.data.Value){
+      console.log(that.data.Value)
+      wx.request({
+        url: url.serverUrl + 'mini/partner/joinPartnerByInviteCode',
+        method: 'POST',
+        header: {
+          //设置参数内容类型为x-www-form-urlencoded
+          'content-type': 'application/x-www-form-urlencoded',
+          'Accept': 'application/json'
+        },
+        data: {
+          token: wx.getStorageSync('token'),
+          inviteCode: that.data.Value
+          // token:"6000001740059476",
+        },
+        success: function (res) {
+          var data = res.data
+          if (data.status == "200") {
+            wx.navigateTo({
+              url: '../myapplyView/index?value=' + that.data.Value,
+            })
+          } else {
+            wx.showToast({
+              title: data.errorMsg,
+              icon: 'none',
+              duration: 2000
+            })
+          }
         }
-      }
-    })
+      })
+    }else{
+      wx.showToast({
+        title: "请填写开店码",
+        icon: 'none',
+        duration: 2000
+      })
+    }
+  
   },
   /**
    * 生命周期函数--监听页面隐藏

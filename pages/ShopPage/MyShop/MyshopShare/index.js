@@ -11,7 +11,8 @@ Page({
     canvasHidden:true,
     backGround:"",
     localQrCodeUrl:"",
-    widthCanvas:"750"
+    widthCanvas:"750",
+    height:"1250rpx"
   },
 
   /**
@@ -103,9 +104,13 @@ Page({
     let promise1 =(url) => {
       console.log(url)
       return new Promise(function (resolve, reject) {
+        wx.showLoading({
+          title: '加载中',
+        })
         wx.getImageInfo({
           src: url,
           success: function (res) {
+           
             resolve(res);
           },
           fail:function(err){
@@ -129,14 +134,22 @@ Page({
   conPhoto(context, url1, url2,url3,rpx){
 
   try {
+    
     let productDataset = wx.getStorageSync('productDataset')
     console.log(rpx,url1, url2)
+    wx.hideLoading()
     if (productDataset) {
       context.setFillStyle('white')
       context.fillRect(0, 0, rpx * 350, rpx * 100)
       context.setFillStyle('black')
-      context.drawImage(url1, 0, rpx * 90, rpx * 340, rpx * 548)
-     
+      if (productDataset.width){
+        context.drawImage(url1, 0, rpx * 90, rpx * 340, rpx * 340)
+        this.setData({
+          height: "770rpx"
+        })
+      }else{
+        context.drawImage(url1, 0, rpx * 90, rpx * 340, rpx * 548)
+      }
     //二维码
       context.drawImage(url3, rpx * 270, rpx * 15, rpx * 50, rpx * 50)
     
@@ -148,7 +161,7 @@ Page({
       context.drawImage(url2, rpx * 15, rpx * 22, rpx * 36, rpx * 36)
      context.restore();
       
-
+    
      
     
       //名字

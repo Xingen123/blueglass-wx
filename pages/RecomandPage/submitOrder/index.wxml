@@ -23,14 +23,23 @@
         </view>
 
       </view>
+    <!-- 优惠券 -->
+    <view class='coupon'>
+      <view class='title'>优惠券</view>
+      <view class='couponSelect' catchtap='goCoupon' data-state='ask'>{{coupon}}<text>></text></view>
+    </view>
 
       <view class='shop pay_detail'>
         <view class='pay_detail_title'>支付详情</view>
         <view class='shop_nearby'>
           <view class='shop_nearby_left'>商品金额</view>
-          <view class='shop_nearby_right'>¥{{price}}</view>
+          <view class='shop_nearby_right'>¥{{totalPrice}}</view>
         </view>
-
+        <view class='shop_nearby'>
+          <view class='shop_nearby_left'>优惠减免</view>
+          <view class='shop_nearby_right'  wx:if="{{couponNum != 0}}">-¥{{couponNum}}</view>
+        <view class='shop_nearby_right'  wx:else>¥{{couponNum}}</view>
+        </view>
         <view class='shop_nearby'>
           <view class='shop_nearby_left'>实际金额</view>
           <view class='pay_money'>¥{{price}}</view>
@@ -39,7 +48,7 @@
 
       <van-blue-card msgData="{{items}}" shopname="{{shopname}}">
       </van-blue-card>
-      <van-submit-bar label="实际支付：" price="{{ price *100}}" button-text="立即支付" bind:submit="onClickButton">
+      <van-submit-bar label="实际支付：" price="{{ price *100}}" button-text="立即支付" data-state="是否确认门店自取？"  bind:submit='onClickButtonAlert'>
       </van-submit-bar>
 
     </van-tab>
@@ -54,6 +63,7 @@
           <view class='shop_nearby_right' catchtap='chooseAddress'>编辑</view>
         </view>
 
+
         <view class='shop_person'>
           <view class='shop_person_name'>{{addressInfodetail.recieveName}}</view>
           <view class='shop_person_phone'>{{addressInfodetail.mobile}}</view>
@@ -61,7 +71,11 @@
 
         <view class='shop_desc'>{{addressInfodetail.address}}{{addressInfodetail.addressDetail}}</view>
       </view>
-
+    <!-- 优惠券 -->
+    <view class='coupon'>
+      <view class='title'>优惠券</view>
+      <view class='couponSelect' catchtap='goCoupon' data-state='delivery'>{{coupon}}<text>></text></view>
+    </view>
       <view class='shop pay_detail'>
         <view class='pay_detail_title'>支付详情</view>
         <view class='shop_nearby'>
@@ -69,9 +83,21 @@
           <view class='shop_nearby_right'>¥{{price}}</view>
         </view>
         <view class='shop_nearby'>
-          <view class='shop_nearby_left'>配送金额</view>
-          <view class='shop_nearby_right'>¥{{deliveryCost}}</view>
+          <view class='shop_nearby_left'>优惠减免</view>
+          <view class='shop_nearby_right'  wx:if="{{couponNum != 0}}">-¥{{couponNum}}</view>
+          <view class='shop_nearby_right'  wx:else>¥{{couponNum}}</view>
         </view>
+        <view class='shop_nearby'>
+          <view class='shop_nearby_left'>配送金额</view>
+          <view class='shop_nearby_right' wx:if="{{deliveryCost == 0}}">¥{{derateCost}}</view>
+          <view class='shop_nearby_right'  wx:else>¥{{deliveryCost}}</view>
+        </view>
+        <view class='shop_nearby'>
+          <view class='shop_nearby_left'>配送减免</view>
+          <view class='shop_nearby_right'  wx:if="{{derateCost != 0}}">-¥{{derateCost}}</view>
+          <view class='shop_nearby_right'  wx:else>¥{{derateCost}}</view>
+        </view>
+
         <view class='shop_nearby'>
           <view class='shop_nearby_left'>实际金额</view>
           <view class='pay_money'>¥{{totalPrice}}</view>
@@ -80,7 +106,7 @@
 
       <van-blue-card msgData="{{items}}" shopname="{{shopname}}">
       </van-blue-card>
-      <van-submit-bar label="实际支付：" price="{{totalPrice * 100}}" button-text="立即支付" bind:submit="onClickButton">
+      <van-submit-bar label="实际支付：" price="{{totalPrice * 100}}" button-text="立即支付" data-state="是否确认配送？" bind:submit='onClickButtonAlert'>
       </van-submit-bar>
 
     </van-tab>
@@ -89,3 +115,12 @@
 
 
 </view>
+<view class='bgloading' wx:if="{{bgLoading}}">
+
+</view>
+
+
+<view class='shareParekt' bindtap='shareParekt'>
+<image src='{{shareImg}}' ></image>
+</view>
+<van-dialog id="van-dialog" />

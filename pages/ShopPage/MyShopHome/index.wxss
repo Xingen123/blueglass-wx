@@ -285,6 +285,7 @@ button::after {
   background-color: #fcfcfc;
   display: flex;
   flex-direction: column;
+  padding-bottom: 100rpx;
 }
 
 .moneyView {
@@ -361,10 +362,33 @@ button::after {
   top: 324rpx;
   left: 50rpx;
 }
+.shopButton{
+  width: 100%;
+  height: 98rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4rpx 36rpx 0 #9B9B9B;
+}
+.shopButton view{
+  width: 50%;
+  height:98rpx;
+  line-height: 98rpx;
+  text-align: center;
+  font-size:36rpx;
+  font-weight:400;
 
+}
 .editbackView {
-  background-image: linear-gradient(-270deg, #40c6ff 0%, #01a0eb 100%);
-  box-shadow: 0 4rpx 36rpx 0 #c8eeff;
+  background: white;
+  /* background-image: linear-gradient(-270deg, #40c6ff 0%, #01a0eb 100%);
+ bac
   border-radius: 45rpx;
   width: 90rpx;
   height: 90rpx;
@@ -373,7 +397,11 @@ button::after {
   bottom: 115rpx;
   right: 37rpx;
   text-align: center;
-  line-height: 90rpx;
+  line-height: 90rpx; */
+}
+.compile{
+  background: #00A0E8;
+  color: white;
 }
 
 .editbackView text {

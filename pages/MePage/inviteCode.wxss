@@ -5,22 +5,49 @@
   flex-direction: column;
 }
 
-.logo{
-  width: 100%;
-  height: 100%;
-}
+
 
 .topview {
-  display: flex;
-  width: 100%;
-  height: 200rpx;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  box-shadow: 0 4px 40px 0 rgba(232, 232, 232, 0.50);
 }
-
+.success{
+  width:690rpx;
+height:175rpx;
+background:rgba(255,255,255,1);
+box-shadow:0px 4rpx 40rpx 0px rgba(232,232,232,0.5);
+position: absolute;
+top: 433rpx;
+left: 0;
+right: 0;
+margin: 0 auto;
+display: flex;
+justify-content: space-between;
+}
+.successNum{
+  width: 50%;
+  height:100%;
+  text-align: center;
+}
+.successMoney{
+  width: 50%;
+  height:100%;
+  text-align: center;
+}
+.num{
+  margin-top: 37rpx;
+  font-size:40rpx;
+  color:rgba(0,0,0,1);
+line-height:56rpx;
+}
+.text{
+  margin-top: 14rpx;
+  font-size:26rpx;
+font-weight:400;
+color:rgba(74,74,74,1);
+}
+.slide-image{
+  width:100%  ;
+  height:500rpx;
+}
 .toptitle {
   font-family: PingFangSC-Regular;
   font-size: 32rpx;
@@ -30,6 +57,8 @@
 .midview {
   display: flex;
   flex-direction: column;
+  margin-top:110rpx;
+
 }
 
 .invitecodetitle {

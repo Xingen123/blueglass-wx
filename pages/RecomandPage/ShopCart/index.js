@@ -1,6 +1,7 @@
 // pages/RecomandPage/ShopCart/index.js
 var url = require('../../../utils/url.js');
 var util = require('../../../utils/util.js');
+import Dialog from '../../../dist/dialog/dialog';
 
 Page({
 
@@ -9,30 +10,14 @@ Page({
    */
   data: {
     shopname: "订单详情",
-    // items: [
-    //   {
-    //     "thumb": "../../Images/Order/address.png",
-    //     "title": "商品标题1",
-    //     "desc": "描述信息",
-    //     "detail": "荔枝**1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1",
-    //     "num": "2",
-    //     "price": "20",
-    //   },
-    //   {
-    //     "thumb": "../../Images/Order/address.png",
-    //     "title": "商品标题2",
-    //     "desc": "描述信息",
-    //     "detail": "荔枝**1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1荔枝*1",
-    //     "num": "2",
-    //     "price": "20",
-    //   }
-    // ],
+    isBindPhone:false,
+    messageAlign:"right"
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    this.yzPhone()
     console.log(options)
     let that = this;
 
@@ -118,16 +103,127 @@ Page({
       }
     });
   },
+  yzPhone() {
+    wx.request({
+      url: url.serverUrl + 'mini/partner/check/isBindPhone',
+      method: 'POST',
+      header: {
+        //设置参数内容类型为x-www-form-urlencoded
+        'content-type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'
+      },
+      data: {
+        token: wx.getStorageSync('token'),
+      },
+      success: (res) => {
+        console.log(Dialog)
+        if (!res.data.data.phone) {
+          Dialog.alert({
+            message: '绑定手机号，喝杯大师酸奶',
+            confirmButtonText: "绑定",
+            messageAlign: "center",
+            confirmButtonOpenType: 'getPhoneNumber',
+          }).then((succss) => {
+            console.log(succss)
+          });
+        }
+        else {
+          
+        }
+      }
+    })
+  },
 
-
-
+  receiveGiftTicket(phone) {
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.request({
+      url: url.serverUrl + 'mini/partner/receiveGiftTicket',
+      method: 'POST',
+      header: {
+        //设置参数内容类型为x-www-form-urlencoded
+        'content-type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'
+      },
+      data: {
+        token: wx.getStorageSync('token'),
+        phone: phone,
+        sendUserId: this.data.sendUserId
+      },
+      success: (res) => {
+        wx.hideLoading()
+        if (res.data.status == 200) {
+          wx.showToast({
+            title: '绑定成功',
+            icon: 'success',
+            duration: 1000
+          })
+        }
+      },
+      fail: (err) => {
+        wx.hideLoading()
+        wx.showModal({
+          title: err.data,
+        })
+      }
+    })
+  },
+  bindgetphonenumber(e) {
+    let encryptedData = e.detail.encryptedData;
+    let iv = e.detail.iv;
+    if (encryptedData) {
+      this.bindSuccse(encryptedData, iv)
+    } else {
+      // wx.navigateTo({
+      //   url: '../../MePage/editPhone?typecode=1&sendUserId' + this.data.sendUserId,
+      // })
+      wx.showToast({
+        title: '请绑定完成下单',
+        icon:"none",
+        duration: 1000
+      })
+      Dialog.alert({
+        message: '绑定手机号，喝杯大师酸奶',
+        confirmButtonText: "绑定",
+        messageAlign: "center",
+        confirmButtonOpenType: 'getPhoneNumber',
+      }).then((succss) => {
+        console.log(succss)
+      });
+    }
+  },
+  bindSuccse(encryptedData, iv) {
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.request({
+      url: url.serverUrl + 'mini/partner/decryptMobile',
+      method: 'POST',
+      header: {
+        //设置参数内容类型为x-www-form-urlencoded
+        'content-type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'
+      },
+      data: {
+        token: wx.getStorageSync('token'),
+        encryptedData: encryptedData,
+        iv: iv
+      },
+      success: (res) => {
+        wx.hideLoading()
+        if (res.data.status == 200) {
+          // this.setData({
+          //   isBindPhone: false
+          // })
+          this.receiveGiftTicket(res.data.data.mobile)
+        }
+      }
+    })
+  },
   onClickButton: function() {
     var that = this;
-    // console.log(that.data);
 
-    // util.wxPay('6000001740059476', that.data.merchantId, that.data.addressId, that.data.payableAmount, that.data.tradeInfos, that.data.isPickup, function (e) {
-
-    // });
     wx.showLoading({
       title: '正在加载',
     })

@@ -16,6 +16,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    shareImg: "https://wxmp.clicksdiy.com/makeup/pbag/4.png?" + Math.random(),
+    partnerID: '',
+    ldata: false,
     indicatorDots: true,
     indicatorColor: '#D8D8D8',
     indicatorActiveColor: '#9B9B9B',
@@ -40,7 +43,8 @@ Page({
     addressInfodetail:{},
     // isIphoneX: app.globalData.isIphoneX ? true : false,
     backgroundIVs:[],
-    totalAmount:0
+    totalAmount:0,
+    optionsArr:{}
   },
   addAddressGoto: function (e) {
     console.log(e)
@@ -52,10 +56,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var shareiv = options.shareiv;
+    console.log(options,"ssss")
     this.setData({
-      shareiv:shareiv
+      optionsArr: options,
+      partnerID: options.partnerId
     })
+    console.log(options.partnerId)
+    if (options.shareiv){
+      var shareiv = options.shareiv;
+      this.setData({
+        shareiv: shareiv
+      })
+    }
+
     var that = this;
     wx.getLocation({
       type: 'wgs84',
@@ -65,20 +78,60 @@ Page({
         var longitude = res.longitude
         that.setData({
           wd: latitude,
-          jd: longitude
+          jd: longitude,
+          ldata: false
         })
-        that.requestNetWork(options);
+        let parId = options.partnerId
+        that.requestNetWork(parId,latitude,longitude);
       },
       fail: function (res) {
-        console.log(res)
+        console.log(res, '定位真不准啊')
+        that.setData({
+          ldata: true
+        })
       }
     })
-
-
   },
-  requestNetWork: function (options) {
+  shareParekt() {
+    wx.navigateTo({
+      url: '../MePage/sharePacket',
+    })
+  },
+  handler: function (e) {
     var that = this;
+    if (!e.detail.authSetting['scope.userLocation']) 
+    {
+      that.setData({
+        ldata: true
+      })
+    }
+    else 
+    {
+      that.setData({
+        ldata: false,
+      })
 
+      setTimeout(function () {
+        wx.getLocation({
+          type: 'wgs84',
+          success: function (res) {
+            var latitude = res.latitude
+            var longitude = res.longitude
+            that.setData({
+              wd: latitude,
+              jd: longitude
+            })
+            that.requestNetWork(that.data.partnerID, latitude, longitude);
+          },
+          fail: function (res) {
+          }
+        })
+      }, 500)
+    }
+  },
+  requestNetWork(parId,latitude,longitude) {
+    var that = this;
+    console.log(parId,latitude,longitude,"aiyou")
     wx.showLoading({
       title: '正在加载',
     })
@@ -86,12 +139,13 @@ Page({
       url: serverUrl.serverUrl + 'mini/partner/recommendOrder',
       data: {
         token: wx.getStorageSync('token'),
-        longitude: that.data.jd,
-        latitude: that.data.wd,
-        partnerId: options.partnerId
+        longitude: longitude,
+        latitude: latitude,
+        partnerId: parId
       },
       method: 'GET',
       success: function(res) {
+        console.log(res)
         wx.hideLoading();
         serverUrl.logoutAction(res)
 
@@ -101,7 +155,7 @@ Page({
           categoryList: res.data.data.myProducts,
           merchantInfo: res.data.data.merchantInfo,
           shipment: res.data.data.shipment,
-          partnerId: options.partnerId
+          partnerId: parId
 
         });
         if(that.data.categoryList)
@@ -414,7 +468,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    var that = this;
 
+    var modifyInfo = wx.getStorageSync('merchantInfo');
+    if (modifyInfo) {
+      that.setData({
+        merchantInfo: {
+          id: modifyInfo.id,
+          shortName: modifyInfo.shortName,
+          location: modifyInfo.businessAddress
+        }
+      });
+      wx.removeStorageSync('merchantInfo');
+    }
   },
 
   /**
@@ -579,8 +645,15 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function(e) {
+    console.log(this.data.optionsArr)
+    return {
+      title: this.data.optionsArr.shopName + ":酸奶店里走一走,不买不是好朋友!",
+      imageUrl: this.data.optionsArr.shareiv,
+      success: function () {
 
+      }
+    }
   },
   morePersonClick(e) {
     var that = this;

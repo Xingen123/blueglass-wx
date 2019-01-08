@@ -112,6 +112,11 @@ Page({
 
     //mini/partner/addOrEditAddress
     let that = this;
+
+    wx.showLoading({
+      title: '正在加载',
+    })
+
     wx.request({
       url: url.serverUrl + 'mini/partner/addOrEditAddress',
       method: 'POST',
@@ -133,7 +138,8 @@ Page({
       },
       success: function (res) {
         url.logoutAction(res)
-
+        wx.hideLoading();
+        
         console.log(res.data)
         var data = res.data
         if (data.status == "200") {

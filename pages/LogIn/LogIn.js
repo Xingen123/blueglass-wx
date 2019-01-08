@@ -8,6 +8,7 @@ Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
+    sendUserId:"",
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
@@ -17,7 +18,13 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function() {
+  onLoad: function(options) {
+    console.log(options.sendUserId)
+    if (options.sendUserId){
+      this.setData({
+        sendUserId: options.sendUserId
+      })
+    }
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -45,13 +52,18 @@ Page({
       })
     }
   },
+  getPhoneNumber(e){
+    console.log(e)
+  },
   getUserInfo: function(e) {
-    console.log(e,132);
+   let that = this
     wx.login({
       success: function(res) {
         console.log(res.code,555);
         if (res.code) {
-          //TODO
+          wx.showLoading({
+            title: '加载中',
+          })
           wx.request({
             url: url.serverUrl + "mini/partner/getUserToken",
             header: {
@@ -62,9 +74,9 @@ Page({
               js_code: res.code
             },
             complete: function(res) {
-              console.log(res,5556);
-              console.log('token ++++++1 ', res);
+            
               wx.setStorageSync('token', res.data.data);
+             
               wx.request({
                 url: url.serverUrl + "mini/partner/signIn",
                 header: {
@@ -79,7 +91,11 @@ Page({
                   iv: e.detail.iv
                 },
                 complete: function(res) {
+                  wx.hideLoading()
                   if (res.data.status == 200) {
+                    wx.showLoading({
+                      title: '加载中',
+                    })
                     wx.setStorageSync('headImage', res.data.headImgUrl)
                     wx.setStorageSync('nickName', res.data.nickName)
                     wx.setStorageSync('userId', res.data.userId)
@@ -94,16 +110,33 @@ Page({
                         token: wx.getStorageSync('token')
                       },
                       complete: function(res) {
+                        wx.hideLoading()
+                        let partnerid = wx.getStorageSync('partnerid');
                         if (res.data.data.phone) {
-                          // if (wx.getStorageSync('phone')) {
-                          wx.reLaunch({
-                            url: '../RecomandPage/RecomandIndex/index',
-                          })
-                          // } 
-                        } else {
-                          wx.navigateTo({
-                            url: '../MePage/editPhone?typecode=1',
-                          })
+                          if (partnerid) {
+                            wx.navigateTo({
+                              url: '../ShopPage/shareMyShop/index?partnerid=' + partnerid,
+                            })    
+                          }
+                          else{
+                            wx.reLaunch({
+                              url: '../RecomandPage/RecomandIndex/index',
+                            })
+                          } 
+                        }
+                       else {
+                          // if (partnerid){
+                          //   console.log(5555555)
+                          //   wx.reLaunch({
+                          //     url: '../RecomandPage/RecomandIndex/index?isPhone=isPhone&partnerid' + partnerid +'&sendUserId=' + that.data.sendUserId,
+                          //   })
+                          // }else{
+                          //   console.log(66666)
+                            wx.reLaunch({
+                              url: '../RecomandPage/RecomandIndex/index?isPhone=isPhone&sendUserId=' + that.data.sendUserId + '&partnerid=' + partnerid,
+                            })
+                          // }
+                          
                         }
                       }
                     })

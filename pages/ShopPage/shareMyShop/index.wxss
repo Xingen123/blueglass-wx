@@ -3,6 +3,42 @@
 .content {
   margin: 100rpx 20rpx 20rpx 20rpx;
 }
+.bgCoupon{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  z-index: 1000000;
+  top: 0;
+  left: 0;
+}
+.shareParekt{
+  position:fixed;
+right:20px;
+height:115rpx;
+width:115rpx;
+bottom:200rpx;
+
+}
+.shareParekt image{
+    width: 100%;
+  height: 100%;
+}
+.bgCouponview{
+  width:600rpx;
+height:800rpx;
+border-radius:5rpx;
+  position: absolute;
+  z-index: 1000001;
+  top: 239rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.bgCouponview image{
+  width: 100%;
+  height: 100%;
+}
 /* .bacdground_imgurl {
   height: 100%;
   width: 100%;

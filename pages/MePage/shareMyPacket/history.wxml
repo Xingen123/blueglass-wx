@@ -1,0 +1,11 @@
+<!--pages/MePage/shareMyPacket/history.wxml-->
+
+<view style="padding-bottom:100rpx;">
+    <view class="historyBox" wx:for="{{giftData}}" wx:for-item="item" wx:key="{{index}}">
+        <text>{{item.sendName}}领取了你分享的</text>
+        <view class="historyBox_last">
+            <view style="color: #4A4A4A;">{{item.giftName}}</view>
+            <view class="text">{{item.time}}</view>
+        </view>    
+    </view>
+</view>    

@@ -71,8 +71,9 @@ Page({
       success: function (res) {
         wx.hideLoading();
         serverUrl.logoutAction(res)
-
         let data = res.data
+        console.log(data)
+
         if (data.status == 200) {
           console.log(data)
           that.setData({
@@ -93,13 +94,12 @@ Page({
             item.title = data.data.productDetails[i].productName;
             item.detail = data.data.productDetails[i].tradeMaterials;
             item.num = data.data.productDetails[i].amount;
-            item.price = data.data.productDetails[i].totalPrice;
+            item.price = data.data.productDetails[i].totalPrice / data.data.productDetails[i].amount;
             item.isLucky = 'false'
             items.push(item);
             that.setData({
               items: items,
               shopname: data.data.productDetails[i].nickName,
-
             })
           }
 

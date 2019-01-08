@@ -20,6 +20,11 @@ Page({
   onLoad: function (options) {
     this.loadOrderData(options);
   },
+  callPhone(){
+    wx.navigateTo({
+      url: "/pages/Course/course"
+    })
+  },
   loadOrderData: function (options) {
     let that = this;
     console.log(options)

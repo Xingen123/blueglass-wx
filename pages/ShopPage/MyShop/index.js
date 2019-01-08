@@ -50,6 +50,12 @@ Page({
       url: './MyshopShare/index'
     })
   },
+  editAction: function () {
+    wx.navigateTo({
+      // url: '../addProduct/index',
+      url: '../ProductLibrary/index',
+    })
+  },
   mark_dialog(){
     this.setData({
       showView: false

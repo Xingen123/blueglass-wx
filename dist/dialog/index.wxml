@@ -19,7 +19,7 @@
     wx:elif="{{ message }}"
     class="van-dialog__message {{ title ? 'van-dialog__message--has-title' : '' }}"
   >
-    <text>{{ message }}</text>
+    <view class='center'>{{ message }}</view>
   </view>
 
   <view class="van-hairline--top van-dialog__footer">

@@ -267,7 +267,8 @@ Page({
       },
       data: {
         token: wx.getStorageSync('token'),
-        orderId: orderId
+        orderId: orderId,
+        giftTicketId:""
       },
       method: 'POST',
       success: function (res) {
@@ -282,14 +283,16 @@ Page({
           'signType': 'MD5',
           'paySign': res.data.data.paySign,
           'success': function (ressuccess) {
+            console.log(isPickup)
             if (isPickup == 1) {
               wx.navigateTo({
                 url: '../../OrderPage/PurchaseOrder/index?orderId=' + res.data.data.orderId,
               })
+        
             }
             else {
               wx.navigateTo({
-                url: '../../OrderPage/WaitingOrderDetail/WaitingOrderDetail?orderId=' + res.data.data.orderId,
+                url: '../../OrderPage/DistributionOrderDetail/index?orderId=' + res.data.data.orderId,
               })
             }
 

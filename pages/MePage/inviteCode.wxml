@@ -3,8 +3,40 @@
 
 <view class='invitecontainer'>
   <view class='topview'>
-    <!-- <text class='toptitle'>邀请好友步骤的示意图</text> -->
-    <image src='{{background}}' class='logo'></image>
+    <!-- <text class='toptitle'>邀请好友步骤的示意图</text>
+    <image src='{{background}}' class='logo'></image> -->
+    <swiper
+  indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}"
+  interval="{{interval}}"
+  duration="{{duration}}"
+  style="height:500rpx"
+>
+  <block >
+    <swiper-item wx:for="{{background}}" wx:for-item="item"  wx:key="index">
+      <image src="{{item}}" class="slide-image"  />
+    </swiper-item>
+  </block>
+</swiper>
+<cover-view class="success">
+  <cover-view class="successNum">
+    <cover-view class="num">
+       {{successAmount}}
+    </cover-view>
+    <cover-view class="text">
+      人成功邀请
+    </cover-view>
+  </cover-view>
+
+  <cover-view class="successMoney" bindtap='goSharePacket'>
+    <cover-view class="num">
+      {{giftValue}}
+    </cover-view>
+    <cover-view class="text" >
+      元红包奖励>
+    </cover-view>
+  </cover-view>
+</cover-view> 
   </view>
   <view class='midview'>
     <text class='invitecodetitle'>开店码</text>

@@ -13,9 +13,11 @@ var tabs = [{
 }
 ];
 Page({
+  
+
   /**
    * 页面的初始数据
-   */
+   */  
   data: {
     imgUrls: [
     ],
@@ -422,19 +424,18 @@ Page({
     var orderId = event.currentTarget.dataset.orderid;
     var orderType = event.currentTarget.dataset.type;
     var orderstatus = event.currentTarget.dataset.orderstatus;
-
+    console.log(event.currentTarget.dataset)
     if (orderType != '外卖订单') {
-
+      
       wx.navigateTo({
         url: './PurchaseOrder/index?orderId=' + orderId
       })
     }
     else {
-
+     
       if (orderstatus == '支付完成') {
-
         wx.navigateTo({
-          url: './WaitingOrderDetail/WaitingOrderDetail?orderId=' + orderId,
+          url: './DistributionOrderDetail/index?orderId=' + orderId,
         })
       }
       else {

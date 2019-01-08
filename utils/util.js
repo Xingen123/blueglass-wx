@@ -86,7 +86,7 @@ function wxPay(token, merchantId, addressId, payableAmount, tradeInfos, isPickup
 
 
 
-function wxNewPay(token, orderId, callback,fail) {
+function wxNewPay(giftTicketId,token, orderId, callback,fail) {
   wx.showLoading({
     title: '正在加载',
   })
@@ -95,6 +95,7 @@ function wxNewPay(token, orderId, callback,fail) {
     data: {
       token: token,
       orderId: orderId,
+      giftTicketId: giftTicketId
     },
     method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT  
     // header: {}, // 设置请求的 header  

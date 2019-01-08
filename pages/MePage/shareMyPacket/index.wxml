@@ -1,0 +1,35 @@
+<view class="box">
+    <van-tabs  bind:click="onClick" color="#01A0EB"  sticky>
+        <van-tab title="可使用">
+            <view class="shareHistory">
+                <text catchtap='shareHistory' style='color:#4A4A4A;'>分享记录</text>
+                <text catchtap="goRule" >使用规则</text>
+            </view>
+            <!-- 优惠券盒子 -->
+            <view class="packet"  wx:for="{{giftTickets}}" wx:for-item="item" wx:key="{{index}}">
+                <text>{{item.giftName}}</text>
+                <image src="https://clickvideo.oss-cn-beijing.aliyuncs.com/blueglass/40ded5a0-a046-4acc-8d21-be2290c2e173.png"></image>
+                <view>{{item.comment}}</view>    
+                <view>有效期至：{{item.exceeTime}}</view>  
+                <button open-type="share" data-giftTicketId="{{item.giftTicketId}}" data-giftName="{{item.giftName}}"  data-partnerId="{{item.partnerId}}" > 用不完？送好友！</button>
+            </view>
+           
+        </van-tab>
+        <van-tab title="已过期">
+            <view class="shareHistory">
+                <text catchtap='shareHistory' style='color:#4A4A4A;'>分享记录</text>
+                <text catchtap="goRule" >使用规则</text>
+            </view>
+            <!-- 优惠券盒子 -->
+            <view class="packetB" wx:for="{{giftTickets}}" wx:for-item="item" wx:key="{{index}}">
+                <text>{{item.giftName}}</text>
+                <image src="https://clickvideo.oss-cn-beijing.aliyuncs.com/blueglass/40ded5a0-a046-4acc-8d21-be2290c2e173.png"></image>
+                <view>{{item.comment}}</view>    
+                <view>有效期至：{{item.exceeTime}}</view>  
+            </view>
+        </van-tab>
+      </van-tabs>
+</view>   
+    <view class='shareParekt' bindtap='shareParekt'>
+      <image src='{{shareImg}}' ></image>
+    </view> 
